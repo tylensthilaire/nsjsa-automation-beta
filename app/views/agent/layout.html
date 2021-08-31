@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+    {{ dwpHeader({
+        "homepageUrl": "/",
+        "serviceName": serviceName,
+        "serviceUrl": "/",
+        "containerClasses": "govuk-width-container"
+    }) }}
+{% endblock %}
+
+{% set htmlClasses = htmlClasses | default("dwp-agent-layout") %}

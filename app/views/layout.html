@@ -31,6 +31,12 @@
 {% from "govuk/components/textarea/macro.njk"            import govukTextarea %}
 {% from "govuk/components/warning-text/macro.njk"        import govukWarningText %}
 
+{# Custom macros #}
+{% from "dwp-components/dwp-summary-list/macro.njk"          import dwpSummaryList %}
+{% from "dwp-components/dwp-header/macro.njk"                import dwpHeader %}
+{% from "dwp-components/dwp-timeline/macro.njk"              import dwpTimeline %}
+{% from "dwp-components/dwp-key-details-bar/macro.njk"       import dwpKeyDetailsBar %}
+
 {% block head %}
   {% include "includes/head.html" %}
 {% endblock %}

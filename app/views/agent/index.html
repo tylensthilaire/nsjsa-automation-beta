@@ -1,0 +1,56 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        JSA Agent prototypes
+        <span class="govuk-caption-l">Tasks for agents to process a JSA claim</span>
+      </h1>
+
+      <p class="govuk-!-font-size-27"><a href="agent/task" class="govuk-link">Select task</a></p>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">Triage tasks</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="task/a">Create an identity template</a> (bio template)</li>
+        <li><a href="task/b">Conduct an identity check</a> (bio check)</li>
+        <li><a href="task/c">Conduct an identity check after failed contact</a></li>
+        <li><a href="task/d">Determine if a claim is fraudulent</a></li>
+        <li><a href="task/e">Refer claim to Job Centre</a> (appointee)</li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Processing tasks</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="task/f">Process a claim too complex for automation</a></li>
+        <li><a href="task/g">Process a claim too complex for a low tier agent</a></li>
+        <li><a href="task/h">Book appointment</a></li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Management tasks</h2>
+      <p><a href="mi">View management information</a></p>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">
+        <span>Templates patterns and examples</span>
+        <span class="govuk-caption-m">August 2021 to December 2021</span>
+      </h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="agent/example/claim">Agent claim view</a></li>
+      </ul>
+      
+    </div>
+  </div>
+
+{% endblock %}
