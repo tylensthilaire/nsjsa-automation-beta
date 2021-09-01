@@ -4,14 +4,11 @@
   {{ serviceName }}: Application for {{ data['service-short-name']}} Customer Statement
 {% endblock %}
 
+{% set claimStatus = data['claimStatus'] | replace("-", " ") | capitalize %}
+
 {% block header %}
   
-  {{ dwpHeader({
-    "homepageUrl": "/",
-    "serviceName": serviceName,
-    "serviceUrl": "/",
-    "containerClasses": "govuk-width-container"
-  }) }}
+  {{ super() }}
 
 {{ dwpKeyDetailsBar({
     claimantName: "Ian Johnson",
@@ -39,9 +36,6 @@
     classes: "dwp-print-hide"
 }) }}
 
-{% endblock %}
-
-{% block beforeContent %}
 {% endblock %}
 
 {% block content %}

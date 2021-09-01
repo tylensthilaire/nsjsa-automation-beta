@@ -7,10 +7,13 @@
 {% block header %}
     {{ dwpHeader({
         "homepageUrl": "/",
-        "serviceName": serviceName,
+        "serviceName": data['agentServiceName'],
         "serviceUrl": "/",
         "containerClasses": "govuk-width-container"
     }) }}
 {% endblock %}
 
 {% set htmlClasses = htmlClasses | default("dwp-agent-layout") %}
+
+{# reset auto spacing from layout.html #}
+{% set mainClasses = mainClasses | default("") %}
