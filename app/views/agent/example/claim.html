@@ -6,12 +6,7 @@
 
 {% block header %}
   
-  {{ dwpHeader({
-    "homepageUrl": "/",
-    "serviceName": serviceName,
-    "serviceUrl": "/",
-    "containerClasses": "govuk-width-container"
-  }) }}
+  {{ super() }}
 
 {{ dwpKeyDetailsBar({
     claimantName: "Ian Johnson",

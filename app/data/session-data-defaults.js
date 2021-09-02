@@ -20,7 +20,7 @@ Example usage:
 module.exports = {
 
   // Insert values here
-  "agentServiceName": "Manage New Style Jobseekers Allowance Claims",
+  "agentServiceName": "Manage New Style Jobseekers Allowance Applications",
   "claimStatus": "ID not verified"
 
 }

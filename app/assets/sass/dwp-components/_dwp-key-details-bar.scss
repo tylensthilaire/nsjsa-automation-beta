@@ -9,6 +9,7 @@ $key-details-bar-break-point-sm: 640px;
 
 .dwp-key-details-bar {
   background-color: govuk-colour("blue");
+  @include govuk-font($size: 16);
 
   .dwp-key-details-bar__contents {
     margin-top: 0;
@@ -40,7 +41,6 @@ $key-details-bar-break-point-sm: 640px;
     dd,
     dt {
       float: left;
-      font-family: 'nta', Arial, sans-serif; // TODO: Refactor
       font-size: 19px;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;

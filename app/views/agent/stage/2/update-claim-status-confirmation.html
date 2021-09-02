@@ -1,4 +1,4 @@
-{% extends "agent/example/claim.html" %}
+{% extends "agent/stage/2/claim.html" %}
 
 {% block pageTitle %}
   Select a status
@@ -12,8 +12,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       {{ govukPanel({
-        titleText: "The claim was updated",
-        html: claimStatus
+        titleText: "Claim updated to " + claimStatus
       }) }}
 
       {{ govukButton({

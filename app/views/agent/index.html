@@ -1,5 +1,5 @@
 
-{% extends "layout.html" %}
+{% extends "agent/layout.html" %}
 
 {% block pageTitle %}
   GOV.UK Prototype Kit
@@ -8,7 +8,7 @@
 {% block content %}
 {{ govukBackLink({
   text: "Back",
-  href: "javascript:history.back()"
+  href: "/"
 }) }}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -42,10 +42,28 @@
 
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-      <h2 class="govuk-heading-m">
-        <span>Templates patterns and examples</span>
-        <span class="govuk-caption-m">August 2021 to December 2021</span>
-      </h2>
+      <h2 class="govuk-heading-m">Screens by stage</h2>
+      <h3 class="govuk-heading-s">Stage 1</h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="agent/stage/1/claim?claimStatus=ID-verified&guidMismatch=1">Process a claim, ID Verified online, warning of NINO mismatch</a> – Processing agent 
+        {# {{ govukTag({
+          text: "update",
+          classes: "govuk-tag--yellow"
+        }) }} #}
+        </li>
+        <li><a href="agent/stage/1/claim?claimStatus=ID-not-verified&guidMismatch=0">Process a claim, ID not verified online</a> – Processing agent</li>
+      </ul>
+
+      <h3 class="govuk-heading-s">Stage 2</h3>
+      <p><a href="agent/stage/2/nino-search">Full journey</a></p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="agent/stage/2/claim?claimStatus=ID-verified">Process a claim, update claim status, entitlement</a> – Processing agent</li>
+        <li><a href="agent/stage/2/book">Book appointment</a> – G4S agent</li>
+      </ul>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">Templates patterns and examples</h2>
       <ul class="govuk-list govuk-list--bullet">
         <li><a href="agent/example/claim">Agent claim view</a></li>
         <li><a href="agent/example/update-claim-status">Agent update claim status</a></li>
