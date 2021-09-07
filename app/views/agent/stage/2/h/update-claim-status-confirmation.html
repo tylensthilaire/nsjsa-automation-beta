@@ -1,10 +1,11 @@
-{% extends "agent/stage/2/claim.html" %}
+{% extends "agent/stage/2/h/claim.html" %}
 
 {% block pageTitle %}
   Select a status
 {% endblock %}
 
 {% set claimStatus = data['claimStatus'] | replace("-", " ") | capitalize %}
+{% set subStatus = data['reason'] | replace(",", "") %}
 
 {% block content %}
 
@@ -12,14 +13,16 @@
     <div class="govuk-grid-column-two-thirds">
 
       {{ govukPanel({
-        titleText: "Claim updated to " + claimStatus
+        titleText: "The claim was updated",
+        html: claimStatus + ' – ' + subStatus
       }) }}
 
       {{ govukButton({
-        text: "Get next claim"
+        text: "Get next claim",
+        href: "claim?claimStatus=Entitled"
       }) }}
 
-      <p><a href="./start" class="govuk-link">Return to start screen</a></p>
+      <p><a href="../start" class="govuk-link">Return to start screen</a></p>
 
     </div>
     </div>

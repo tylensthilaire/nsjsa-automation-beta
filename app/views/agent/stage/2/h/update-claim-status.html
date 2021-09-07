@@ -1,4 +1,4 @@
-{% extends "agent/task/h/claim.html" %}
+{% extends "agent/stage/2/h/claim.html" %}
 
 {% block pageTitle %}
 Update the status of this claim
@@ -16,23 +16,27 @@ Update the status of this claim
     name: "reason",
     classes: "govuk-input--width-10",
     label: {
-      text: "Give more detail"
+      text: "Give more detail",
+      classes: "govuk-visually-hidden"
     },
     items: [
       {
-        value: "too-early",
+        text: "Select an option"
+      },
+      {
+        value: "Too early 7-8am",
         text: "Too early 7-8am"
       },
       {
-        value: "too-early",
+        value: "Too early 8-9am",
         text: "Too early 8-9am"
       },
       {
-        value: "too-late-89",
+        value: "Too late 8-9pm",
         text: "Too late 8-9pm"
       },
       {
-        value: "potentially-violent",
+        value: "PV flag",
         text: "PV flag"
       }
     ]
@@ -44,31 +48,35 @@ Update the status of this claim
     name: "reason",
     classes: "govuk-input--width-10",
     label: {
-      text: "Give more detail"
+      text: "Give more detail",
+      classes: "govuk-visually-hidden"
     },
     items: [
       {
-        value: "callback-1hr",
+        text: "Select an option"
+      },
+      {
+        value: "Callback in 1 hr",
         text: "Callback in 1 hr"
       },
       {
-        value: "callback-2hr",
+        value: "Callback in 2 hrs",
         text: "Callback in 2 hrs"
       },
       {
-        value: "callback-3hr",
+        value: "Callback in 3 hrs",
         text: "Callback in 3 hrs"
       },
       {
-        value: "fail-to-attend",
+        value: "Fail to attend",
         text: "Fail to attend"
       },
       {
-        value: "landline-only",
+        value: "Landline only",
         text: "Landline only"
       },
       {
-        value: "wrong-nino",
+        value: "Wrong NINo",
         text: "Wrong NINo"
       }
     ]
@@ -80,23 +88,27 @@ Update the status of this claim
     name: "reason",
     classes: "govuk-input--width-10",
     label: {
-      text: "Give more detail"
+      text: "Give more detail",
+      classes: "govuk-visually-hidden"
     },
     items: [
       {
-        value: "voicemail",
+        text: "Select an option"
+      },
+      {
+        value: "Voicemail if possible",
         text: "Voicemail if possible"
       },
       {
-        value: "no-voicemail",
+        value: "No voicemail - letter sent",
         text: "No voicemail - letter sent"
       },
       {
-        value: "callback-3hr",
+        value: "Callback in 3 hrs",
         text: "Callback in 3 hrs"
       },
       {
-        value: "appointee-letter",
+        value: "Appointee letter",
         text: "Appointee letter"
       }
     ]

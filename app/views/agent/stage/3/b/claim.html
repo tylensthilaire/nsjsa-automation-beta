@@ -40,6 +40,21 @@
 
 {% block content %}
 
+
+{% set matchTag %}
+{{ govukTag({
+  text: "match",
+  classes: "govuk-tag--grey"
+}) }}
+{% endset %}
+
+{% set misMatchTag %}
+{{ govukTag({
+  text: "mismatch",
+  classes: "govuk-tag--red"
+}) }}
+{% endset %}
+
 <div class="govuk-grid-row dwp-print-hide">
   <div class="govuk-grid-column-two-thirds">
 
@@ -345,12 +360,12 @@
             text: "Update claim status",
             href: "update-claim-status"
           }) }}
-
-          <p><a href="/agent/stage/shared/nino-search?stage=2&claimStatus=ID-verified">Find another claim</a></p>
             
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
           <h3 class="govuk-heading-m">Claim history</h3>
+
+          {% if data['claimStatus'] == 'ID-verified' %}
 
           {{ dwpTimeline({
             items: [
@@ -369,6 +384,28 @@
               }
             ]
           }) }}
+
+          {% else %}
+
+        {{ dwpTimeline({
+          items: [
+            {
+              heading: "ID not verified",
+              label: "label",
+              author: "by DWP Trust Hub",
+              date: "on 29 June 2021",
+              time: "at 4:43pm"
+            },
+            {
+              heading: "Application submitted",
+              date: "by claimant on 29 June 2021",
+              time: "at 4:32pm",
+              classes: "dwp-timeline-entry--closing"
+            }
+          ]
+        }) }}
+
+          {% endif %}
 
     </aside>
 

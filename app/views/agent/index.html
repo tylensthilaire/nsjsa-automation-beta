@@ -42,23 +42,29 @@
 
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-      <h2 class="govuk-heading-m">Screens by stage</h2>
+      <h2 class="govuk-heading-m">User journeys by stage</h2>
       <h3 class="govuk-heading-s">Stage 1</h3>
       <ul class="govuk-list govuk-list--bullet">
-        <li><a href="agent/stage/1/claim?claimStatus=ID-verified&guidMismatch=1">Process a claim, ID Verified online, warning of NINO mismatch</a> – Processing agent 
+      <li>SC – <a href="agent/stage/shared/nino-search?stage=1&claimStatus=ID-verified&guidMismatch=1">Process a claim, ID Verified online, warning of NINO mismatch</a></li>
+        {# <li><a href="agent/stage/1/claim?claimStatus=ID-verified&guidMismatch=1">Process a claim, ID Verified online, warning of NINO mismatch</a>  #}
         {# {{ govukTag({
           text: "update",
           classes: "govuk-tag--yellow"
         }) }} #}
         </li>
-        <li><a href="agent/stage/1/claim?claimStatus=ID-not-verified&guidMismatch=0">Process a claim, ID not verified online</a> – Processing agent</li>
+        <li>SC – <a href="agent/stage/shared/nino-search?stage=1&claimStatus=ID-not-verified&guidMismatch=0">Process a claim, ID not verified online</a></li>
       </ul>
 
       <h3 class="govuk-heading-s">Stage 2</h3>
-      <p><a href="agent/stage/2/nino-search">Full journey</a></p>
       <ul class="govuk-list govuk-list--bullet">
-        <li><a href="agent/stage/2/claim?claimStatus=ID-verified">Process a claim, update claim status, entitlement</a> – Processing agent</li>
-        <li><a href="agent/stage/2/book">Book appointment</a> – G4S agent</li>
+        <li>SC – <a href="agent/stage/shared/nino-search?stage=2&claimStatus=ID-verified">Process a claim, update claim status, entitlement</a></li>
+        <li>G4S – <a href="agent/stage/2/h/claim?stage=2&claimStatus=entitled">Book appointment</a></li>
+      </ul>
+
+      <h3 class="govuk-heading-s">Stage 3</h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>SC – <a href="agent/stage/3/a/claim?stage=3&claimStatus=ID-not-verified">Create ID template</a></li>
+        <li>SC – <a href="agent/stage/3/b/claim?stage=3&claimStatus=ID-not-verified">Conduct ID check then process a claim</a></li>
       </ul>
 
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
@@ -68,6 +74,7 @@
         <li><a href="agent/example/claim">Agent claim view</a></li>
         <li><a href="agent/example/update-claim-status">Agent update claim status</a></li>
         <li><a href="agent/example/update-claim-status-confirmation">Agent claim status update confirmation</a></li>
+        <li><a href="agent/example/task">Choose task</a></li>
       </ul>
       
     </div>

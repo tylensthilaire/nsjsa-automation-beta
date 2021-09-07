@@ -29,7 +29,7 @@
         },
         {
             title: "Claim submitted",
-            value: "31/08/21"
+            value: "29/06/21"
         }
     ],
     showToggle: showToggle,
@@ -45,6 +45,47 @@
 
   <h1 class="govuk-heading-l govuk-visually-hidden">Claim processing</h1>
 
+{% if data['guidMismatch'] == '1' %}
+{% set html %}
+  <p class="govuk-notification-banner__heading">National Insurance number mismatch</p>
+  {# <p>The National Insurance number from the claimants application does not match their online identity.</p> #}
+    {{ govukSummaryList({
+      classes: "dwp-summary-list--wide govuk-!-margin-bottom-2",
+      rows: [
+        {
+          key: {
+            text: "Claimant application"
+          },
+          value: {
+            text: "CX 40 01 26 A"
+          },
+          actions: {
+            items: [
+              {
+                href: "nino",
+                text: "Change",
+                visuallyHiddenText: "name"
+              }
+            ]
+          }
+        },{
+          key: {
+            text: "Online identity check"
+          },
+          value: {
+            text: "CX 40 01 25 A"
+          }
+        }
+      ]
+    }) }}
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html
+}) }}
+
+{% endif %}
+
   <h2 class="govuk-heading-l">Claimant application</h2>
 
   <section class="dwp-claim-section">
@@ -57,7 +98,7 @@
             text: "Claim start date"
           },
           value: {
-            text: "31 July 2021"
+            text: "29 June 2021"
           }
         }
       ]
@@ -338,37 +379,59 @@
   <div class="govuk-grid-column-one-third">
     
     <aside class="app-related-items" role="complementary">
-
+      
       <h3 class="govuk-heading-m">Claim actions</h3>
 
-          {{ govukButton({
-            text: "Update claim status",
-            href: "update-claim-status"
-          }) }}
+      {{ govukButton({
+        text: "Update claim status",
+        href: "update-claim-status"
+      }) }}
+        
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-          <p><a href="/agent/stage/shared/nino-search?stage=2&claimStatus=ID-verified">Find another claim</a></p>
-            
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <h3 class="govuk-heading-m">Claim history</h3>
 
-          <h3 class="govuk-heading-m">Claim history</h3>
+      {% if data['claimStatus'] == 'ID-not-verified' %}
 
-          {{ dwpTimeline({
-            items: [
-              {
-                heading: "ID verified",
-                label: "label",
-                author: "by DWP Trust Hub",
-                date: "on 29 June 2021",
-                time: "at 4:43pm"
-              },
-              {
-                heading: "Application submitted",
-                date: "by claimant on 29 June 2021",
-                time: "at 4:32pm",
-                classes: "dwp-timeline-entry--closing"
-              }
-            ]
-          }) }}
+        {{ dwpTimeline({
+          items: [
+            {
+              heading: "ID not verified",
+              label: "label",
+              author: "by DWP Trust Hub",
+              date: "on 29 June 2021",
+              time: "at 4:43pm"
+            },
+            {
+              heading: "Application submitted",
+              date: "by claimant on 29 June 2021",
+              time: "at 4:32pm",
+              classes: "dwp-timeline-entry--closing"
+            }
+          ]
+        }) }}
+
+      {% else %}
+
+        {{ dwpTimeline({
+          items: [
+            {
+              heading: "ID verified",
+              label: "label",
+              author: "by DWP Trust Hub",
+              date: "on 29 June 2021",
+              time: "at 4:43pm"
+            },
+            {
+              heading: "Application submitted",
+              date: "by claimant on 29 June 2021",
+              time: "at 4:32pm",
+              classes: "dwp-timeline-entry--closing"
+            }
+          ]
+        }) }}
+
+      {% endif %}
 
     </aside>
 

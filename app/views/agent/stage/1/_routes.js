@@ -9,6 +9,10 @@ const NEXT_PATH = '/sprint8/1/3-claim-start';
 //   res.redirect(`${ABS_BASE_PATH}/nino`);
 // })
 
+router.post('/nino-search', function (req, res) {
+    res.redirect('claim');
+});
+
 router.post('/nino', function (req, res) {
     res.redirect('claim');
 });
