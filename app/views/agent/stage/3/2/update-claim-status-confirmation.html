@@ -1,11 +1,11 @@
-{% extends "agent/stage/3/b/claim.html" %}
+{% extends "agent/stage/3/2/claim.html" %}
 
 {% block pageTitle %}
   Select a status
 {% endblock %}
 
 {% set claimStatus = data['claimStatus'] | replace("-", " ") | capitalize %}
-{% set subStatus = data['reason'] | replace(",", "") %}
+{% set subStatus = data['subStatus'] %}
 
 {% block content %}
 
@@ -14,7 +14,7 @@
 
       {{ govukPanel({
         titleText: "The claim was updated",
-        html: claimStatus + ' – ' + subStatus
+        html: claimStatus + ' – ' + data['subStatus']
       }) }}
 
       {{ govukButton({
@@ -22,7 +22,7 @@
         href: "claim"
       }) }}
 
-      <p><a href="../start" class="govuk-link">Return to start screen</a></p>
+      <p><a href="../choose-task" class="govuk-link">Return to start screen</a></p>
 
     </div>
     </div>

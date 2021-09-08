@@ -1,4 +1,4 @@
-{% extends "agent/stage/3/b/claim.html" %}
+{% extends "agent/stage/3/2/claim.html" %}
 
 {% block pageTitle %}
   Select a status
@@ -9,7 +9,7 @@
 {% set failHtml %}
 {{ govukCheckboxes({
   idPrefix: "failed-contact",
-  name: "failed-contact",
+  name: "subStatus",
   fieldset: {
     legend: {
       text: "What did you do?",
@@ -43,7 +43,7 @@
 {% set entitledHtml %}
 {{ govukRadios({
   idPrefix: "entitled",
-  name: "entitled",
+  name: "subStatus",
   fieldset: {
     legend: {
       text: "Is the claimant entitled?",
@@ -58,6 +58,13 @@
     {
       value: "Not entitled",
       text: "No"
+    },
+    {
+        value: "Undecided",
+        text: "Undecided",
+        hint: {
+          text: "Give claim to a specialist agent for review."
+        }
     }
   ]
 }) }}
@@ -97,10 +104,6 @@
                         {
                             value: "Suspected fraud",
                             text: "Suspected fraud"
-                        },
-                        {
-                            value: "Complex claim",
-                            text: "Complex claim"
                         },
                         {
                           divider: "or"

@@ -337,16 +337,19 @@
 
   <div class="govuk-grid-column-one-third">
     
-    <aside class="app-related-items" role="complementary">
+    <aside role="complementary">
 
-      <h3 class="govuk-heading-m">Claim actions</h3>
+      <h3 class="govuk-heading-m govuk-visually-hidden">Actions</h3>
 
           {{ govukButton({
             text: "Update claim status",
             href: "update-claim-status"
           }) }}
 
-          <p><a href="/agent/stage/shared/nino-search?stage=2&claimStatus=ID-verified">Find another claim</a></p>
+          <ul class="govuk-list govuk-list--unstyled">
+            <li><a href="/agent/stage/shared/nino-search?stage=2&claimStatus=ID-verified">Find another claim</a></li>
+            <li><a href="/agent/stage/shared/task">Change task</a></li>
+          </ul>
             
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
