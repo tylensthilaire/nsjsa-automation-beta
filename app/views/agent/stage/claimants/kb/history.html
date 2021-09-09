@@ -1,0 +1,41 @@
+{% if data['claimStatus'] == 'ID-verified' %}
+
+{{ dwpTimeline({
+items: [
+    {
+    heading: "ID verified",
+    label: "label",
+    author: "by DWP Trust Hub",
+    date: "on 5 September 2021",
+    time: "at 6:37am"
+    },
+    {
+    heading: "Application submitted",
+    date: "by claimant on 5 September 2021",
+    time: "at 6:12am",
+    classes: "dwp-timeline-entry--closing"
+    }
+]
+}) }}
+
+{% else %}
+
+{{ dwpTimeline({
+    items: [
+    {
+        heading: "ID not verified",
+        label: "label",
+        author: "by DWP Trust Hub",
+        date: "on 5 September 2021",
+        time: "at 6:33am"
+    },
+    {
+        heading: "Application submitted",
+        date: "by claimant on 5 September 2021",
+        time: "at 6:12am",
+        classes: "dwp-timeline-entry--closing"
+    }
+    ]
+}) }}
+
+{% endif %}

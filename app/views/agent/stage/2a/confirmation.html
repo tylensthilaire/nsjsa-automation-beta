@@ -1,4 +1,4 @@
-{% extends "agent/stage/3/2/claim.html" %}
+{% extends "./view-claim.html" %}
 
 {% block pageTitle %}
   Select a status
@@ -19,10 +19,8 @@
 
       {{ govukButton({
         text: "Get next claim",
-        href: "claim"
+        href: "view-claim?claimStatus=ID-not-verified"
       }) }}
-
-      <p><a href="../choose-task" class="govuk-link">Return to start screen</a></p>
 
     </div>
     </div>

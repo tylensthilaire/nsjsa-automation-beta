@@ -21,6 +21,9 @@ module.exports = {
 
   // Insert values here
   "agentServiceName": "Manage New Style Jobseekers Allowance Applications",
-  "claimStatus": "ID not verified"
+  "claimStatus": "ID not verified",
+  "claimant": "sh",
+  "guidMismatch": '0',
+  "task": "view"
 
 }

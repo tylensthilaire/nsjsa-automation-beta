@@ -1,4 +1,4 @@
-{% extends "agent/stage/3/2/claim.html" %}
+{% extends "./view-claim.html" %}
 
 {% block pageTitle %}
   Select a status
@@ -75,12 +75,46 @@
   href: "javascript:history.back()"
 }) }}
 
-  <div class="govuk-grid-row">
+  <div class="govuk-grid-row  govuk-!-margin-top-4">
     <div class="govuk-grid-column-two-thirds">
           
-      <h1 class="govuk-heading-l govuk-!-margin-top-4">Update claim status</h1>
+      {% if data['task'] == 'ID-template' %}
 
-      <form action="update-claim-status-confirmation" method="get">
+      <form action="confirmation" method="get">
+
+        {{ govukRadios({
+            idPrefix: 'status',
+            name: 'claimStatus',
+            fieldset: {
+              legend: {
+                text: "Update claim status",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+                {
+                    value: "ID template created",
+                    text: "ID template created"
+                },
+                {
+                    value: "ID-not-verified",
+                    text: "ID template not created"
+                }                   
+            ]
+          })
+        }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+
+
+      {% elif data['task'] == 'ID-check' %}
+
+
+      <form action="confirmation" method="get">
 
         <div class="govuk-form-group">
 
@@ -89,6 +123,13 @@
                 {{ govukRadios({
                     idPrefix: 'status',
                     name: 'claimStatus',
+                    fieldset: {
+                      legend: {
+                        text: "Update claim status",
+                        isPageHeading: true,
+                        classes: "govuk-fieldset__legend--l"
+                      }
+                    },
                     items: [
                         {
                             value: "Failed to contact",
@@ -127,6 +168,16 @@
         }) }}
 
       </form>
+
+      {% else %}
+
+      <p>No ?task set!</p>
+
+      {% endif %}
+
+
+
+      
     </div>
   </div>
 

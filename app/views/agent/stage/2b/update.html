@@ -1,4 +1,4 @@
-{% extends "agent/stage/2/h/claim.html" %}
+{% extends "./view-claim.html" %}
 
 {% block pageTitle %}
 Update the status of this claim
@@ -117,7 +117,7 @@ Update the status of this claim
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="update-claim-status-confirmation" method="get" class="govuk-!-margin-top-4">
+      <form action="confirmation" method="get" class="govuk-!-margin-top-4">
 
         {{ govukRadios({
             idPrefix: 'status',

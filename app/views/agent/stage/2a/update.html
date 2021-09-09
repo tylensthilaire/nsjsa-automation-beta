@@ -1,4 +1,4 @@
-{% extends "agent/stage/2/claim.html" %}
+{% extends "./view-claim.html" %}
 
 {% block pageTitle %}
   Select a status
@@ -11,14 +11,10 @@
   href: "javascript:history.back()"
 }) }}
 
-  <div class="govuk-grid-row">
+  <div class="govuk-grid-row  govuk-!-margin-top-4">
     <div class="govuk-grid-column-two-thirds">
           
-      <h1 class="govuk-heading-l govuk-!-margin-top-4">
-        Update claim status
-      </h1>
-
-      <form action="update-claim-status-confirmation" method="get">
+      <form action="confirmation" method="get">
 
         <div class="govuk-form-group">
 
@@ -27,6 +23,13 @@
                 {{ govukRadios({
                     idPrefix: 'status',
                     name: 'claimStatus',
+                    fieldset: {
+                      legend: {
+                        text: "Update claim status",
+                        isPageHeading: true,
+                        classes: "govuk-fieldset__legend--l"
+                      }
+                    },
                     items: [
                         {
                             value: "entitled",
@@ -48,6 +51,7 @@
         }) }}
 
       </form>
+      
     </div>
   </div>
 

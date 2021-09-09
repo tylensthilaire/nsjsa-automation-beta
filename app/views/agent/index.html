@@ -17,60 +17,36 @@
         <span class="govuk-caption-l">Tasks for agents to process a JSA claim</span>
       </h1>
 
-      <p><a href="/agent/task/grid">All tasks</a></p>
-
       <h2 class="govuk-heading-m">Tasks by stage</h2>
       <h3 class="govuk-heading-s">Stage 1 – IDV</h3>
- 
-      <ul class="govuk-list govuk-list--bullet">
-        {# <li>ID verified online, GUID NINO matches application NINO</li>
-        <li>ID verified online, GUID NINO doesn't match application NINO</li>
-        <li>ID verified online, application NINO matches CIS</li>
-        <li>ID verified online, application NINO doesn't match CIS</li>
-        <li>ID not verified online</li> #}
-        <li>SC – <a href="agent/stage/shared/nino-search?stage=1&claimStatus=ID-verified&guidMismatch=1">Process a claim, warning of NINO mismatch</a></li>
-        {# <li><a href="agent/stage/1/claim?claimStatus=ID-verified&guidMismatch=1">Process a claim, ID Verified online, warning of NINO mismatch</a>  #}
-        {# {{ govukTag({
-          text: "update",
-          classes: "govuk-tag--yellow"
-        }) }} #}
-        </li>
-        <li>SC – <a href="agent/stage/shared/nino-search?stage=1&claimStatus=ID-not-verified&guidMismatch=0">Process a claim, ID not verified online</a></li>
-      </ul>
+
+      <p>1. <a href="agent/stage/1">Service centre agent start</a></p>
 
       <h3 class="govuk-heading-s">Stage 2 – Book appointment</h3>
 
       <ul class="govuk-list govuk-list--bullet">
-        <li>SC – <a href="agent/stage/shared/nino-search?stage=2&claimStatus=ID-verified">Process a claim, update claim status, entitlement</a></li>
-        <li>G4S – <a href="agent/stage/2/h/claim?stage=2&claimStatus=entitled">Book appointment</a></li>
+        <li>2a. <a href="agent/stage/2a">Service centre agent start</a></li>
+        <li>2b. <a href="agent/stage/2b">Contact centre agent start</a></li>
       </ul>
 
       <h3 class="govuk-heading-s">Stage 3 – Manual ID/bio checks</h3>
 
-      <p>SC – <a href="agent/stage/3/choose-task">Choose task</a></p>
+      <p>3. <a href="agent/stage/3">Service centre agent start</a></p>
 
-      <ul class="govuk-list govuk-list--bullet">
-        <li>SC – <a href="agent/stage/3/1/claim?stage=3&claimStatus=ID-not-verified">Create ID template</a></li>
-        <li>SC – <a href="agent/stage/3/2/claim?stage=3&claimStatus=ID-not-verified">Conduct ID check then process a claim</a></li>
-      </ul>
-
-      <h3 class="govuk-heading-s">Stage 4 – ES/BA pushes, process claim bucket</h3>
+      {# <h3 class="govuk-heading-s">Stage 4 – ES/BA pushes, process claim bucket</h3>
       <p>To add</p>
       <h3 class="govuk-heading-s">Stage 5 – Fraud check</h3>
       <p>To add</p>
       <h3 class="govuk-heading-s">Stage 6 – Robotics</h3>
       <p>To add</p>
       <h3 class="govuk-heading-s">Stage 7 – Escalation and appointee buckets</h3>
-      <p>To add</p>
+      <p>To add</p> #}
 
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-
-      <p class="govuk-!-font-size-27"><a href="agent/task" class="govuk-link">Select task</a></p>
-
       {# <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"> #}
 
-      <h2 class="govuk-heading-m">Triage tasks</h2>
+      {# <h2 class="govuk-heading-m">Triage tasks</h2>
       <ul class="govuk-list govuk-list--bullet">
         <li><a href="task/a">Create an identity template</a> (bio template)</li>
         <li><a href="agent/task/b/claim">Conduct an identity check</a> (bio check)</li>
@@ -84,7 +60,7 @@
         <li><a href="task/f">Process a claim too complex for automation</a></li>
         <li><a href="task/g">Process a claim too complex for a low tier agent</a></li>
         <li><a href="agent/task/h/claim">Book appointment</a></li>
-      </ul>
+      </ul> #}
 
       <h2 class="govuk-heading-m">Management tasks</h2>
       <p><a href="agent/mi/overview">View management information</a></p>
@@ -99,6 +75,14 @@
         <li><a href="agent/example/update-claim-status-confirmation">Agent claim status update confirmation</a></li>
         <li><a href="agent/example/task">Choose task</a></li>
       </ul>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>claimant – sh, kb, ij</li>
+        <li>task – view, ID-template, ID-check, book</li>
+        <li>claimStatus – ID-not-verified, ID-verified</li>
+        <li>guidMismatch – 0, 1</li>
+      </ul>
+
       
     </div>
   </div>
