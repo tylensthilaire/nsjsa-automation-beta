@@ -6,12 +6,14 @@
 
 {% block header %}
     {{ dwpHeader({
-        "homepageUrl": "/agent",
+        "homepageUrl": "/",
         "serviceName": data['agentServiceName'],
-        "serviceUrl": "/agent",
+        "serviceUrl": "/",
         "containerClasses": "govuk-width-container"
     }) }}
 {% endblock %}
+
+{# {% block footer %}{% endblock %} #}
 
 {% set htmlClasses = htmlClasses | default("dwp-agent-layout") %}
 

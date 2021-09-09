@@ -14,3 +14,7 @@ $govuk-font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", san
 $govuk-canvas-background-colour: $govuk-body-background-colour;
 
 @import "application";
+
+.jsa-automation .dwp-header {
+    background-color: govuk-colour("turquoise");
+}

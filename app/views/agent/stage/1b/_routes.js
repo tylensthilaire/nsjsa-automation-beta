@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const BASE_PATH = 'agent/stage/1';
+const BASE_PATH = 'agent/stage/1b';
 const ABS_BASE_PATH = `/${BASE_PATH}`;
 
 router.get('/', function (req, res) {
