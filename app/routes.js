@@ -16,6 +16,7 @@ router.use('/agent/stage/1a/9-pensions/', require('./views/agent/stage/1a/9-pens
 router.use('/agent/stage/1a/10-education/', require('./views/agent/stage/1a/10-education/_routes'))
 router.use('/agent/stage/1a/dth/', require('./views/agent/stage/1a/dth/_routes'))
 
+router.use('/agent/stage/4/', require('./views/agent/stage/4/_routes'))
 router.use('/agent/stage/3/', require('./views/agent/stage/3/_routes'))
 router.use('/agent/stage/2b/', require('./views/agent/stage/2b/_routes'))
 router.use('/agent/stage/2a/', require('./views/agent/stage/2a/_routes'))
