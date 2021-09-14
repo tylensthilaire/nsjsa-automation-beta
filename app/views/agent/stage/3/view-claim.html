@@ -14,6 +14,8 @@
     {% include '../claimants/sh/key-details.html' %}
   {% elif data['claimant'] == 'kb' %}
     {% include '../claimants/kb/key-details.html' %}
+  {% elif data['claimant'] == 'ij' %}
+    {% include '../claimants/ij/key-details.html' %}
   {% else %}
     <p>No claimant set.</p>
   {% endif %}
@@ -37,6 +39,8 @@
       {% include '../claimants/sh/application.html' %}
     {% elif data['claimant'] == 'kb' %}
       {% include '../claimants/kb/application.html' %}
+    {% elif data['claimant'] == 'ij' %}
+      {% include '../claimants/ij/application.html' %}
     {% else %}
       <p>No claimant set.</p>
     {% endif %}
@@ -55,6 +59,8 @@
         {% include '../claimants/sh/history.html' %}
       {% elif data['claimant'] == 'kb' %}
         {% include '../claimants/kb/history.html' %}
+      {% elif data['claimant'] == 'ij' %}
+        {% include '../claimants/ij/history.html' %}
       {% else %}
         <p>No claimant set.</p>
       {% endif %}
