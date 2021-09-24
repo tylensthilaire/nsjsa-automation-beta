@@ -9,11 +9,30 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Delivery by stage</h1>
+      <h1 class="govuk-heading-l">Delivery by area</h1>
 
       {# <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"> #}
 
-      <h2 class="govuk-heading-m">Stage 1 – IDV</h2>
+      <h2 class="govuk-heading-m">Book appointment</h2>
+
+      <ul class="govuk-list govuk-list--unstyled">
+        <li><a href="agent/stage/2a">Service centre agent – Find a claim</a></li>
+        <li><a href="agent/stage/2b">Contact centre agent – Choose a task</a></li>
+        <li><a href="agent/stage/2b/view-claim?task=book&claimStatus=first-fail&claimant=kb">Contact centre agent – First fail</a></li>
+      </ul>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      
+
+      <h2 class="govuk-heading-m">ES/BA pushes, process claim bucket</h2>
+
+      <p><a href="agent/stage/4">Service centre agent – Choose a task</a></p>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      
+      <h2 class="govuk-heading-m">IDV</h2>
 
       <h3 class="govuk-heading-s">Citizen screens</h3>
 
@@ -23,7 +42,11 @@
         html: "
             <ul class=govuk-list govuk-list--bullet>
               <li><a href='agent/stage/1a/declaration'>Declaration</a></li>
-              <li><a href='agent/stage/1a/confirmation'>Application sent confirmation</a></li>
+                      <li><a href='agent/stage/1a/confirmation'>Application sent confirmation 1</a></li>
+        <li><a href='agent/stage/1a/confirmation2'>Application sent confirmation 2</a></li>
+        <li><a href='agent/stage/1a/confirmation3'>Application sent confirmation 3</a></li>
+        <li><a href='agent/stage/1a/confirmation4'>Application sent confirmation 4</a></li>
+        <li><a href='agent/stage/1a/confirmation5'>Application sent confirmation 5</a></li>
               <li><a href='agent/stage/1a/complete-confirmation?id=verified'>Application complete – successful IDV confirmation</a></li>
               <li><a href='agent/stage/1a/complete-confirmation?id=not-verified'>Application complete – unsuccessful IDV confirmation</a></li>
             </ul> 
@@ -36,31 +59,9 @@
 
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-      <h2 class="govuk-heading-m">Stage 2 – Book appointment</h2>
-
-      <ul class="govuk-list govuk-list--unstyled">
-        <li>a. <a href="agent/stage/2a">Service centre agent – Find a claim</a></li>
-        <li>b. <a href="agent/stage/2b">Contact centre agent – Choose a task</a></li>
-      </ul>
-
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-      <h2 class="govuk-heading-m">Stage 3 – Manual ID/bio checks</h2>
+      <h2 class="govuk-heading-m">Manual ID/bio checks</h2>
 
       <p><a href="agent/stage/3">Service centre agent – Choose a task</a></p>
-
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-      <h2 class="govuk-heading-m">Stage 4 – ES/BA pushes, process claim bucket</h2>
-
-      <p><a href="agent/stage/4">Service centre agent – Choose a task</a></p>
-
-      {# <h2 class="govuk-heading-m">Stage 5 – Fraud check</h2>
-      <p>To add</p>
-      <h2 class="govuk-heading-m">Stage 6 – Robotics</h2>
-      <p>To add</p>
-      <h2 class="govuk-heading-m">Stage 7 – Escalation and appointee buckets</h2>
-      <p>To add</p> #}
 
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 

@@ -9,7 +9,7 @@ router.get('/', function (req, res) {
 })
 
 router.post('/nino-search', function (req, res) {
-    res.redirect('view-claim?task=ID-check&claimant=sh');
+    res.redirect('view-claim?task=view&claimant=sh&claimStatus=new-claim');
 });
 
 router.post('/nino', function (req, res) {

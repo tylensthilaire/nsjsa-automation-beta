@@ -14,12 +14,12 @@
 
       {{ govukPanel({
         titleText: "The claim was updated",
-        html: claimStatus + ' – ' + data['subStatus']
+        html: claimStatus
       }) }}
 
       {{ govukButton({
         text: "Get next claim",
-        href: "view-claim?claimStatus=ID-not-verified"
+        href: "nino-search?claimStatus=new-claim&claimant=kb"
       }) }}
 
     </div>

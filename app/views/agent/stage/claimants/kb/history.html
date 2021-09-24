@@ -18,6 +18,51 @@ items: [
 ]
 }) }}
 
+{% elif data['claimStatus'] == 'awaiting-appointment' %}
+
+{{ dwpTimeline({
+items: [
+    {
+    heading: "Awaiting appointment",
+    label: "label",
+    author: "by DWP Agent",
+    date: "on 5 September 2021",
+    time: "at 4:43pm"
+    },
+    {
+    heading: "New claim",
+    date: "by claimant on 5 September 2021",
+    time: "at 6:12am",
+    classes: "dwp-timeline-entry--closing"
+    }
+]
+}) }}
+
+{% elif data['claimStatus'] == 'first-fail' %}
+
+{{ dwpTimeline({
+items: [
+    {
+    heading: "Awaiting appointment",
+    label: "label",
+    author: "by DWP Agent",
+    date: "on 5 September 2021",
+    time: "at 4:43pm",
+    body: "<h4 class='dwp-timeline-title govuk-heading-s'>First fail</h4>
+    <p class=dwp-timeline-info>
+    <span class=dwp-timeline-date>on 6 September 2021</span>
+    <span class=dwp-timeline-time>at 9:09am</span>
+    </p>"
+    },
+    {
+    heading: "New claim",
+    date: "by claimant on 5 September 2021",
+    time: "at 6:12am",
+    classes: "dwp-timeline-entry--closing"
+    }
+]
+}) }}
+
 {% else %}
 
 {{ dwpTimeline({

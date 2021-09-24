@@ -18,6 +18,18 @@ items: [
 ]
 }) }}
 
+{% elif data['claimStatus'] == 'new-claim' %}
+
+{{ dwpTimeline({
+    items: [
+    {
+        heading: "New claim",
+        date: "by claimant on 31 July 2021",
+        time: "at 4:32pm"
+    }
+    ]
+}) }}
+
 {% else %}
 
 {{ dwpTimeline({

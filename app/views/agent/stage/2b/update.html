@@ -119,6 +119,47 @@ Update the status of this claim
     <div class="govuk-grid-column-two-thirds">
       <form action="confirmation" method="get" class="govuk-!-margin-top-4">
 
+      {% if data['task'] == 'book' %}
+      
+        {{ govukRadios({
+            idPrefix: 'status',
+            name: 'claimStatus',
+            fieldset: {
+              legend: {
+                text: "Update claim status",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+                {
+                    value: "no-slots",
+                    text: "No slots available"
+                },
+                {
+                    value: "first-fail",
+                    text: "First fail",
+                    conditional: {
+                      html: firstFailHtml
+                    }
+                },
+                {
+                    value: "final-fail",
+                    text: "Final fail",
+                    conditional: {
+                      html: finalFailHtml
+                    }
+                },
+                {
+                    value: "appointment-booked",
+                    text: "Appointment booked"
+                }                     
+            ]
+          })
+        }}
+
+      {% else %}
+
         {{ govukRadios({
             idPrefix: 'status',
             name: 'claimStatus',
@@ -162,6 +203,8 @@ Update the status of this claim
             ]
           })
         }}
+
+        {% endif %}
 
         {{ govukButton({
           text: "Continue"

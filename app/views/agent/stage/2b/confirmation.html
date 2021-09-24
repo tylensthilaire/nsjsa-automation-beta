@@ -14,12 +14,12 @@
 
       {{ govukPanel({
         titleText: "The claim was updated",
-        html: claimStatus + ' – ' + data['subStatus']
+        html: claimStatus
       }) }}
 
       {{ govukButton({
         text: "Get next claim",
-        href: "view-claim?claimant=kb&claimStatus=ID-verified"
+        href: "view-claim?claimant=kb&claimStatus=awaiting-appointment"
       }) }}
 
     </div>
