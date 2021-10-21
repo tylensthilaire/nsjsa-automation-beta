@@ -38,6 +38,19 @@ module.exports = function (env) {
 
   ------------------------------------------------------------------ */
 
+  filters.randomise = (array, limit) => {
+    let results = [];
+    let myArray = array.slice(0, array.length);
+
+    for (var i = 0; i < limit; i ++) {
+      var r = Math.floor(Math.random() * myArray.length);
+      results.push(myArray[r]);
+      myArray.splice(r, 1);
+    }
+
+    return results;
+  }
+  
   /* ------------------------------------------------------------------
     keep the following line to return your filters to the app
   ------------------------------------------------------------------ */

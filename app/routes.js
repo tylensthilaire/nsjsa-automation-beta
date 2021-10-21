@@ -23,4 +23,6 @@ router.use('/agent/stage/2a/', require('./views/agent/stage/2a/_routes'))
 router.use('/agent/stage/1b/', require('./views/agent/stage/1b/_routes'))
 router.use('/agent/stage/shared/', require('./views/agent/stage/shared/_routes'))
 
+router.use('/sprint3/', require('./views/sprint3/_routes'))
+
 module.exports = router
