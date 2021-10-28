@@ -22,6 +22,11 @@
 
 {% block content %}
 
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+
 <div class="govuk-grid-row dwp-print-hide">
   <div class="govuk-grid-column-two-thirds">
 
@@ -32,7 +37,7 @@
       {% include '../claimants/sh/mismatch.html' %}
     {% endif %}
 
-    <h2 class="govuk-heading-l">Claimant application</h2>
+    <h2 class="govuk-heading-l">Customer statement</h2>
     {% if data['claimant'] == 'sh' %}
       {% include '../claimants/sh/application.html' %}
     {% elif data['claimant'] == 'kb' %}
