@@ -1,0 +1,238 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  DWP - Jobseeker&rsquo;s Allowance  
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        <span class="govuk-caption-xl">Personal details</span>
+        Select your address
+      </h1>
+
+      <form action="address-is-it-postal" method="get">
+
+      {% if data['results'] == '9' %}
+
+        {{ govukInsetText({
+          html: "9 addresses found for <strong>40</strong> and <strong class=uc>W2 1JB</strong>"
+        }) }}
+
+        {{ govukRadios({
+            idPrefix: 'select-address',
+            name: 'select-address',
+            items: [
+                {
+                    value: "1",
+                    html: "401, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "2",
+                    html: "402, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "3",
+                    html: "403, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "4",
+                    html: "404, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "5",
+                    html: "405, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "6",
+                    html: "406, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "7",
+                    html: "407, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "8",
+                    html: "408, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "9",
+                    html: "409, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                }           
+            ]
+        }) }}
+      {% elif data['results'] == '5' %}
+
+        {{ govukInsetText({
+          html: "27 addresses found for <strong>5</strong> and <strong class=uc>W2 1JB</strong>"
+        }) }}
+
+        {{ govukRadios({
+            idPrefix: 'select-address',
+            name: 'select-address',
+            items: [
+                {
+                    value: "1",
+                    html: "105, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "2",
+                    html: "115, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "3",
+                    html: "205, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "4",
+                    html: "215, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "5",
+                    html: "305, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "6",
+                    html: "315, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "7",
+                    html: "405, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "8",
+                    html: "415, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "9",
+                    html: "501, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "10",
+                    html: "502, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "11",
+                    html: "503, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "12",
+                    html: "504, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "13",
+                    html: "505, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "14",
+                    html: "506, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "15",
+                    html: "507, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "16",
+                    html: "508, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "17",
+                    html: "509, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "18",
+                    html: "510, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },  
+                {
+                    value: "19",
+                    html: "511, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "20",
+                    html: "512, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "21",
+                    html: "513, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "22",
+                    html: "514, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "23",
+                    html: "515, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "24",
+                    html: "605, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "25",
+                    html: "615, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "26",
+                    html: "705, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "27",
+                    html: "715, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                }
+            ]
+        }) }}
+
+      {% else %}
+
+      {{ govukInsetText({
+        html: "4 addresses found for <strong class=uc>CW10 0NL</strong>"
+      }) }}
+      
+        {{ govukRadios({
+            idPrefix: 'select-address',
+            name: 'select-address',
+            items: [
+                {
+                    value: "1",
+                    html: "1 Allgreave Close, Middlewich, Cheshire. CW10 0NL"
+                },
+                {
+                    value: "2",
+                    html: "2 Allgreave Close, Middlewich, Cheshire. CW10 0NL"
+                },
+                {
+                    value: "3",
+                    html: "3 Allgreave Close, Middlewich, Cheshire. CW10 0NL"
+                },
+                {
+                    value: "4",
+                    html: "4 Allgreave Close, Middlewich, Cheshire. CW10 0NL"
+                }              
+            ]
+        }) }}
+      {% endif %}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+      <p><a href="address">My address is not listed</a></p>
+
+
+    </div>
+  </div>
+
+{% endblock %}

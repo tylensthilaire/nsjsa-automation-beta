@@ -25,4 +25,17 @@ router.use('/agent/stage/shared/', require('./views/agent/stage/shared/_routes')
 
 router.use('/sprint3/', require('./views/sprint3/_routes'))
 
+router.use('/sprint4/', require('./views/sprint4/_routes'))
+router.use('/sprint4/1-eligibility/', require('./views/sprint4/1-eligibility/_routes'))
+router.use('/sprint4/2-details/', require('./views/sprint4/2-details/_routes'))
+// router.use('/agent/stage/1a/3-claim-start/', require('./views/agent/stage/1a/3-claim-start/_routes'))
+// router.use('/agent/stage/1a/4-other-benefits/', require('./views/agent/stage/1a/4-other-benefits/_routes'))
+// router.use('/agent/stage/1a/5-jury-service/', require('./views/agent/stage/1a/5-jury-service/_routes'))
+// router.use('/agent/stage/1a/6-current-employment/', require('./views/agent/stage/1a/6-current-employment/_routes'))
+// router.use('/agent/stage/1a/7-previous-employment/', require('./views/agent/stage/1a/7-previous-employment/_routes'))
+// router.use('/agent/stage/1a/8-abroad/', require('./views/agent/stage/1a/8-abroad/_routes'))
+// router.use('/agent/stage/1a/9-pensions/', require('./views/agent/stage/1a/9-pensions/_routes'))
+// router.use('/agent/stage/1a/10-education/', require('./views/agent/stage/1a/10-education/_routes'))
+// router.use('/agent/stage/1a/dth/', require('./views/agent/stage/1a/dth/_routes'))
+
 module.exports = router

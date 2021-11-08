@@ -1,0 +1,72 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  DWP - Jobseeker&rsquo;s Allowance  
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="property-number" method="post">
+        
+        <h1 class="govuk-heading-l"><span class='govuk-caption-xl'>Personal details</span> Find your address</h1>
+
+      {{ govukInsetText({
+        html: "349 addresses found for <strong class=uc>W2 1JB</strong>"
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      {% call govukFieldset({
+          legend: {
+              text: "Narrow your results",
+              classes: "govuk-fieldset__legend--m",
+              isPageHeading: true
+          }
+      }) %}
+
+        {{ govukInput({
+            label: {
+              text: "Enter property number or name",
+              isPageHeading: false
+            },
+            classes: "govuk-input--width-10",
+            id: "property",
+            name: "property",
+            hint: {
+              text: "for example, Flat 20A"
+            }
+        }) }}
+
+      {% endcall %}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      {% set dontKnowHtml %}
+<p>Enter the property number for the address that your application for New Style JSA will be registered to.</p>
+<p>You can also enter your property name for example, <span>Mill Cottage</span>.</p>
+<p><a href="address">Enter your address manually</a></p>
+{% endset %}
+
+      {{ govukDetails({
+        summaryText: "I don't know what property number or name to use",
+        html: dontKnowHtml
+      }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
