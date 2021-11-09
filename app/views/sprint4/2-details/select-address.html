@@ -24,7 +24,57 @@
 
       <form action="address-is-it-postal" method="get">
 
-      {% if data['results'] == '9' %}
+      {% if data['results'] == 'cottage' %}
+
+        {{ govukInsetText({
+          html: "9 addresses found for <strong>Cottage</strong> and <strong class=uc>AB31 5PY</strong>"
+        }) }}
+
+
+        {{ govukRadios({
+            idPrefix: 'select-address',
+            name: 'select-address',
+            items: [
+                {
+                    value: "1",
+                    html: "Larch Cottage, Pantoch, Banchory, AB31 5PY"
+                },
+                {
+                    value: "2",
+                    html: "Apple Cottage, Silverbank, Banchory, AB31 5PY"
+                },
+                {
+                    value: "3",
+                    html: "3 Pantoch Cottages, Banchory, AB31 5PY"
+                },
+                {
+                    value: "4",
+                    html: "2 Pantoch Cottages, Banchory, AB31 5PY"
+                },
+                {
+                    value: "5",
+                    html: "1 Pantoch Cottages, Banchory, AB31 5PY"
+                },
+                {
+                    value: "6",
+                    html: "The Silverbank Cottage, Banchory, AB31 5PY"
+                },
+                {
+                    value: "7",
+                    html: "Mill Cottage, Silverbank, Banchory, AB31 5PY"
+                },
+                {
+                    value: "8",
+                    html: "Durie Cottage, Banchory, AB31 5PY"
+                },
+                {
+                    value: "9",
+                    html: "Bridge Of Bennie Cottage, Banchory, AB31 5PY"
+                }           
+            ]
+        }) }}
+
+      {% elif data['results'] == '9' %}
 
         {{ govukInsetText({
           html: "9 addresses found for <strong>40</strong> and <strong class=uc>W2 1JB</strong>"
@@ -72,10 +122,11 @@
                 }           
             ]
         }) }}
-      {% elif data['results'] == '5' %}
+
+      {% elif data['results'] == '7' %}
 
         {{ govukInsetText({
-          html: "27 addresses found for <strong>5</strong> and <strong class=uc>W2 1JB</strong>"
+          html: "30 addresses found for <strong>7</strong> and <strong class=uc>W2 1JB</strong>"
         }) }}
 
         {{ govukRadios({
@@ -83,112 +134,124 @@
             name: 'select-address',
             items: [
                 {
+                    value: "0",
+                    html: "7, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
                     value: "1",
-                    html: "105, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                    html: "107, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
                 },
                 {
                     value: "2",
-                    html: "115, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                    html: "117, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
                 },
                 {
                     value: "3",
-                    html: "205, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                    html: "207, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
                 },
                 {
                     value: "4",
-                    html: "215, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                    html: "217, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
                 },
                 {
                     value: "5",
-                    html: "305, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                    html: "307, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
                 },
                 {
                     value: "6",
-                    html: "315, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                    html: "317, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
                 },
                 {
                     value: "7",
-                    html: "405, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                    html: "407, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
                 },
                 {
                     value: "8",
-                    html: "415, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                    html: "417, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
                 },
                 {
-                    value: "9",
-                    html: "501, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
-                },
-                {
-                    value: "10",
-                    html: "502, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
-                },
-                {
-                    value: "11",
-                    html: "503, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
-                },
-                {
-                    value: "12",
-                    html: "504, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
-                },
-                {
-                    value: "13",
-                    html: "505, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
-                },
-                {
-                    value: "14",
-                    html: "506, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
-                },
-                {
-                    value: "15",
+                    value: "28",
                     html: "507, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
                 },
                 {
-                    value: "16",
-                    html: "508, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
-                },
-                {
-                    value: "17",
-                    html: "509, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
-                },
-                {
-                    value: "18",
-                    html: "510, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
-                },  
-                {
-                    value: "19",
-                    html: "511, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
-                },
-                {
-                    value: "20",
-                    html: "512, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
-                },
-                {
-                    value: "21",
-                    html: "513, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
-                },
-                {
-                    value: "22",
-                    html: "514, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
-                },
-                {
-                    value: "23",
-                    html: "515, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                    value: "29",
+                    html: "517, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
                 },
                 {
                     value: "24",
-                    html: "605, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                    html: "607, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
                 },
                 {
                     value: "25",
-                    html: "615, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                    html: "617, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
                 },
                 {
-                    value: "26",
+                    value: "9",
+                    html: "701, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "10",
+                    html: "702, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "11",
+                    html: "703, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "12",
+                    html: "704, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "13",
                     html: "705, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
                 },
                 {
-                    value: "27",
+                    value: "14",
+                    html: "706, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "15",
+                    html: "707, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "16",
+                    html: "708, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "17",
+                    html: "709, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "18",
+                    html: "710, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },  
+                {
+                    value: "19",
+                    html: "711, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "20",
+                    html: "712, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "21",
+                    html: "713, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "22",
+                    html: "714, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "23",
                     html: "715, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "26",
+                    html: "716, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
+                },
+                {
+                    value: "27",
+                    html: "717, Westcliffe Apartments, 1 South Wharf Road. W2 1JB"
                 }
             ]
         }) }}

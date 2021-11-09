@@ -24,6 +24,7 @@ module.exports = {
   "claimStatus": "ID not verified",
   "claimant": "sh",
   "guidMismatch": '0',
-  "task": "view"
+  "task": "view",
+  "postcode": "AA1 3AB"
 
 }

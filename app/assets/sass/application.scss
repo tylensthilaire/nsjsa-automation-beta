@@ -35,3 +35,40 @@ $govuk-assets-path: '/govuk/assets/';
 .uc {
     text-transform: uppercase!important;
 }
+
+.dwp-address-example {
+    @include govuk-font($size: 19);
+    display: inline-block;
+    position: relative;
+    padding: 4em 6em 0 1em;
+    background-color: $govuk-brand-colour;
+    margin-bottom: 1em;;
+    
+    address {
+        display: inline-block;
+        padding: 1em 1.5em;
+        color: $govuk-brand-colour;
+        background-color: govuk-colour("white");
+        font-style: normal;
+        // font-weight: bold;
+        border-radius: 4px;
+    }
+    &__crown {
+        padding: 14px 10px 8px 10px;
+        background-color: govuk-colour("white");
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        outline: dotted 4px $govuk-brand-colour;
+        outline-offset: -3px;
+
+        svg {
+            fill: $govuk-brand-colour;
+            color: $govuk-brand-colour;
+        }
+    }
+
+    &__crown {
+
+    }
+}

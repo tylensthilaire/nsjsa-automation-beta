@@ -76,17 +76,23 @@ router.post('/postcode', function (req, res) {
 
   if (answer.includes("EC1A")) {
     // 1 result
-    res.redirect(`${ABS_BASE_PATH}/confirm-address`);
+    res.redirect(`${ABS_BASE_PATH}/confirm-address?results=1`);
 
-  } else if (answer.includes("CW1")) {
+  } else if (answer.includes("CW10")) {
 
     // up to 5 results
     res.redirect(`${ABS_BASE_PATH}/select-address?results=4`);
 
+  } else if (answer.includes("AB31")) {
+
+    // up to 5 results
+    res.redirect(`${ABS_BASE_PATH}/property-number?results=27`);
+
+
   } else if (answer.includes("W2")) {
 
     // over 5 results
-    res.redirect(`${ABS_BASE_PATH}/property-number`);
+    res.redirect(`${ABS_BASE_PATH}/property-number?results=349`);
 
   } else {
     // no results
@@ -102,13 +108,18 @@ router.post('/property-number', function (req, res) {
   if (answer.includes("mill")) {
     // 1 result
     res.redirect(`${ABS_BASE_PATH}/confirm-address`);
+
+  } else if (answer.includes("cottage")) {
+    // up to 5 results
+    res.redirect(`${ABS_BASE_PATH}/select-address?results=cottage`);
+
   } else if (answer.includes("40")) {
     // up to 5 results
     res.redirect(`${ABS_BASE_PATH}/select-address?results=9`);
 
-  } else if (answer.includes("5")) {
+  } else if (answer.includes("7")) {
     // up to 5 results
-    res.redirect(`${ABS_BASE_PATH}/select-address?results=5`);
+    res.redirect(`${ABS_BASE_PATH}/select-address?results=7`);
   
   } else if (answer.includes("30")) {
     // over 5 results

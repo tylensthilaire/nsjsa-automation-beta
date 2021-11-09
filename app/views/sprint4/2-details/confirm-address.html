@@ -22,17 +22,19 @@
         Confirm your address
       </h1>
 
-      {% if data['property'] %}
-        <p>1 address found for <strong>{{ data['property'] }}</strong> and <strong class="uc">{{ data['postcode'] }}</strong>.</p>
+      {% if data['results'] == '27' %}
+
+        <p>1 address found for <strong>{{ data['property'] }}</strong> and <strong class="uc">AB31 5PY</strong>.</p>
         {% set addressHtml %}
-          {{ data['property'] }}<br>
-          Madeupistown<br>
-          Madeupville<br>
-          <span class='uc'>{{ data['postcode'] }}</span>
+          Mill Cottage<br>
+          Silverbank<br>
+          Banchory<br>
+          <span class='uc'>AB31 5PY</span>
         {% endset %}
-      {% else %}
-      <p>1 address found for <strong class="uc">EC1A 1AA</strong>.</p>
-      {% set addressHtml %}
+
+      {% elif data['results'] == '1' %}
+        <p>1 address found for <strong class="uc">EC1A 1AA</strong>.</p>
+        {% set addressHtml %}
           185 Farringdon Road<br>
           London<br>
           <span class='uc'>EC1A 1AA</span>
