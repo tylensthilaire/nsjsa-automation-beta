@@ -47,12 +47,32 @@
     <h2 class="govuk-heading-m">New claims
     <span class="govuk-caption-m">on Tuesday 19 October 2021</span></h2>
 
-    {% include "agent/mi/book-appointment/table/new-claims.html" %}
+    {% if data['v'] == '2' %}
+      
+      {% include "agent/mi/book-appointment/table/new-claims2.html" %}
+
+    {% else %}
+
+      {% include "agent/mi/book-appointment/table/new-claims.html" %}
+    
+    {% endif %}
 
     <h2 class="govuk-heading-m">Appointment booking claims
     <span class="govuk-caption-m">on Tuesday 19 October 2021</span></h2>
 
-    {% include "agent/mi/book-appointment/table/new-claims.html" %}
+    {% if data['v'] == '2' %}
+      
+      {% include "agent/mi/book-appointment/table/ba-claims2.html" %}
+
+    {% else %}
+
+      {% include "agent/mi/book-appointment/table/new-claims.html" %}
+    
+    {% endif %}
+
+    {{ govukButton({
+        html: "Download CSV"
+    }) }}
 
 
   </div>
