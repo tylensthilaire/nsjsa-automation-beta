@@ -3,7 +3,7 @@ var router = express.Router()
 
 const BASE_PATH = 'sprint5';
 const ABS_BASE_PATH = `/${BASE_PATH}`;
-const START_PATH = '/sprint5/nino-search';
+const START_PATH = '/sprint5/choose-task';
 
 router.get('/', function (req, res) {
     res.redirect(`${START_PATH}`);
