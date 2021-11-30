@@ -11,9 +11,26 @@
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">Automation beta</h1>
 
-      <h2 class="govuk-heading-m">Sprint 5 – ID@Risk, Pushes</h2>
-      <p>Capture iteration including this flag for service centre agents.</p>
-      <p><a href="sprint5/">Start journey</a></p>
+      <h2 class="govuk-heading-m">Sprint 5 – ID at risk, registration push fail</h2>
+      <p>Capture iteration including new Id at risk flag for service centre agents.</p>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <h3 class="govuk-heading-s">Increment 3</h3>
+      <p><a href="sprint5/i3/nino-search">Find a claim</a></p>
+
+      <h4 class="govuk-heading-s">Scenarios</h4>
+      <ol class="govuk-list govuk-list--number">
+        <li><a href="sprint5/i3/view-claim?task=process&claimant=sh&claimStatus=new-claim&idRisk=1&fraud=0&cis=0&noReg=0">Process a claim with ID at risk</a></li>
+      </ol>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <h3 class="govuk-heading-s">Increment 4</h3>
+      <p><a href="sprint5/choose-task">Choose task</a></p>
+      <h4 class="govuk-heading-s">Scenarios</h4>
+      <ol class="govuk-list govuk-list--number">
+        <li><a href="sprint5/view-claim?task=idRefer&claimant=sh&claimStatus=new-claim&idRisk=1&fraud=0&cis=0&noReg=0">Process a claim with ID at risk</a></li>
+        <li><a href="sprint5/view-claim?task=fix&claimStatus=registration-failed&claimant=ij&idRisk=0&fraud=0&cis=0&noReg=1">Registration failed claim</a></li>
+        <li><a href="sprint5/view-claim?task=process&claimant=ij&claimStatus=new-claim&idRisk=0&fraud=0&cis=0&noReg=0">No ID at risk and no fraud</a></li>
+      </ol>
 
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 

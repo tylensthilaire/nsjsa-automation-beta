@@ -30,6 +30,7 @@ router.use('/sprint4/1-eligibility/', require('./views/sprint4/1-eligibility/_ro
 router.use('/sprint4/2-details/', require('./views/sprint4/2-details/_routes'))
 
 router.use('/sprint5/', require('./views/sprint5/_routes'))
+router.use('/sprint5/i3/', require('./views/sprint5/i3/_routes'))
 
 // router.use('/agent/stage/1a/3-claim-start/', require('./views/agent/stage/1a/3-claim-start/_routes'))
 // router.use('/agent/stage/1a/4-other-benefits/', require('./views/agent/stage/1a/4-other-benefits/_routes'))

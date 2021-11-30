@@ -106,9 +106,32 @@
   <div class="govuk-grid-row  govuk-!-margin-top-4">
     <div class="govuk-grid-column-two-thirds">
 
-      {% if data['task'] == 'fix' %}
-
       <form action="confirmation" method="get">
+
+        {% if data['task'] == 'idRefer' %}
+        {# If we detect id at risk the task is to refer it for bio process #}
+
+          {{ govukRadios({
+              idPrefix: 'status',
+              name: 'claimStatus',
+              fieldset: {
+                legend: {
+                  text: "Update claim status",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--l"
+                }
+              },
+              items: [
+                  {
+                      value: "ID check needed",
+                      text: "ID check needed"
+                  }                  
+              ]
+            })
+          }}
+
+      {% elif data['task'] == 'fix' %}
+
 
         {{ govukRadios({
             idPrefix: 'status',
@@ -135,15 +158,9 @@
             ]
           })
         }}
-
-        {{ govukButton({
-          text: "Continue"
-        }) }}
-      </form>
           
       {% elif data['task'] == 'ID-template' %}
 
-      <form action="confirmation" method="get">
 
         {{ govukRadios({
             idPrefix: 'status',
@@ -168,14 +185,7 @@
           })
         }}
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
-      </form>
-
       {% elif data['task'] == 'ID-check' %}
-
-      <form action="confirmation" method="get">
 
         {{ govukRadios({
             idPrefix: 'status',
@@ -214,15 +224,7 @@
         })
         }}
 
-        {{ govukButton({
-            text: "Confirm"
-        }) }}
-
-      </form>
-
       {% elif data['task'] == 'process' %}
-
-      <form action="confirmation" method="get">
 
         {{ govukRadios({
           idPrefix: "entitled",
@@ -267,15 +269,7 @@
           ]
         }) }}
 
-        {{ govukButton({
-            text: "Confirm"
-        }) }}
-
-      </form>
-
       {% elif data['task'] == 'ID-process' %}
-
-      <form action="confirmation" method="get">
 
         {{ govukRadios({
             idPrefix: 'status',
@@ -317,17 +311,16 @@
         })
         }}
 
-        {{ govukButton({
-            text: "Confirm"
-        }) }}
+      {# {% else %}
 
-      </form>
-
-      {% else %}
-
-      <p>No ?task set!</p>
+      <p>No ?task set!</p> #}
 
       {% endif %}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
 
 
 
