@@ -1,4 +1,11 @@
-{% if data['idRisk'] == '1' or data['fraud'] == '1' or data['cis'] == '1' or data['noReg'] == '1' %}
+{% if
+data['idRisk'] == '1'
+or data['fraud'] == '1'
+or data['cis'] == '1'
+or data['cis'] == 'appointee'
+or data['noReg'] == '1'
+or data['build'] == '1'
+%}
 
 <section class="dwp-print-hide">
   <div class="govuk-warning-text">
@@ -19,8 +26,12 @@
     {% endif %}
     {% if data['cis'] == '1' %}
       <li>Claimant does not match CIS record</li>
+    {% elif data['cis'] == 'appointee' %}
+      <li>Claimant has an appointee</li>
     {% endif %}
-
+    {% if data['build'] == '1' %}
+      <li>This claim has not been built in the benefit system</li>
+    {% endif %}
     </ul>
  </div>
 </section>
