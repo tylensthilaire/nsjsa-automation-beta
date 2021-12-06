@@ -15,7 +15,7 @@ router.get('/', function (req, res) {
 
 
 router.post('/nino-search', function (req, res) {
-    res.redirect('view-claim?task=view&claimant=sh&claimStatus=new-claim');
+    res.redirect('view-claim?task=needsId&claimant=sh&claimStatus=pre-checks-complete&idRisk=1&fraud=0&cis=0&noReg=0');
 });
 
 module.exports = router

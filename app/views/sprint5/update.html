@@ -111,24 +111,34 @@
         {% if data['task'] == 'idRefer' %}
         {# If we detect id at risk the task is to refer it for bio process #}
 
-          {{ govukRadios({
-              idPrefix: 'status',
-              name: 'claimStatus',
-              fieldset: {
-                legend: {
-                  text: "Update claim status",
-                  isPageHeading: true,
-                  classes: "govuk-fieldset__legend--l"
-                }
-              },
-              items: [
-                  {
-                      value: "ID check needed",
-                      text: "ID check needed"
-                  }                  
-              ]
-            })
-          }}
+        {{ govukRadios({
+          idPrefix: "status",
+          name: "claimStatus",
+          fieldset: {
+            legend: {
+              text: "Update claim status",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "id-verified",
+              text: "ID verified"
+            },
+            {
+              value: "Suspected fraud",
+              text: "Suspected fraud"
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "ID-check",
+              text: "Waiting for ID check"
+            }
+          ]
+        }) }}
 
       {% elif data['task'] == 'fix' %}
 
