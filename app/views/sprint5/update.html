@@ -226,7 +226,33 @@
             ]
           })
         }}
-          
+
+      {% elif data['task'] == 'register' %}
+
+
+        {{ govukRadios({
+            idPrefix: 'status',
+            name: 'claimStatus',
+            fieldset: {
+              legend: {
+                text: "Update claim status",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+                {
+                    value: "Registration complete",
+                    text: "Registration complete"
+                },
+                {
+                    value: "Registration needed",
+                    text: "Registration needed"
+                }                   
+            ]
+          })
+        }}
+
       {% elif data['task'] == 'ID-template' %}
 
 

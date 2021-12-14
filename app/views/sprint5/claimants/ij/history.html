@@ -81,6 +81,26 @@ items: [
 ]
 }) }}
 
+{% elif data['claimStatus'] == 'registration-needed' %}
+
+{{ dwpTimeline({
+items: [
+    {
+    heading: "Registration needed",
+    label: "label",
+    author: "by automated process",
+    date: "on 31 August 2021",
+    time: "at 4:43pm"
+    },
+    {
+    heading: "New claim",
+    date: "by claimant on 31 August 2021",
+    time: "at 4:32pm",
+    classes: "dwp-timeline-entry--closing"
+    }
+]
+}) }}
+
 
 {% elif data['claimStatus'] == 'new-claim' %}
 
