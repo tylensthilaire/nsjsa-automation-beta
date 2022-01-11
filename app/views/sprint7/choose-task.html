@@ -1,0 +1,59 @@
+{% extends "agent/layout.html" %}
+
+{% block pageTitle %}
+Service centre - {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+<span class="govuk-caption-l">Service centre agent</span>
+<h1 class="govuk-heading-l">Choose a task</h1>
+
+<h2 class="govuk-heading-m">Claim processing tasks</h2>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    <a href="view-claim?task=fix&claimStatus=registration-failed&claimant=ij&idRisk=0&fraud=0&cis=0&noReg=1" class="tile tile--blue">
+      <div class="tile__contents">
+        <h2 class="tile__title">Register a claim</h2>
+      </div>
+    </a>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <a href="view-claim?task=process&claimStatus=new-claim&claimant=kb&idRisk=1&fraud=0&cis=0&noReg=0" class="tile tile--blue">
+      <div class="tile__contents">
+        <h2 class="tile__title">Process a claim</h2>
+      </div>
+    </a>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <a href="nino-search" class="tile tile--blue">
+      <div class="tile__contents">
+        <h2 class="tile__title">Find a claim</h2>
+      </div>
+    </a>
+  </div>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<h2 class="govuk-heading-m">Verifying identity tasks</h2>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    <a href="view-claim?task=ID-template&claimStatus=ID-check-needed&claimant=sh&idRisk=1&fraud=0&cis=1&noReg=0" class="tile tile--blue">
+      <div class="tile__contents">
+        <h2 class="tile__title">Create an ID template</h2>
+      </div>
+    </a>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <a href="view-claim?task=ID-check&claimStatus=registration-failed&claimant=ij&idRisk=0&fraud=0&cis=0&noReg=1" class="tile tile--blue">
+      <div class="tile__contents">
+        <h2 class="tile__title">Conduct an ID check</h2>
+      </div>
+    </a>
+  </div>
+</div>
+{% endblock %}
