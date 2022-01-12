@@ -89,6 +89,27 @@ items: [
     ]
 }) }}
 
+{% elif data['claimStatus'] == 'ID-template-needed' %}
+
+{{ dwpTimeline({
+    items: [
+    {
+        heading: "ID template needed",
+        label: "label",
+        author: "by Automated process",
+        date: "on 31 July 2021",
+        time: "at 4:43pm"
+    },
+    {
+        heading: "Application submitted",
+        author: "by claimant",
+        date: "on 31 July 2021",
+        time: "at 4:32pm",
+        classes: "dwp-timeline-entry--closing"
+    }
+    ]
+}) }}
+
 {% else %}
 
 {{ dwpTimeline({

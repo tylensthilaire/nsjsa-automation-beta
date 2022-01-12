@@ -123,13 +123,9 @@
             },
             items: [
                 {
-                    value: "ID template created",
-                    text: "ID template created"
-                },
-                {
-                    value: "ID-not-verified",
-                    text: "ID template not created"
-                }                   
+                    value: "ID check needed",
+                    text: "ID check needed"
+                }                 
             ]
           })
         }}
@@ -148,6 +144,13 @@
             },
             items: [
                 {
+                    value: "ID Verified",
+                    text: "ID Verified"
+                },
+                {
+                  divider: "or"
+                },  
+                {
                     value: "Failed to contact",
                     text: "Failed to contact",
                     conditional: {
@@ -155,20 +158,9 @@
                     }
                 },
                 {
-                    value: "Awaiting evidence",
-                    text: "Awaiting evidence"
-                },
-                {
                     value: "Suspected fraud",
                     text: "Suspected fraud"
-                },
-                {
-                  divider: "or"
-                },
-                {
-                    value: "ID Verified",
-                    text: "ID Verified"
-                }       
+                }
             ]
           })
         }}

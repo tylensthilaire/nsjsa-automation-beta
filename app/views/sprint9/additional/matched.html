@@ -46,7 +46,7 @@
 
 
     {{ govukTable({
-        caption: "Dates and amounts",
+        caption: "Current claim",
         captionClasses: "govuk-table__caption--m govuk-visually-hidden",
         head: [
             {
@@ -90,13 +90,15 @@
     <ul class="govuk-list govuk-list--bullet  govuk-!-margin-bottom-0">
       <li><a href="#email">10 have a matching email address</a></li>
       <li><a href="#mobile">3 have a matching mobile number</a></li>
+      <li><a href="#bank-details">3 have matching bank details</a></li>
+      <li><a href="#address">3 have a matching address</a></li>
     </ul>
 
 
     <h2 class="govuk-heading-m govuk-!-margin-top-9 govuk-!-margin-bottom-0" id="email">Email address (10)</h2>
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-half">
+  <div class="govuk-grid-column-two-thirds">
 
 {% set emailSummary %}
     {{ govukSummaryList({
@@ -121,7 +123,7 @@
 </div>
 
     {{ govukTable({
-        caption: "Dates and amounts",
+        caption: "Matched claims with the same email address",
         captionClasses: "govuk-table__caption--m govuk-visually-hidden",
         head: [
             {
@@ -318,7 +320,7 @@
     <h2 class="govuk-heading-m govuk-!-margin-top-9 govuk-!-margin-bottom-0" id="mobile">Mobile number (3)</h2>
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-half">
+  <div class="govuk-grid-column-two-thirds">
 
     {% set mobileSummary %}
         {{ govukSummaryList({
@@ -342,7 +344,228 @@
 </div>
 
     {{ govukTable({
-        caption: "Dates and amounts",
+        caption: "Matched claims with the same mobile number",
+        captionClasses: "govuk-table__caption--m govuk-visually-hidden",
+        head: [
+            {
+                text: "Name"
+            },
+            {
+                text: "National Insurance number"
+            },
+            {
+                text: "Date"
+            },
+            {
+                text: "Time"
+            },
+            {
+                text: "Status",
+                classes: 'govuk-!-width-one-quarter'
+            }
+        ],
+        rows: [
+            [
+                {
+                    html: "Ian Johnson"
+                },
+                {
+                    text: "WE 24 57 44 D"
+                },
+                {
+                    text: "10 December 2021"
+                },
+                {
+                    text: "7:26am"
+                },
+                {
+                    html: newTag
+                }
+            ],
+            [
+                {
+                    html: "Trevor McDonald"
+                },
+                {
+                    text: "TR 56 56 22 S"
+                },
+                {
+                    text: "10 December 2021"
+                },
+                {
+                    text: "10:24am"
+                },
+                {
+                    html: sfTag
+                }
+            ],
+            [
+                {
+                    html: "Celine Dion"
+                },
+                {
+                    text: "AA 12 34 56 F"
+                },
+                {
+                    text: "10 December 2021"
+                },
+                {
+                    text: "10:56am"
+                },
+                {
+                    html: sfTag
+                }
+            ]
+        ]
+    }) }}
+
+
+ <h2 class="govuk-heading-m govuk-!-margin-top-9 govuk-!-margin-bottom-0" id="bank-details">Bank details (3)</h2>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% set bankSummary %}
+        {{ govukSummaryList({
+        rows: [
+            {
+                key: {
+                    text: "Sort code"
+                },
+                value: {
+                    text: "11 22 33"
+                }
+            },
+            {
+                key: {
+                    text: "Account number"
+                },
+                value: {
+                    text: "1234567"
+                }
+            }
+        ]
+        }) }}
+    {% endset %}
+
+    {{ govukInsetText({
+        html: bankSummary
+    }) }}
+    </div>
+</div>
+
+    {{ govukTable({
+        caption: "Matched claims with the same mobile number",
+        captionClasses: "govuk-table__caption--m govuk-visually-hidden",
+        head: [
+            {
+                text: "Name"
+            },
+            {
+                text: "National Insurance number"
+            },
+            {
+                text: "Date"
+            },
+            {
+                text: "Time"
+            },
+            {
+                text: "Status",
+                classes: 'govuk-!-width-one-quarter'
+            }
+        ],
+        rows: [
+            [
+                {
+                    html: "Ian Johnson"
+                },
+                {
+                    text: "WE 24 57 44 D"
+                },
+                {
+                    text: "10 December 2021"
+                },
+                {
+                    text: "7:26am"
+                },
+                {
+                    html: newTag
+                }
+            ],
+            [
+                {
+                    html: "Trevor McDonald"
+                },
+                {
+                    text: "TR 56 56 22 S"
+                },
+                {
+                    text: "10 December 2021"
+                },
+                {
+                    text: "10:24am"
+                },
+                {
+                    html: sfTag
+                }
+            ],
+            [
+                {
+                    html: "Celine Dion"
+                },
+                {
+                    text: "AA 12 34 56 F"
+                },
+                {
+                    text: "10 December 2021"
+                },
+                {
+                    text: "10:56am"
+                },
+                {
+                    html: sfTag
+                }
+            ]
+        ]
+    }) }}
+
+<h2 class="govuk-heading-m govuk-!-margin-top-9 govuk-!-margin-bottom-0" id="address">Address (3)</h2>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% set addressSummary %}
+        {{ govukSummaryList({
+        rows: [
+            {
+                key: {
+                    text: "Address line 1"
+                },
+                value: {
+                    text: "1 Madeup Lane"
+                }
+            },
+            {
+                key: {
+                    text: "Postcode"
+                },
+                value: {
+                    text: "MD13 UP0"
+                }
+            }
+        ]
+        }) }}
+    {% endset %}
+
+    {{ govukInsetText({
+        html: addressSummary
+    }) }}
+    </div>
+</div>
+
+    {{ govukTable({
+        caption: "Matched claims with the same address",
         captionClasses: "govuk-table__caption--m govuk-visually-hidden",
         head: [
             {
