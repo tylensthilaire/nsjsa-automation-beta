@@ -38,12 +38,16 @@ or data['scenario'] == 'F6'
 
     {% if data['scenario'] == 'F2' or data['scenario'] == 'F4' or data['scenario'] == 'F6' %}
       <li>Claimants name doesn't match bank account name</li>
+    {% endif %}
+    {% if data['scenario'] == 'F2' or data['scenario'] == 'F4' %}
       <li>There are 10 other claims with the same email address</li>
       <li>There are 3 other claims with the same mobile number</li>
+      <li>There are 3 other claims with the same bank details</li>
+      <li>There are 3 other claims with the same address</li>
     {% endif %}
     </ul>
  </div>
- {% if data['scenario'] == 'F2' or data['scenario'] == 'F4' or data['scenario'] == 'F6' %}
+ {% if data['scenario'] == 'F2' or data['scenario'] == 'F4' %}
  <p><a href="matched">View all matching claims</a></p>
  {% endif %}
 </section>
