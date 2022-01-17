@@ -102,6 +102,51 @@ items: [
 }) }}
 
 
+{% elif data['claimStatus'] == 'ID-check-needed' %}
+
+{{ dwpTimeline({
+items: [
+    {
+        heading: "Failed to contact 3rd",
+        label: "label",
+        author: "by Greg Sykes",
+        date: "on 12 September 2021",
+        time: "at 10:12am",
+        body: "<p class=dwp-timeline-info>Left a voicemail, Sent a JSA 164 letter</p>"
+    },
+    {
+        heading: "Failed to contact 2nd",
+        label: "label",
+        author: "by Lynne Akers",
+        date: "on 1 September 2021",
+        time: "at 12:38pm",
+        body: "<p class=dwp-timeline-info>Left a voicemail, Sent an SMS</p>"
+    },
+    {
+        heading: "Failed to contact 1st",
+        label: "label",
+        author: "by Terry Stanley",
+        date: "on 1 September 2021",
+        time: "at 9:32am",
+        body: "<p class=dwp-timeline-info>Left a voicemail</p>"
+    },
+    {
+        heading: "ID template needed",
+        label: "label",
+        author: "by automated process",
+        date: "on 31 August 2021",
+        time: "at 4:53pm"
+    },
+    {
+        heading: "New claim",
+        date: "by claimant on 31 August 2021",
+        time: "at 4:32pm",
+        classes: "dwp-timeline-entry--closing"
+    }
+]
+}) }}
+
+
 {% elif data['claimStatus'] == 'new-claim' %}
 
 {{ dwpTimeline({
