@@ -102,12 +102,12 @@ items: [
 }) }}
 
 
-{% elif data['claimStatus'] == 'ID-check-needed' %}
+{% elif data['claimStatus'] == 'ID-check-needed' or  data['claimStatus'] == '3rd-fail-to-contact' %}
 
 {{ dwpTimeline({
 items: [
     {
-        heading: "Failed to contact 3rd",
+        heading: "3rd fail to contact",
         label: "label",
         author: "by Greg Sykes",
         date: "on 12 September 2021",
@@ -115,7 +115,7 @@ items: [
         body: "<p class=dwp-timeline-info>Left a voicemail, Sent a JSA 164 letter</p>"
     },
     {
-        heading: "Failed to contact 2nd",
+        heading: "2nd fail to contact",
         label: "label",
         author: "by Lynne Akers",
         date: "on 1 September 2021",
@@ -123,12 +123,19 @@ items: [
         body: "<p class=dwp-timeline-info>Left a voicemail, Sent an SMS</p>"
     },
     {
-        heading: "Failed to contact 1st",
+        heading: "1st fail to contact",
         label: "label",
         author: "by Terry Stanley",
         date: "on 1 September 2021",
         time: "at 9:32am",
         body: "<p class=dwp-timeline-info>Left a voicemail</p>"
+    },
+    {
+        heading: "ID check needed",
+        label: "label",
+        author: "by Remi Sindar",
+        date: "on 1 September 2021",
+        time: "at 9:10am"
     },
     {
         heading: "ID template needed",
@@ -139,7 +146,9 @@ items: [
     },
     {
         heading: "New claim",
-        date: "by claimant on 31 August 2021",
+        label: "label",
+        author: "by claimant",
+        date: "on 31 August 2021",
         time: "at 4:32pm",
         classes: "dwp-timeline-entry--closing"
     }
