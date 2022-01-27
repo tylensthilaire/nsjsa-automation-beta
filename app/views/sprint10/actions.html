@@ -1,0 +1,16 @@
+<h3 class="govuk-heading-m">Actions</h3>
+{% if data['cis'] === 0 %}
+{{ govukButton({
+    text: "Update claim status",
+    href: "update"
+}) }}
+{% endif %}
+
+<ul class="govuk-list">
+    {% if data['cis'] == 1 %}
+    <li><a href="nino">Update claimants NI number</a></li>
+    {% endif %}
+    <li><a href="choose-task">Choose a task</a></li>
+</ul>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
