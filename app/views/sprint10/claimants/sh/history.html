@@ -54,7 +54,7 @@ items: [
     ]
 }) }}
 
-{% elif data['claimStatus'] == 'registration-needed' %}
+{% elif data['claimStatus'] == 'registration-needed' and data['niUpdate'] == 0 %}
 
 {{ dwpTimeline({
     items: [
@@ -76,7 +76,7 @@ items: [
     ]
 }) }}
 
-{% elif data['claimStatus'] == 'ni-updated' %}
+{% elif data['claimStatus'] == 'registration-needed' and data['niUpdate'] == 1 %}
 
 {{ dwpTimeline({
     items: [

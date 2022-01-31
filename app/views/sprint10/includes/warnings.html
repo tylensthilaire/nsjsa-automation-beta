@@ -5,6 +5,7 @@ or data['cis'] == '1'
 or data['cis'] == 'appointee'
 or data['noReg'] == '1'
 or data['build'] == '1'
+or data['dupe'] == '1'
 %}
 
 <section class="dwp-print-hide">
@@ -31,6 +32,9 @@ or data['build'] == '1'
     {% endif %}
     {% if data['build'] == '1' %}
       <li>This claim has not been built in the benefit system</li>
+    {% endif %}
+    {% if data['dupe'] == '1' %}
+      <li>There are 5 claims with this National Insurance number</li>
     {% endif %}
     </ul>
  </div>

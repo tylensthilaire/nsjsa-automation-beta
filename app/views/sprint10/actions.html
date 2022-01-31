@@ -1,9 +1,14 @@
 <h3 class="govuk-heading-m">Actions</h3>
-{% if data['cis'] === 0 %}
-{{ govukButton({
-    text: "Update claim status",
-    href: "update"
-}) }}
+
+{% if (data['claimStatus'] != 'appointment-needed')  %}
+{% if (data['claimStatus'] != 'withdrawn')  %}
+    {% if data['cis'] == 0 %}
+        {{ govukButton({
+            text: "Update claim status",
+            href: "update"
+        }) }}
+    {% endif %}
+{% endif %}
 {% endif %}
 
 <ul class="govuk-list">

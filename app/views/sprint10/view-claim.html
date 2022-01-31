@@ -10,6 +10,8 @@
   
   {{ super() }}
 
+  {% block keyDetails %}
+
   {% if data['claimant'] == 'sh' %}
     {% include './claimants/sh/key-details.html' %}
   {% elif data['claimant'] == 'kb' %}
@@ -20,9 +22,18 @@
     <p>No claimant set.</p>
   {% endif %}
 
+  {% endblock %}
+
 {% endblock %}
 
 {% block content %}
+
+{% if data['dupe'] == '1' %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+{% endif %}
 
 <div class="govuk-grid-row dwp-print-hide">
   <div class="govuk-grid-column-two-thirds">

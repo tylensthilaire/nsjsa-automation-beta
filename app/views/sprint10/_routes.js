@@ -21,7 +21,7 @@ router.post('/nino-search', function (req, res) {
 router.post('/nino', function (req, res) {
     let data = req.session.data;
     data['cis'] = 0;
-    data['claimStatus'] = 'ni-updated';
+    data['niUpdate'] = 1;
     res.redirect('view-claim');
 });
 
