@@ -28,7 +28,7 @@
   rows: [
     {
       key: {
-        text: "National Insurance number"
+        text: "National Insurance number (NINo)"
       },
       value: {
         text: "CX 60 12 13 A"
@@ -102,7 +102,7 @@
         rows: [
             [
                 {
-                    html: "<a title=View-claim href=view-claim?claimant=kb&claimStatus=registration-needed&dupe=1>Karan Bhopal</a>"
+                    html: "<a title=View-claim href=view-claim?claimant=kb&claimStatus=registration-needed&dupe=1&previous-employment=1>Karan Bhopal</a>"
                 },
                 {
                     text: "10 December 2021"
@@ -140,7 +140,7 @@
         rows: [
             [
                 {
-                    html: "<a title=View-claim href=view-claim?claimant=kb&claimStatus=appointment-needed&dupe=1>Karan Bhopal</a>"
+                    html: "<a title=View-claim href=view-claim?claimant=kb&claimStatus=appointment-needed&dupe=1&previous-employment=0>Karan Bhopal</a>"
                 },
                 {
                     text: "9 December 2021"
@@ -178,7 +178,7 @@
         rows: [
             [
                 {
-                    html: "<a title=View-claim href=view-claim?claimant=kb&claimStatus=withdrawn&dupe=1>Karan Bhopal</a>"
+                    html: "<a title=View-claim href=view-claim?claimant=kb&claimStatus=registration-needed&dupe=1&previous-employment=0>Karan Bhopal</a>"
                 },
                 {
                     text: "9 December 2021"
@@ -187,12 +187,12 @@
                     text: "8:34pm"
                 },
                 {
-                    html: wdTag
+                    html: regTag
                 }
             ],
             [
                 {
-                    html: "<a title=View-claim href=view-claim?claimant=kb&claimStatus=withdrawn&dupe=1>Karan Bhopal</a>"
+                    html: "<a title=View-claim href=view-claim?claimant=kb&claimStatus=registration-needed&dupe=1>Karan Bhopal</a>"
                 },
                 {
                     text: "9 December 2021"
@@ -201,12 +201,12 @@
                     text: "12:31pm"
                 },
                 {
-                    html: wdTag
+                    html: regTag
                 }
             ],
             [
                 {
-                    html: "<a title=View-claim href=view-claim?claimant=kb&claimStatus=suspected-fraud&dupe=1>Karan Bhopal</a>"
+                    html: "<a title=View-claim href=view-claim?claimant=kb&claimStatus=registration-needed&dupe=1&previous-employment=0>Karan Bhopal</a>"
                 },
                 {
                     text: "9 December 2021"
@@ -215,7 +215,7 @@
                     text: "8:56am"
                 },
                 {
-                    html: sfTag
+                    html: regTag
                 }
             ]
         ]

@@ -16,7 +16,7 @@ or data['dupe'] == '1'
       <span class="govuk-heading-m">Important</span>
     </strong>
     <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
-    {% if data['noReg'] == '1' %}
+    {% if data['noReg'] == '1' or data['claimStatus'] == 'registration-needed' %}
       <li>This claim has not been registered with the benefit system</li>
     {% endif %}
     {% if data['idRisk'] == '1' %}

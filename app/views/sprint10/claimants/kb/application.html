@@ -164,6 +164,8 @@
 
 <section class="dwp-claim-section">
 <h2 class="govuk-heading-m">Previous employment</h2>
+
+{% if data['previous-employment'] == 1 %}
 {{ govukSummaryList({
     classes: "dwp-summary-list--wide govuk-!-margin-bottom-7",
     rows: [
@@ -231,6 +233,24 @@
     }
     ]
 }) }}
+
+{% else %}
+
+{{ govukSummaryList({
+    classes: "dwp-summary-list--wide govuk-!-margin-bottom-7",
+    rows: [
+    {
+        key: {
+        text: "Have you had a job that ended in the last 6 months?"
+        },
+        value: {
+        text: "No"
+        }
+    }
+    ]
+}) }}
+
+{% endif %}
 </section>
 
 <section class="dwp-claim-section">

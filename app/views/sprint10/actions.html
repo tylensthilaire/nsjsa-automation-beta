@@ -2,19 +2,16 @@
 
 {% if (data['claimStatus'] != 'appointment-needed')  %}
 {% if (data['claimStatus'] != 'withdrawn')  %}
-    {% if data['cis'] == 0 %}
-        {{ govukButton({
-            text: "Update claim status",
-            href: "update"
-        }) }}
-    {% endif %}
+
+<!-- // need to contact citizen for ni reconcile so need to park claim -->
+    {{ govukButton({
+        text: "Update claim status",
+        href: "update"
+    }) }}
 {% endif %}
 {% endif %}
 
 <ul class="govuk-list">
-    {% if data['cis'] == 1 %}
-    <li><a href="nino">Update claimants NI number</a></li>
-    {% endif %}
     <li><a href="choose-task">Choose a task</a></li>
 </ul>
 
