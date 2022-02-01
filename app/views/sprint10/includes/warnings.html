@@ -6,6 +6,7 @@ or data['cis'] == 'appointee'
 or data['noReg'] == '1'
 or data['build'] == '1'
 or data['dupe'] == '1'
+or data['niMatchCis'] == '0'
 %}
 
 <section class="dwp-print-hide">
@@ -16,7 +17,7 @@ or data['dupe'] == '1'
       <span class="govuk-heading-m">Important</span>
     </strong>
     <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
-    {% if data['noReg'] == '1' or data['claimStatus'] == 'registration-needed' %}
+    {% if data['noReg'] == '1' %}
       <li>This claim has not been registered with the benefit system</li>
     {% endif %}
     {% if data['idRisk'] == '1' %}
@@ -29,6 +30,9 @@ or data['dupe'] == '1'
       <li>Claimant does not match CIS record</li>
     {% elif data['cis'] == 'appointee' %}
       <li>Claimant has an appointee</li>
+    {% endif %}
+    {% if data['niMatchCis'] == '0' %}
+      <li>Claimant NI number does not match CIS record</li>
     {% endif %}
     {% if data['build'] == '1' %}
       <li>This claim has not been built in the benefit system</li>
