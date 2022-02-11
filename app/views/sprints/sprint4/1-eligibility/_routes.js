@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const BASE_PATH = 'sprint4/1-eligibility';
+const BASE_PATH = 'sprints/sprint4/1-eligibility';
 const ABS_BASE_PATH = `/${BASE_PATH}`;
 
 router.get('/', function (req, res) {

@@ -23,20 +23,20 @@ router.use('/agent/stage/2a/', require('./views/agent/stage/2a/_routes'))
 router.use('/agent/stage/1b/', require('./views/agent/stage/1b/_routes'))
 router.use('/agent/stage/shared/', require('./views/agent/stage/shared/_routes'))
 
-router.use('/sprint3/', require('./views/sprint3/_routes'))
+router.use('/sprints/sprint3/', require('./views/sprints/sprint3/_routes'))
 
 
-router.use('/sprint4/', require('./views/sprint4/_routes'))
-router.use('/sprint4/1-eligibility/', require('./views/sprint4/1-eligibility/_routes'))
-router.use('/sprint4/2-details/', require('./views/sprint4/2-details/_routes'))
+router.use('/sprints/sprint4/', require('./views/sprints/sprint4/_routes'))
+router.use('/sprints/sprint4/1-eligibility/', require('./views/sprints/sprint4/1-eligibility/_routes'))
+router.use('/sprints/sprint4/2-details/', require('./views/sprints/sprint4/2-details/_routes'))
 
-router.use('/sprint5/', require('./views/sprint5/_routes'))
-router.use('/sprint5/i3/', require('./views/sprint5/i3/_routes'))
+router.use('/sprints/sprint5/', require('./views/sprints/sprint5/_routes'))
+router.use('/sprints/sprint5/i3/', require('./views/sprints/sprint5/i3/_routes'))
 
-router.use('/sprint7/', require('./views/sprint7/_routes'))
+router.use('/sprints/sprint7/', require('./views/sprints/sprint7/_routes'))
 
-router.use('/sprint9/additional/', require('./views/sprint9/additional/_routes'))
-router.use('/sprint10/', require('./views/sprint10/_routes'))
+router.use('/sprints/sprint9/additional/', require('./views/sprints/sprint9/additional/_routes'))
+router.use('/sprints/sprint10/', require('./views/sprints/sprint10/_routes'))
 
 // router.use('/agent/stage/1a/3-claim-start/', require('./views/agent/stage/1a/3-claim-start/_routes'))
 // router.use('/agent/stage/1a/4-other-benefits/', require('./views/agent/stage/1a/4-other-benefits/_routes'))

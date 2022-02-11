@@ -5,9 +5,9 @@ const BASE_PATH = 'sprint4';
 const ABS_BASE_PATH = `/${BASE_PATH}`;
 const NEXT_PATH = '/agent/stage/1a/dth';
 
-router.get('/', function (req, res) {
-    res.redirect(`${ABS_BASE_PATH}/1-eligibility`);
-})
+// router.get('/', function (req, res) {
+//     res.redirect(`${ABS_BASE_PATH}/1-eligibility`);
+// })
 
 // router.post('/hand-off', function (req, res) {
 //   let data = req.session.data;
