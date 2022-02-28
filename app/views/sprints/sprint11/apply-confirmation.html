@@ -1,0 +1,25 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">You have applied for Jobseeker's Allowance but you still need to confirm your identity</h1>
+
+      <p>Your application for New Style JSA is safe.</p>
+
+      {{ govukButton({
+          text: "Continue",
+          href: "dth-lead-in"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

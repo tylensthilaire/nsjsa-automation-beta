@@ -1,0 +1,54 @@
+/*
+
+Used from here
+https://github.com/DFE-Digital/claim-additional-payments-for-teaching/blob/master/app/views/claims/existing_session.html.erb
+https://github.com/DFE-Digital/claim-additional-payments-for-teaching/blob/master/app/assets/stylesheets/components/panel.scss
+
+*/
+  
+  .govuk-panel--interruption {
+    background-color: $govuk-link-colour;
+    text-align: left;
+    border-radius: 4px;
+  
+    * {
+      color: govuk-colour("white");
+    }
+
+    >:last-child {
+      margin-bottom: 0;
+    }
+  
+    .govuk-radios__label::before,
+    & ::after {
+      color: govuk-colour("black");
+      border-color: govuk-colour("black");
+      background-color: govuk-colour("white");
+    }
+  
+    .govuk-list--definition {
+      dt,
+      dd {
+        color: govuk-colour("blue");
+      }
+    }
+  
+    .govuk-button,
+    .govuk-button:disabled:hover {
+      color: $govuk-link-colour;
+      font-weight: bold;
+      background-color: govuk-colour("white");
+      box-shadow: 0 2px 0 govuk-colour("black");
+    }
+  
+    .govuk-button:hover {
+      background-color: govuk-colour("light-grey");
+    }
+    .govuk-button:focus {
+      box-shadow: inset 0 0 0 1px #ffdd00;
+    }
+
+    .govuk-section-break--visible {
+      border-bottom-color: govuk-colour("white");
+    }
+  }

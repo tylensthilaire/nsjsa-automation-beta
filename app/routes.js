@@ -38,6 +38,28 @@ router.use('/sprints/sprint7/', require('./views/sprints/sprint7/_routes'))
 router.use('/sprints/sprint9/additional/', require('./views/sprints/sprint9/additional/_routes'))
 router.use('/sprints/sprint10/', require('./views/sprints/sprint10/_routes'))
 
+router.use('/sprints/sprint11/', require('./views/sprints/sprint11/_routes'))
+router.use('/sprints/sprint11/1a-eligibility/', require('./views/sprints/sprint11/1a-eligibility/_routes'))
+router.use('/sprints/sprint11/1b-lead-in/', require('./views/sprints/sprint11/1b-lead-in/_routes'))
+router.use('/sprints/sprint11/2-details/', require('./views/sprints/sprint11/2-details/_routes'))
+router.use('/sprints/sprint11/3-claim-start/', require('./views/sprints/sprint11/3-claim-start/_routes'))
+router.use('/sprints/sprint11/4-other-benefits/', require('./views/sprints/sprint11/4-other-benefits/_routes'))
+router.use('/sprints/sprint11/5-jury-service/', require('./views/sprints/sprint11/5-jury-service/_routes'))
+router.use('/sprints/sprint11/6-current-employment/', require('./views/sprints/sprint11/6-current-employment/_routes'))
+router.use('/sprints/sprint11/7-previous-employment/', require('./views/sprints/sprint11/7-previous-employment/_routes'))
+router.use('/sprints/sprint11/8-abroad/', require('./views/sprints/sprint11/8-abroad/_routes'))
+router.use('/sprints/sprint11/9-pensions/', require('./views/sprints/sprint11/9-pensions/_routes'))
+router.use('/sprints/sprint11/10-education/', require('./views/sprints/sprint11/10-education/_routes'))
+router.use('/sprints/sprint11/dth-lead-in/', require('./views/sprints/sprint11/dth-lead-in/_routes'))
+router.use('/sprints/sprint11/dth/', require('./views/sprints/sprint11/dth/_routes'))
+
+// redirect to latest citizen journey
+router.get('/citizen-latest', function (req, res) {
+    res.redirect('sprints/sprint11/screens');
+});
+
+
+
 // router.use('/agent/stage/1a/3-claim-start/', require('./views/agent/stage/1a/3-claim-start/_routes'))
 // router.use('/agent/stage/1a/4-other-benefits/', require('./views/agent/stage/1a/4-other-benefits/_routes'))
 // router.use('/agent/stage/1a/5-jury-service/', require('./views/agent/stage/1a/5-jury-service/_routes'))

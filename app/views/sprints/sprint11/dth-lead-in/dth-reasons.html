@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  DWP - Jobseeker&rsquo;s Allowance
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+        <div class="govuk-panel govuk-panel--interruption govuk-!-margin-bottom-8">
+
+            {# <span class="govuk-caption-l">1. {{ serviceName }}</span> #}
+            <h1 class="govuk-heading-l">You now need to confirm your identity</h1>
+
+            <h2>Doing this:</h2>
+            <ol class="govuk-list govuk-list--bullet">
+                <li>helps us check its really you applying</li>
+                <li>helps us check your eligibility sooner</li>
+                <li>will save you time later</li>
+            </ol>
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+            {{ govukButton({
+                text: "Continue",
+                href: "dth-things-needed"
+            }) }}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
