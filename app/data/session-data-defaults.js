@@ -25,6 +25,7 @@ module.exports = {
   "claimant": "sh",
   "guidMismatch": '0',
   "task": "view",
-  "postcode": "AA1 3AB"
+  "postcode": "AA1 3AB",
+  "serviceShortName": "New Style JSA"
 
 }

@@ -11,7 +11,7 @@
 
     <div class="govuk-grid-column-two-thirds">
 
-        <form method="post" action="" name="">
+        <form method="post" action="p60-q2">
 
             <div class="govuk-form-group">
                 <span class="govuk-caption-xl">
@@ -35,7 +35,9 @@
                 
             </div>
 
-            <a class="govuk-button" href="../confirmation">Continue</a>
+            {{ govukButton({
+                text: "Continue"
+            }) }}
 
         </form>
 

@@ -26,13 +26,8 @@
 
             <div class="govuk-radios__item">
               <input class="govuk-checkboxes__input" id="ukPassport" name="ivQuestionLogic" type="checkbox" value="ukPassport" aria-controls="target-ukPassport" aria-expanded="false">
-
-              <label class="govuk-label govuk-checkboxes__label" for="ukPassport">
-                UK passport
-              </label>
-              <span id="ukPassport-hint" class="govuk-hint govuk-radios__hint">
-                You need a valid UK passport
-              </span>
+              <label class="govuk-label govuk-checkboxes__label" for="ukPassport">UK passport</label>
+              <span id="ukPassport-hint" class="govuk-hint govuk-radios__hint">You need a valid UK passport</span>
             </div>
 
             <!-- Start the reveal panel -->
@@ -48,41 +43,6 @@
               </div><br>
               <p class="govuk-body-s">To see how we store and process your information, see our <a href="#privacy">privacy notice (opens in new tab)</a>.</p>
             </div>
-
-            <!-- end the concealed panel -->
-
-            <!-- <div class="govuk-radios__item">
-              <input class="govuk-checkboxes__input" id="driversLicense" name="ivQuestionLogic" type="checkbox"
-                value="driversLicense" aria-controls="target-driversLicense" aria-expanded="false">
-
-              <label class="govuk-label govuk-checkboxes__label" for="driversLicense">
-                Driving licence
-              </label>
-              <span id="driversLicense-hint" class="govuk-hint govuk-radios__hint">
-                You need a driving licence issued in the UK or Ireland
-              </span>
-            </div> -->
-
-            <!-- Start the reveal panel -->
-
-            <!-- <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="target-driversLicense">
-              <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset">
-                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Where was your driving licence
-                    issued?</legend>
-                  <div class="govuk-radios">
-                    <div class="govuk-radios__item" data-children-count="1"><input class="govuk-radios__input" id="dvla"
-                        name="issuedDl" type="radio" value="dvla" "=""><label class=" govuk-label
-                        govuk-radios__label " for=" dvla">England, Scotland or Wales</label></div>
-                    <div class="govuk-radios__item" data-children-count="1"><input class="govuk-radios__input" id="dva"
-                        name="issuedDl" type="radio" value="dva" "=""><label class=" govuk-label
-                        govuk-radios__label " for=" dva">Northern Ireland</label></div>
-                  </div>
-                </fieldset>
-              </div>
-            </div> -->
-
-            <!-- end the concealed panel -->
 
             <div class="govuk-radios__item">
               <input class="govuk-checkboxes__input" id="payslipsP60" name="ivQuestionLogic" type="checkbox" value="payslipsP60" aria-controls="target-payslipsP60" aria-expanded="false">
@@ -136,9 +96,14 @@
                 <fieldset class="govuk-fieldset">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Do you want to use Voice ID?</legend>
                   <div class="govuk-radios">
-                    <div class="govuk-radios__item" data-children-count="1"><input class="govuk-radios__input" id="voiceIdYes" name="tcOptions" type="radio" value="voiceIdYes"><label class="govuk-label govuk-radios__label " for="voiceIdYes">Yes</label></div>
-                    <div class="govuk-radios__item" data-children-count="1"><input class="govuk-radios__input" id="voiceIdNo" name="tcOptions" type="radio" value="voiceIdNo"><label class=" govuk-label
-                        govuk-radios__label " for=" voiceIdNo">No</label></div>
+                    <div class="govuk-radios__item" data-children-count="1">
+                      <input class="govuk-radios__input" id="voiceIdYes" name="tcOptions" type="radio" value="voiceIdYes">
+                      <label class="govuk-label govuk-radios__label" for="voiceIdYes">Yes</label>
+                    </div>
+                    <div class="govuk-radios__item" data-children-count="1">
+                      <input class="govuk-radios__input" id="voiceIdNo" name="tcOptions" type="radio" value="voiceIdNo">
+                      <label class=" govuk-label govuk-radios__label" for=" voiceIdNo">No</label>
+                    </div>
                   </div>
                 </fieldset>
               </div>
@@ -168,7 +133,10 @@
               <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset">
                   <div class="govuk-checkboxes">
-                    <div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" id="cra-consent" name="cra-consent" type="checkbox" value="true"><label class="govuk-label govuk-checkboxes__label" for="cra-consent">I agree</label></div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="cra-consent" name="cra-consent" type="checkbox" value="true">
+                      <label class="govuk-label govuk-checkboxes__label" for="cra-consent">I agree</label>
+                    </div>
                   </div>
                 </fieldset>
               </div><br>
