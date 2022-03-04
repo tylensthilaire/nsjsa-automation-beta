@@ -26,6 +26,7 @@ module.exports = {
   "guidMismatch": '0',
   "task": "view",
   "postcode": "AA1 3AB",
-  "serviceShortName": "New Style JSA"
+  "serviceShortName": "New Style JSA",
+  "i4Name": "JSAPS Pushes and process claims buckets"
 
 }

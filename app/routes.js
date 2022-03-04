@@ -58,16 +58,8 @@ router.get('/citizen-latest', function (req, res) {
     res.redirect('sprints/sprint11/screens');
 });
 
-
-
-// router.use('/agent/stage/1a/3-claim-start/', require('./views/agent/stage/1a/3-claim-start/_routes'))
-// router.use('/agent/stage/1a/4-other-benefits/', require('./views/agent/stage/1a/4-other-benefits/_routes'))
-// router.use('/agent/stage/1a/5-jury-service/', require('./views/agent/stage/1a/5-jury-service/_routes'))
-// router.use('/agent/stage/1a/6-current-employment/', require('./views/agent/stage/1a/6-current-employment/_routes'))
-// router.use('/agent/stage/1a/7-previous-employment/', require('./views/agent/stage/1a/7-previous-employment/_routes'))
-// router.use('/agent/stage/1a/8-abroad/', require('./views/agent/stage/1a/8-abroad/_routes'))
-// router.use('/agent/stage/1a/9-pensions/', require('./views/agent/stage/1a/9-pensions/_routes'))
-// router.use('/agent/stage/1a/10-education/', require('./views/agent/stage/1a/10-education/_routes'))
-// router.use('/agent/stage/1a/dth/', require('./views/agent/stage/1a/dth/_routes'))
+// plug in service centre beta
+router.use('/service-centre/i4/', require('./views/service-centre/i4/_routes'))
+router.use('/service-centre/mvp/', require('./views/service-centre/mvp/_routes'))
 
 module.exports = router

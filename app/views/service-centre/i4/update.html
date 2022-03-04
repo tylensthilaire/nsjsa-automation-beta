@@ -1,0 +1,99 @@
+{% extends "./view-claim.html" %}
+
+{% block pageTitle %}
+  Select a status
+{% endblock %}
+
+{% block content %}
+
+{% set failHtml %}
+{{ govukCheckboxes({
+  idPrefix: "failed-contact",
+  name: "subStatus",
+  fieldset: {
+    legend: {
+      text: "What did you do?",
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "Select all that apply."
+  },
+  items: [
+    {
+      value: "sms",
+      text: "Sent an SMS"
+    },
+    {
+      value: "voicemail",
+      text: "Left a voicemail"
+    },
+    {
+      value: "email",
+      text: "Sent an email"
+    },
+    {
+      value: "letter",
+      text: "Sent a JSA 164 letter"
+    }
+  ]
+}) }}
+{% endset -%}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
+
+  <div class="govuk-grid-row  govuk-!-margin-top-4">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="confirmation" method="get">
+
+        {{ govukRadios({
+            idPrefix: 'status',
+            name: 'claimStatus',
+            fieldset: {
+              legend: {
+                text: "Update claim status",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+                {
+                    value: "Claim registered",
+                    text: "Claim registered"
+                },
+                {
+                    value: "Awaiting agent",
+                    text: "Awaiting agent"
+                },
+                {
+                    value: "failed-to-contact",
+                    text: "Failed to contact – 1st attempt",
+                    conditional: {
+                      html: failHtml
+                    }
+                },
+                {
+                    value: "potential-fraud",
+                    text: "Potential fraud"
+                },
+                {
+                    value: "withdrawn",
+                    text: "Withdrawn"
+                }         
+            ]
+          })
+        }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+      
+    </div>
+  </div>
+
+{% endblock %}
