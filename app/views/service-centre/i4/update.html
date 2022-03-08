@@ -40,6 +40,31 @@
 }) }}
 {% endset -%}
 
+{% set ttcHtml %}
+  {{ govukRadios({
+      idPrefix: 'ttc',
+      name: 'ttcStatus',
+      fieldset: {
+        legend: {
+          text: "Select an option",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+          {
+              value: "fully-clerical",
+              text: "Fully clerical"
+          },
+          {
+              value: "needs-rebuild",
+              text: "Needs rebuild"
+          }                     
+      ]
+    })
+  }}
+{% endset -%}
+
 {{ govukBackLink({
   text: "Back",
   href: "javascript:history.back()"
@@ -49,6 +74,8 @@
     <div class="govuk-grid-column-two-thirds">
 
       <form action="confirmation" method="get">
+
+      {% if task == 'register' %}
 
         {{ govukRadios({
             idPrefix: 'status',
@@ -87,6 +114,60 @@
             ]
           })
         }}
+
+        {% else %}
+
+
+        {{ govukRadios({
+            idPrefix: 'status',
+            name: 'claimStatus',
+            fieldset: {
+              legend: {
+                text: "Update claim status",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+                {
+                    value: "Appointment referred",
+                    text: "Appointment referred"
+                },
+                {
+                    value: "Not entitled",
+                    text: "Not entitled"
+                },
+                {
+                    value: "failed-to-contact",
+                    text: "Failed to contact – 1st attempt",
+                    conditional: {
+                      html: failHtml
+                    }
+                },
+                {
+                    value: "potential-fraud",
+                    text: "Potential fraud"
+                },
+                {
+                    value: "suspected-fraud",
+                    text: "Suspected fraud"
+                },
+                {
+                    value: "transfer-to-clerical",
+                    text: "Transfer to clerical",
+                    conditional: {
+                      html: ttcHtml
+                    }
+                },
+                {
+                    value: "escalate-complex",
+                    text: "Escalate to specialist"
+                }        
+            ]
+          })
+        }}
+
+        {% endif %}
 
         {{ govukButton({
           text: "Continue"

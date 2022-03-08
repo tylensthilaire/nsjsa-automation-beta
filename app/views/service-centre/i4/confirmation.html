@@ -10,11 +10,11 @@
 {% block keyDetails %}
   
   {% if data['claimant'] == 'sh' %}
-    {% include './claimants/sh/key-details.html' %}
+    {% include '../claimants/sh/key-details.html' %}
   {% elif data['claimant'] == 'kb' %}
-    {% include './claimants/kb/key-details.html' %}
+    {% include '../claimants/kb/key-details.html' %}
   {% elif data['claimant'] == 'ij' %}
-    {% include './claimants/ij/key-details.html' %}
+    {% include '../claimants/ij/key-details.html' %}
   {% else %}
     <p>No claimant set.</p>
   {% endif %}
