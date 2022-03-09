@@ -56,7 +56,7 @@
 
 {% set regTag %}
 {{ govukTag({
-  text: "Registration needed"
+  text: "Not registered"
 }) }}
 {% endset %}
 
@@ -74,7 +74,7 @@
 
 {% set apptTag %}
 {{ govukTag({
-  text: "Appointment needed"
+  text: "Awaiting appointment"
 }) }}
 {% endset %}
 
@@ -100,7 +100,7 @@
         rows: [
             [
                 {
-                    html: "<a title=View-claim href=view-claim?claimant=kb&claimStatus=registration-needed&dupe=1&previous-employment=1&noReg=1>Karan Bhopal</a>"
+                    html: "<a title=View-claim href=view-claim?claimant=kb&claimStatus=not-registered&dupe=1&previous-employment=1>Karan Bhopal</a>"
                 },
                 {
                     text: "10 December 2021"
@@ -138,7 +138,7 @@
         rows: [
             [
                 {
-                    html: "<a title=View-claim href=view-claim?claimant=kb&claimStatus=appointment-needed&dupe=1&previous-employment=0&noReg=0>Karan Bhopal</a>"
+                    html: "<a title=View-claim href=view-claim?claimant=kb&claimStatus=awaiting-appointment&dupe=1&previous-employment=0>Karan Bhopal</a>"
                 },
                 {
                     text: "9 December 2021"
@@ -176,7 +176,7 @@
         rows: [
             [
                 {
-                    html: "<a title=View-claim href=view-claim?claimant=kb&claimStatus=registration-needed&dupe=1&previous-employment=0&noReg=1>Karan Bhopal</a>"
+                    html: "<a title=View-claim href=view-claim?claimant=kb&claimStatus=not-registered&dupe=1&previous-employment=0>Karan Bhopal</a>"
                 },
                 {
                     text: "9 December 2021"
@@ -190,7 +190,7 @@
             ],
             [
                 {
-                    html: "<a title=View-claim href=view-claim?claimant=kb&claimStatus=registration-needed&dupe=1&noReg=1>Karan Bhopal</a>"
+                    html: "<a title=View-claim href=view-claim?claimant=kb&claimStatus=not-registered&dupe=1>Karan Bhopal</a>"
                 },
                 {
                     text: "9 December 2021"
@@ -204,7 +204,7 @@
             ],
             [
                 {
-                    html: "<a title=View-claim href=view-claim?claimant=kb&claimStatus=registration-needed&dupe=1&previous-employment=0&noReg=1>Karan Bhopal</a>"
+                    html: "<a title=View-claim href=view-claim?claimant=kb&claimStatus=not-registered&dupe=1&previous-employment=0>Karan Bhopal</a>"
                 },
                 {
                     text: "9 December 2021"

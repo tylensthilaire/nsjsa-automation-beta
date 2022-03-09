@@ -32,29 +32,7 @@ items: [
     ]
 }) }}
 
-{% elif data['claimStatus'] == 'pre-checks-complete' %}
-
-
-{{ dwpTimeline({
-    items: [
-    {
-        heading: "Pre-checks complete",
-        label: "label",
-        author: "by automated process",
-        date: "on 31 July 2021",
-        time: "at 4:43pm"
-    },
-    {
-        heading: "Application submitted",
-        author: "by claimant",
-        date: "on 31 July 2021",
-        time: "at 4:32pm",
-        classes: "dwp-timeline-entry--closing"
-    }
-    ]
-}) }}
-
-{% elif data['claimStatus'] == 'not-registered' and data['niMatchCis'] == 0 %}
+{% elif data['claimStatus'] == 'not-registered' %}
 
 {{ dwpTimeline({
     items: [
@@ -62,8 +40,7 @@ items: [
         heading: "Not registered",
         label: "label",
         date: "on 31 July 2021",
-        time: "at 4:43pm",
-        body: "<p>CIS record mismatch</p>"
+        time: "at 4:43pm"
     },
     {
         heading: "New claim",

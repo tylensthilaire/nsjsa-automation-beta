@@ -18,26 +18,26 @@ items: [
 ]
 }) }}
 
-{% elif data['claimStatus'] == 'appointment-needed' %}
+{% elif data['claimStatus'] == 'awaiting-appointment' %}
 
 {{ dwpTimeline({
     items: [
         {
-            heading: "Appointment needed",
+            heading: "Awaiting appointment",
+            label: "label",
+            author: "by Cher Latif",
+            date: "on 6 September 2021",
+            time: "at 1:13pm"
+        },
+        {
+            heading: "Not built",
             label: "label",
             author: "by Automated process",
             date: "on 5 September 2021",
             time: "at 4:43pm"
         },
         {
-            heading: "Claim built",
-            label: "label",
-            author: "by Automated process",
-            date: "on 5 September 2021",
-            time: "at 4:43pm"
-        },
-        {
-            heading: "Claim registered",
+            heading: "Registered",
             label: "label",
             author: "by Automated process",
             date: "on 5 September 2021",

@@ -7,7 +7,7 @@
 {% block content %}
 
 {% set failHtml %}
-{{ govukCheckboxes({
+{{ govukRadios({
   idPrefix: "failed-contact",
   name: "subStatus",
   fieldset: {
@@ -16,25 +16,22 @@
       classes: "govuk-fieldset__legend--s"
     }
   },
-  hint: {
-    text: "Select all that apply."
-  },
   items: [
+    {
+      value: "1stcall",
+      text: "Attempted 1st call"
+    },
+    {
+      value: "2ndcall",
+      text: "Attempted 2nd call"
+    },
     {
       value: "sms",
       text: "Sent an SMS"
     },
     {
-      value: "voicemail",
-      text: "Left a voicemail"
-    },
-    {
-      value: "email",
-      text: "Sent an email"
-    },
-    {
       value: "letter",
-      text: "Sent a JSA 164 letter"
+      text: "Sent a letter"
     }
   ]
 }) }}
@@ -75,7 +72,7 @@
 
       <form action="confirmation" method="get">
 
-      {% if task == 'register' %}
+      {% if data['s'] == '1' %}
 
         {{ govukRadios({
             idPrefix: 'status',
@@ -89,33 +86,22 @@
             },
             items: [
                 {
-                    value: "Claim registered",
-                    text: "Claim registered"
+                    value: "registered",
+                    text: "Registered"
                 },
                 {
-                    value: "Awaiting agent",
-                    text: "Awaiting agent"
+                    value: "Waiting for agent",
+                    text: "Waiting for agent"
                 },
                 {
-                    value: "failed-to-contact",
-                    text: "Failed to contact – 1st attempt",
-                    conditional: {
-                      html: failHtml
-                    }
-                },
-                {
-                    value: "potential-fraud",
-                    text: "Potential fraud"
-                },
-                {
-                    value: "withdrawn",
-                    text: "Withdrawn"
-                }         
+                    value: "escalate-to-specialist",
+                    text: "Escalate to specialist"
+                }          
             ]
           })
         }}
 
-        {% else %}
+        {% elif data['s'] == '2' %}
 
 
         {{ govukRadios({
@@ -130,39 +116,64 @@
             },
             items: [
                 {
-                    value: "Appointment referred",
-                    text: "Appointment referred"
-                },
-                {
-                    value: "Not entitled",
-                    text: "Not entitled"
+                    value: "registered",
+                    text: "Registered"
                 },
                 {
                     value: "failed-to-contact",
-                    text: "Failed to contact – 1st attempt",
+                    text: "Failed to contact",
                     conditional: {
                       html: failHtml
                     }
-                },
-                {
-                    value: "potential-fraud",
-                    text: "Potential fraud"
                 },
                 {
                     value: "suspected-fraud",
                     text: "Suspected fraud"
                 },
                 {
-                    value: "transfer-to-clerical",
-                    text: "Transfer to clerical",
+                    value: "escalate-to-specialist",
+                    text: "Escalate to specialist"
+                }        
+            ]
+          })
+        }}
+
+        {% elif data['s'] == '3' %}
+
+          {{ govukRadios({
+            idPrefix: 'status',
+            name: 'claimStatus',
+            fieldset: {
+              legend: {
+                text: "Update claim status",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+                {
+                    value: "Registered",
+                    text: "Registered"
+                },
+                {
+                    value: "failed-to-contact",
+                    text: "Failed to contact",
                     conditional: {
-                      html: ttcHtml
+                      html: failHtml
                     }
+                },
+                {
+                    value: "suspected-fraud",
+                    text: "Suspected fraud"
                 },
                 {
                     value: "escalate-complex",
                     text: "Escalate to specialist"
-                }        
+                },
+                {
+                    value: "withdrawn",
+                    text: "Withdrawn"
+                }     
             ]
           })
         }}
