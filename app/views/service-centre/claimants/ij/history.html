@@ -168,6 +168,47 @@ items: [
     ]
 }) }}
 
+{% elif data['claimStatus'] == 'northern-ireland' %}
+
+{{ dwpTimeline({
+    items: [
+        {
+        heading: "Northern Ireland claim",
+        label: "label",
+        author: "by automated process",
+        date: "on 5 September 2021",
+        time: "at 6:15am"
+    },
+    {
+        heading: "New claim",
+        date: "by claimant on 5 September 2021",
+        time: "at 6:12am"
+    }
+    ]
+}) }}
+
+{% elif data['claimStatus'] == 'appointee-check-needed' %}
+
+{{ dwpTimeline({
+    items: [
+        {
+        heading: "Appointee check needed",
+        label: "label",
+        author: "by automated process",
+        date: "on 5 September 2021",
+        time: "at 6:15am"
+    },
+    {
+        heading: "New claim",
+        date: "by claimant on 5 September 2021",
+        time: "at 6:12am"
+    }
+    ]
+}) }}
+
+
+
+
 {% else %}
 
 {{ dwpTimeline({

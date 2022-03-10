@@ -72,7 +72,7 @@
 
       <form action="confirmation" method="get">
 
-      {% if data['s'] == '1' %}
+      {% if data['s'] == 'r1' %}
 
         {{ govukRadios({
             idPrefix: 'status',
@@ -101,7 +101,7 @@
           })
         }}
 
-        {% elif data['s'] == '2' %}
+        {% elif data['s'] == 'r2' %}
 
 
         {{ govukRadios({
@@ -138,7 +138,7 @@
           })
         }}
 
-        {% elif data['s'] == '3' %}
+        {% elif data['s'] == 'r3' %}
 
           {{ govukRadios({
             idPrefix: 'status',
@@ -177,6 +177,58 @@
             ]
           })
         }}
+
+        {% elif data['s'] == 'p1' %}
+
+          {{ govukRadios({
+              idPrefix: 'status',
+              name: 'claimStatus',
+              fieldset: {
+                legend: {
+                  text: "Update claim status",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--l"
+                }
+              },
+              items: [
+                  {
+                      value: "withdrawn",
+                      text: "Withdrawn"
+                  }     
+              ]
+            })
+          }}
+        
+        {% elif data['s'] == 'p2' %}
+
+          {{ govukRadios({
+            idPrefix: "status",
+            name: "claimStatus",
+            fieldset: {
+              legend: {
+                text: "Update claim status",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: "appointee confirmed",
+                text: "Appointee confirmed"
+              },
+              {
+                  value: "failed-to-contact",
+                  text: "Failed to contact",
+                  conditional: {
+                    html: failHtml
+                  }
+              },
+              {
+                value: "Withdrawn",
+                text: "Withdrawn"
+              }
+            ]
+          }) }}
 
         {% endif %}
 

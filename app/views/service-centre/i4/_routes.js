@@ -21,7 +21,7 @@ router.post('/nino-search', function (req, res) {
 router.post('/nino', function (req, res) {
     let data = req.session.data;
     // console.log( data['niMatchCis'] );
-    if ( data['s'] != '4' ) {
+    if ( data['s'] != 'r4' ) {
         data['cis'] = 0;
         data['niMatchCis'] = 1;
         data['noReg'] = 1;
