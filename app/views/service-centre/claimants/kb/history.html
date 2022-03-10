@@ -90,14 +90,40 @@ items: [
     ]
 }) }}
 
-{% elif data['claimStatus'] == 'not-registered' %}
+{% elif data['claimStatus'] == 'not-registered' and data['niMatchCis'] == 0 %}
 
 {{ dwpTimeline({
     items: [
     {
         heading: "Not registered",
         label: "label",
-        author: "by automated process",
+        date: "on 31 July 2021",
+        time: "at 4:43pm"
+    },
+    {
+        heading: "New claim",
+        author: "by claimant",
+        date: "on 31 July 2021",
+        time: "at 4:32pm",
+        classes: "dwp-timeline-entry--closing"
+    }
+    ]
+}) }}
+
+{% elif data['claimStatus'] == 'not-registered' and data['niMatchCis'] == 1 %}
+
+{{ dwpTimeline({
+    items: [
+    {
+        heading: "National Insurance number updated",
+        label: "label",
+        author: "by John Walker",
+        date: "on 1 August 2021",
+        time: "at 8:56am"
+    },
+    {
+        heading: "Not registered",
+        label: "label",
         date: "on 31 July 2021",
         time: "at 4:43pm"
     },

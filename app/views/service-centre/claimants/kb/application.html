@@ -15,6 +15,11 @@
 }) }}
 </section>
 
+{% if data['niMatchCis'] == '0' %}
+ {% set actionHref = 'nino' %}
+ {% set actionText = 'Change' %}
+ {% set actionHiddenText = 'Change NI number' %}
+{% endif %}
 <section class="dwp-claim-section">
 <h2 class="govuk-heading-m">Personal details</h2>
 {{ govukSummaryList({
@@ -22,10 +27,19 @@
     rows: [
     {
         key: {
-        text: "National Insurance number"
+            text: "National Insurance number"
         },
         value: {
-        text: "CX 60 12 13 A"
+            text: data['nino']
+        },
+        actions: {
+            items: [
+                {
+                    href: actionHref,
+                    text: actionText,
+                    visuallyHiddenText: actionHiddenText
+                }
+            ]
         }
     },
     {

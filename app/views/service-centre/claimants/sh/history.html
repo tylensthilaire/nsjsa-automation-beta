@@ -32,7 +32,7 @@ items: [
     ]
 }) }}
 
-{% elif data['claimStatus'] == 'not-registered' %}
+{% elif data['claimStatus'] == 'not-registered' and data['niMatchCis'] == 0 %}
 
 {{ dwpTimeline({
     items: [
@@ -57,7 +57,7 @@ items: [
 {{ dwpTimeline({
     items: [
     {
-        heading: "NI number updated",
+        heading: "National Insurance number updated",
         label: "label",
         author: "by John Walker",
         date: "on 1 August 2021",
@@ -67,8 +67,7 @@ items: [
         heading: "Not registered",
         label: "label",
         date: "on 31 July 2021",
-        time: "at 4:43pm",
-        body: "<p>CIS record mismatch</p>"
+        time: "at 4:43pm"
     },
     {
         heading: "New claim",

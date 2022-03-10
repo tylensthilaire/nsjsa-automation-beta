@@ -20,11 +20,15 @@ router.post('/nino-search', function (req, res) {
 
 router.post('/nino', function (req, res) {
     let data = req.session.data;
-    data['cis'] = 0;
-    data['niMatchCis'] = 1;
-    data['noReg'] = 1;
     // console.log( data['niMatchCis'] );
-    res.redirect('view-claim');
+    if ( data['s'] != '4' ) {
+        data['cis'] = 0;
+        data['niMatchCis'] = 1;
+        data['noReg'] = 1;
+        res.redirect('view-claim');
+    } else {
+        res.redirect('duplicates');
+    }
 });
 
 module.exports = router
