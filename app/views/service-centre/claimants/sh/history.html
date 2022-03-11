@@ -32,7 +32,7 @@ items: [
     ]
 }) }}
 
-{% elif data['claimStatus'] == 'not-registered' and data['niMatchCis'] == 0 %}
+{% elif data['claimStatus'] == 'not-registered' and data['niMatchCis'] == '0' %}
 
 {{ dwpTimeline({
     items: [
@@ -52,7 +52,7 @@ items: [
     ]
 }) }}
 
-{% elif data['claimStatus'] == 'not-registered' and data['niMatchCis'] == 1 %}
+{% elif data['claimStatus'] == 'not-registered' and data['niMatchCis'] == '1' %}
 
 {{ dwpTimeline({
     items: [
@@ -86,21 +86,21 @@ items: [
     {
         heading: "Build failed",
         label: "label",
-        author: "by automated process",
+        author: "automated",
         date: "on 31 July 2021",
         time: "at 5:13pm"
     },
     {
         heading: "Pre-checks complete",
         label: "label",
-        author: "by automated process",
+        author: "automated",
         date: "on 31 July 2021",
         time: "at 4:43pm"
     },
     {
         heading: "Claim registered",
         label: "label",
-        author: "by automated process",
+        author: "automated",
         date: "on 31 July 2021",
         time: "at 4:40pm"
     },
@@ -121,7 +121,7 @@ items: [
     {
         heading: "ID template needed",
         label: "label",
-        author: "by Automated process",
+        author: "automated",
         date: "on 31 July 2021",
         time: "at 4:43pm"
     },
@@ -142,7 +142,7 @@ items: [
     {
         heading: "ID check needed",
         label: "label",
-        author: "by Automated process",
+        author: "automated",
         date: "on 31 July 2021",
         time: "at 4:43pm"
     },

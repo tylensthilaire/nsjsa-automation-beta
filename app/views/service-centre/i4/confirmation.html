@@ -6,6 +6,7 @@
 
 {% set claimStatus = data['claimStatus'] | replace("-", " ") | capitalize %}
 {% set subStatus = data['subStatus'] | replace("-", " ") %}
+{% set ttcStatus = data['ttcStatus'] | replace("-", " ") | capitalize %}
 
 {% block keyDetails %}
   
@@ -23,12 +24,18 @@
 
 {% block content %}
 
+{% if data['ttcStatus'] %}
+  {% set msg = ttcStatus %}
+{% else %}
+  {% set msg = claimStatus %}
+{% endif %}
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
       {{ govukPanel({
         titleText: "The claim was updated",
-        html: claimStatus
+        html: msg
       }) }}
 
       {{ govukButton({

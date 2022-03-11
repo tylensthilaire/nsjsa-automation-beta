@@ -32,14 +32,14 @@ items: [
         {
             heading: "Not built",
             label: "label",
-            author: "by Automated process",
+            author: "automated",
             date: "on 5 September 2021",
             time: "at 4:43pm"
         },
         {
             heading: "Registered",
             label: "label",
-            author: "by Automated process",
+            author: "automated",
             date: "on 5 September 2021",
             time: "at 4:43pm"
         },
@@ -90,7 +90,7 @@ items: [
     ]
 }) }}
 
-{% elif data['claimStatus'] == 'not-registered' and data['niMatchCis'] == 0 %}
+{% elif data['claimStatus'] == 'not-registered' and data['niMatchCis'] == '1' %}
 
 {{ dwpTimeline({
     items: [
@@ -110,7 +110,7 @@ items: [
     ]
 }) }}
 
-{% elif data['claimStatus'] == 'not-registered' and data['niMatchCis'] == 1 %}
+{% elif data['claimStatus'] == 'not-registered' and data['niMatchCis'] == '0' %}
 
 {{ dwpTimeline({
     items: [
@@ -144,7 +144,7 @@ items: [
     {
         heading: "Suspected fraud",
         label: "label",
-        author: "by automated process",
+        author: "automated",
         date: "on 31 July 2021",
         time: "at 4:43pm"
     },
@@ -165,7 +165,7 @@ items: [
     {
         heading: "Withdrawn",
         label: "label",
-        author: "by automated process",
+        author: "automated",
         date: "on 31 July 2021",
         time: "at 4:43pm"
     },
