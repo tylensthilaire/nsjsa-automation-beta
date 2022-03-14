@@ -8,7 +8,7 @@ Service centre - {{ serviceName }}
 {% endblock %}
 
 {% block content %}
-
+{# {{ data | dump('\t') }}  #}
 
 <h1 class="govuk-heading-l">
   <span class="govuk-caption-l">Service centre agent</span>
@@ -17,17 +17,16 @@ Service centre - {{ serviceName }}
 
 {% if data['task'] == 'process' %}
   {% set processUrl = 'view-claim' %}
-
+  {% set registerUrl = '#' %}
 {% elif data['task'] == 'register' %}
+  {% set processUrl = '#' %}
   {% set registerUrl = 'view-claim' %}
   {% if data['dupe'] == 1 %}
     {% set registerUrl = 'duplicates' %}
   {% endif %}
 {% else %}
-
   {% set registerUrl = '#' %}
   {% set processUrl = '#' %}
-
 {% endif %}
 
 <div class="govuk-grid-row">

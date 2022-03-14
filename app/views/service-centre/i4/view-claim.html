@@ -27,7 +27,7 @@
 {% endblock %}
 
 {% block content %}
-
+{# {{ data | dump('\t') }}  #}
 {% if data['dupe'] == '1' %}
   {{ govukBackLink({
     text: "Back",

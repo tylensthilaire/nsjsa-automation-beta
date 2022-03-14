@@ -15,14 +15,9 @@
         <span class="govuk-caption-l">{{ data['i4Name'] }}</span>
       </h1>
 
-      {{ govukDetails({
-        summaryText: "Understanding exceptions to automation",
-        html: "
-<p>The goal of the system is to automate claims through to an appointment being needed to be booked.</p>
-<p>Automation isn't always possible though. We have to give any claims that can't be automated to an agent to be manually processed.</p>
-<p>These claims are called exceptions and they will drop into a bucket depending on the type of claim and what needs to happen to it.</p>
-        "
-      }) }}
+      <p><a href="../understanding-exceptions">Understanding exceptions to automation</a>.</p>
+
+{# {{ data | dump('\t') }} #}
 
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
@@ -35,10 +30,10 @@
       <h3 class="govuk-heading-s">Manual task scenarios (r)</h3>
 
       <ol class="govuk-list govuk-list--number">
-        <li><a href="choose-task?s=r1&task=register&claimStatus=not-registered&northernIreland=0&claimant=sh&nino=CX 40 01 26 A&idRisk=0&fraud=0&cis=0&dupe=0&niMatchCis=0&noReg=1">Register a claim where we couldn't automate the registration</a> <br>(ES push fail)</li>
-        <li><a href="choose-task?s=r2&task=register&claimStatus=not-registered&northernIreland=0&claimant=kb&nino=CX 60 12 13 A&idRisk=0&fraud=0&cis=0&dupe=0&niMatchCis=1&noReg=0">Register a claim where the NINo does not match CIS record</a></li>
-        <li><a href="choose-task?s=r3&task=register&claimStatus=not-registered&northernIreland=0&claimant=sh&nino=CX 40 01 26 A&idRisk=0&fraud=0&cis=0&dupe=1&niMatchCis=0&noReg=0">Register the right claim where we have duplicates and deal with the rest</a></li>
-        <li><a href="choose-task?s=r4&task=register&claimStatus=not-registered&northernIreland=0&claimant=kb&nino=CX 60 12 13 A&idRisk=0&fraud=0&cis=0&dupe=0&niMatchCis=1&noReg=0">Register a claim where we have a NINo does not match CIS record and then has duplicates once NINo updated</a></li>
+        <li><a href="start?s=r1">Register a claim where we couldn't automate the registration</a> <br>(ES push fail)</li>
+        <li><a href="start?s=r2">Register a claim where the NINo does not match CIS record</a></li>
+        <li><a href="start?s=r3">Register the right claim where we have duplicates and deal with the rest</a></li>
+        <li><a href="start?s=r4">Register a claim where we have a NINo does not match CIS record and then has duplicates once NINo updated</a></li>
       </ol>
       
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
@@ -46,21 +41,22 @@
       <h2 class="govuk-heading-m">Processing bucket</h2>
       <h3 class="govuk-heading-s">Manual task scenarios (p)</h3>
       <ol class="govuk-list govuk-list--number">
-        <li><a href="choose-task?s=p1&task=process&claimant=ij&claimStatus=northern-ireland&northernIreland=1&idRisk=0&fraud=0&cis=0&dupe=0&noReg=0&build=0&nicCheck=0&bsError=0&note=0">Withdraw a Northern Ireland claim</a></li>
-        <li><a href="choose-task?s=p2&task=process&claimant=ij&claimStatus=appointee-check-needed&northernIreland=0&idRisk=0&fraud=0&cis=0&dupe=0&appointee=1&noReg=0&build=0&nicCheck=0&bsError=0&note=0">Process a claim where an appointee is found</a></li>
-        <li><a href="choose-task?s=p3&task=process&claimant=ij&claimStatus=ID-check-needed&northernIreland=0&idRisk=0&fraud=0&cis=1&dupe=0&noReg=0&build=0&nicCheck=0&bsError=0&note=0">Process a claim where data does not match CIS</a></li>
-        <li><a href="choose-task?s=p4&task=process&claimant=ij&claimStatus=fraud-check-needed&northernIreland=0&idRisk=0&fraud=1&cis=0&dupe=0&noReg=0&build=0&nicCheck=0&bsError=0&note=0">Process a claim where fraud rules are matched</a></li>
-        <li><a href="choose-task?s=p5&task=process&claimant=ij&claimStatus=ID-at-risk-check-needed&northernIreland=0&idRisk=1&fraud=0&cis=0&dupe=0&noReg=0&build=0&nicCheck=0&bsError=0&note=0">Process a claim with ID at risk flag</a></li>
-        <li><a href="choose-task?s=p6&task=process&claimant=ij&claimStatus=not-built&northernIreland=0&idRisk=0&fraud=0&cis=0&dupe=0&noReg=0&build=1&nicCheck=0&bsError=0&note=0">Process a claim with an automated build failure</a></li>
-        <li><a href="choose-task?s=p7&task=process&claimant=ij&claimStatus=review-needed&northernIreland=0&idRisk=0&fraud=0&cis=0&dupe=0&noReg=0&build=0&nicCheck=1&bsError=0&note=0">Process a claim without automatic NI contributions check</a></li>
-        <li><a href="choose-task?s=p8&task=process&claimant=ij&claimStatus=review-needed&northernIreland=0&idRisk=0&fraud=0&cis=0&dupe=0&noReg=0&build=0&nicCheck=0&bsError=0&note=0">Process a claim complex for robotics</a></li>
-        <li><a href="choose-task?s=p9&task=process&claimant=ij&claimStatus=review-needed&northernIreland=0&idRisk=0&fraud=0&cis=0&dupe=0&noReg=0&build=0&nicCheck=0&bsError=1&note=0">Process a claim with robotics error</a></li>
-        <li><a href="choose-task?s=p10&task=process&claimant=ij&claimStatus=not-entitled&northernIreland=0&idRisk=0&fraud=0&cis=0&dupe=0&noReg=0&build=0&nicCheck=0&bsError=0&note=1">Process an entitled claim needing a note adding</a></li>
+        <li><a href="start?s=p1">Withdraw a Northern Ireland claim</a></li>
+        <li><a href="start?s=p2">Process a claim where an appointee is found</a></li>
+        <li><a href="start?s=p3">Process a claim where data does not match CIS</a></li>
+        <li><a href="start?s=p4">Process a claim where fraud rules are matched</a></li>
+        <li><a href="start?s=p5">Process a claim with ID at risk flag</a></li>
+        <li><a href="start?s=p6">Process a claim with an automated build failure</a></li>
+        <li><a href="start?s=p7">Process a claim without automatic NI contributions check</a></li>
+        <li><a href="start?s=p8">Process a claim complex for robotics</a></li>
+        <li><a href="start?s=p9">Process a claim with robotics error</a></li>
+        <li><a href="start?s=p10">Process an entitled claim needing a note adding</a></li>
       </ol>
 
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-      <h2 class="govuk-heading-m">Z. Management information</h2>
+      <h2 class="govuk-heading-m">Management information</h2>
+      <p>Considered options for this increment.</p>
       <ul class="govuk-list govuk-list--number">
         <li><a href="mi">Dashboard view</a></li>
         <li><a href="mi/choose-task">Tile view</a></li>

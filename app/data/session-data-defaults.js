@@ -21,12 +21,27 @@ module.exports = {
 
   // Insert values here
   "agentServiceName": "Manage New Style Jobseekers Allowance Applications",
-  "claimStatus": "ID not verified",
+  "claimStatus": "Not set",
   "claimant": "sh",
   "guidMismatch": '0',
   "task": "view",
   "postcode": "AA1 3AB",
   "serviceShortName": "New Style JSA",
-  "i4Name": "JSAPS Pushes and process claims buckets"
+  "i4Name": "JSAPS Pushes and process claims buckets",
+  "i5Name": "Manual ID and bio check bucket",
+
+  // scenario defaults
+  "northernIreland": 0,
+  "dupe": 0,
+  "idRisk": 0,
+  "fraud": 0,
+  "niMatchCis": 0,
+  "cis": 0,
+  "appointee": 0,
+  "noReg": 0,
+  "build": 0,
+  "nicCheck": 0,
+  "bsError": 0,
+  "note": 0
 
 }
