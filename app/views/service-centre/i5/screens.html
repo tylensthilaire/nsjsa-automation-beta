@@ -1,0 +1,73 @@
+
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+  NSJSA Automation Prototypes
+{% endblock %}
+
+{% block content %}
+{% set i4Link %}
+<a href='../i4'>increment 4</a>
+{% endset %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-l">
+        Increment 5
+        <span class="govuk-caption-l">{{ data['i5Name'] }}</span>
+      </h1>
+
+      <p><a href="../understanding-exceptions">Understanding exceptions to automation</a>.</p>
+
+{# {{ data | dump('\t') }} #}
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <p><a href="nino-search">Find a claim</a> by its bucket letter and scenario number, for example: r3.</p>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">Registration bucket (r)</h2>
+
+      <p>All scenarios as {{ i4Link | safe }}</p>
+      
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">Processing bucket (p)</h2>
+      <h3 class="govuk-heading-s">Manual task scenarios</h3>
+      <ol class="govuk-list govuk-list--number govuk-list--spaced">
+        <li><span class="dwp-span--grey">Withdraw a Northern Ireland claim</span> (as {{ i4Link | safe }})</li>
+        <li><span class="dwp-span--grey">Process a claim where an appointee is found</span> (as {{ i4Link | safe }})</li>
+        <li><span class="dwp-span--grey">Process a claim where data does not match CIS</span> (Moved to ID bucket t1)</li>
+        <li><a href="start?s=p4">Process a claim where only multiple application fraud rules are matched</a> (Changed)</li>
+        <li><span class="dwp-span--grey">Process a claim with ID at risk flag</span> (Moves to ID bucket t3)</li>
+        <li><span class="dwp-span--grey">Process a claim with an automated build failure</span> (as {{ i4Link | safe }})</li>
+        <li><span class="dwp-span--grey">Process a claim without automatic NI contributions check</span> (as {{ i4Link | safe }})</li>
+        <li><span class="dwp-span--grey">Process a claim complex for robotics</span> (as {{ i4Link | safe }})</li>
+        <li><span class="dwp-span--grey">Process a claim with robotics error</span> (as {{ i4Link | safe }})</li>
+        <li><span class="dwp-span--grey">Process an entitled claim needing a note adding</span> (as {{ i4Link | safe }})</li>
+      </ol>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">Create ID template bucket (t)</h2>
+      <h3 class="govuk-heading-s">Manual task scenarios</h3>
+      <ol class="govuk-list govuk-list--number">
+        <li><a href="start?s=t1">Process a claim where data does not match CIS</a></li>
+        <li><a href="start?s=t2">Process a claim where only single application fraud rules are matched</a></li>
+        <li><a href="start?s=t3">Process a claim with ID at risk flag</a></li>
+      </ol>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">Management information</h2>
+      <p>Considered options for this increment.</p>
+      <ul class="govuk-list govuk-list--number">
+        <li><a href="mi">Dashboard view</a></li>
+        <li><a href="mi/choose-task">Tile view</a></li>
+      </ul>
+    </div>
+  </div>
+
+{% endblock %}
