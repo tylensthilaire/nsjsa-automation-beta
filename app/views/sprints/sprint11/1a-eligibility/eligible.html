@@ -10,11 +10,34 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">Based on your answers, you may be eligible for New Style Jobseeker&rsquo;s Allowance</h1>
-      <p class="govuk-body-l">To get it:</p>
-      <ol class="govuk-list govuk-body-l">
+      <p class="govuk-body-l">To get it, you need to:</p>
+      {# <ol class="govuk-list govuk-body-l">
         <li>1. You need to apply for Jobseeker's Allowance</li>
         <li>and then</li>
         <li>2. We need to check who you are</li>
+      </ol> #}
+
+      <ol class="app-task-list">
+        <li>
+
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="../1b-lead-in" aria-describedby="company-information-status">
+                  Apply for Jobseeker's Allowance
+                </a>
+              </span>
+              {# <strong class="govuk-tag app-task-list__tag" id="company-information-status">Completed</strong> #}
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">Not started</strong>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                We need to check who you are
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="financial-evidence-status">Cannot start yet</strong>
+            </li>
+          </ul>
+        </li>
       </ol>
 
       {# <h2 class="govuk-heading-m">To apply, you’ll need:</h2>
@@ -42,10 +65,10 @@
       answers and come back to the form later. But you’ll get a chance to check and update your answers 
       before you send it</div> #}
 
-      {{ govukButton({
+      {# {{ govukButton({
         text: "Start now",
         href: "../1b-lead-in"
-      }) }}
+      }) }} #}
 
     </div>
   </div>
