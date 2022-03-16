@@ -6,6 +6,28 @@
 {% endblock %}
 
 {% block content %}
+
+{% set proTag %}
+    {{govukTag({
+        text: "Process",
+        classes: "govuk-tag--purple"
+    })}}
+{% endset %}
+
+{% set idTemplateTag %}
+    {{govukTag({
+        text: "ID template",
+        classes: "govuk-tag--orange"
+    })}}
+{% endset %}
+
+{% set idCheckTag %}
+    {{govukTag({
+        text: "ID check",
+        classes: "govuk-tag--pink"
+    })}}
+{% endset %}
+
 {% set i4Link %}
 <a href='../i4'>increment 4</a>
 {% endset %}
@@ -15,26 +37,14 @@
 
       <h1 class="govuk-heading-l">
         Increment 5
-        {# <span class="govuk-caption-l">{{ data['i5Name'] }}</span> #}
-        <br>{{govukTag({
-          text: "(I5) – " + data['i5Name'],
-          classes: "govuk-tag--purple"
-        })}}
+        <span class="govuk-caption-l">{{ data['i5Name'] }}</span>
       </h1>
+
+      <p>Increment 5 introduces 2 linked buckets of claims, {{ idTemplateTag | safe }} and {{ idCheckTag | safe }}.</p>
 
       <p><a href="../understanding-exceptions">Understanding exceptions to automation</a>.</p>
 
 {# {{ data | dump('\t') }} #}
-
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-      <p><a href="nino-search">Find a claim</a> by its bucket letter and scenario number, for example: r3.</p>
-
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-      <h2 class="govuk-heading-m">Registration bucket (r)</h2>
-
-      <p>All scenarios as {{ i4Link | safe }}</p>
       
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
@@ -45,150 +55,65 @@
     <div class="govuk-grid-column-full">
       <h2 class="govuk-heading-m">Processing bucket</h2>
 
-    {% set i4Tag %}
-        {{govukTag({
-            text: "Processing",
-            classes: "govuk-tag--blue"
-        })}}
-    {% endset %}
-
-    {% set i5Tag %}
-        {{govukTag({
-          text: "Registration",
-          classes: "govuk-tag--purple"
-        })}}
-    {% endset %}
-
-      {{ govukTable({
-        caption: "Exception scenarios",
+  {{ govukTable({
+        caption: "Automation exceptions",
         captionClasses: "govuk-table__caption--s",
         firstCellIsHeader: true,
         head: [
-          {
-            text: "ID"
-          },
-          {
-            text: "Scenario"
-          },
             {
-                text: "Previous bucket"
-          },
-          {
-                text: "New bucket"
-          }
+                text: "ID"
+            },
+            {
+                text: "Scenario"
+            },
+            {
+                html: "I4 bucket"
+            },
+            {
+                html:  "&rarr; " + "I5 bucket"
+            }
         ],
         rows: [
           [
             {
-              text: "s1"
-            },
-            {
-              text: "Withdraw a Northern Ireland claim"
-            },
-            {
-                html: "Registration &rarr;"
-            },
-            {
-                html: "Processing"
-            }
-          ],
-          [
-            {
-              text: "s2"
-            },
-            {
-              text: "Process a claim where an appointee is found"
-            },
-            {
-                html: i4Tag
-            }
-          ],
-          [
-            {
-              text: "s3"
-            },
-            {
-              text: "Process a claim where data does not match CIS"
-            },
-            {
-                html: i5Tag
-            }
-          ],
-            [
-                {
-                text: "s4"
-                },
-                {
-                text: "Process a claim where single and multiple application fraud rules are matched"
-                },
-                {
-                    html: i5Tag
-                }
-            ],
-            [
-                {
-                text: "s5"
-                },
-                {
-                text: "Process a claim with ID at risk flag"
-                },
-                {
-                    html: i5Tag
-                }
-            ],
-            [
-                {
-                text: "s6"
-                },
-                {
-                text: "Process a claim with an automated build failure"
-                },
-                {
-                    html: i5Tag
-                }
-            ],
-            [
-                {
                 text: "s7"
+            },
+            {
+                html: "<a href='start?s=s7'>Process a claim where data does not match CIS</a>"
+            },
+            {
+                html: proTag
+            },
+            {
+                html: idTemplateTag
+            }
+          ],
+            [
+                {
+                    text: "s8"
                 },
                 {
-                text: "Process a claim without automatic NI contributions check"
+                    html: "<a href='start?s=s8'>Process a claim where single application fraud rules are matched</a>"
                 },
                 {
-                    html: i5Tag
+                    html: proTag
+                },
+                {
+                    html: idTemplateTag
                 }
             ],
             [
                 {
-                text: "s8"
+                    text: "s10"
                 },
                 {
-                text: "Process a claim complex for robotics"
+                    html: "<a href='start?s=s10'>Process a claim with ID at risk flag</a>"
                 },
                 {
-                    html: i5Tag
-                }
-            ],
-            [
-                {
-                text: "s9"
+                    html: proTag
                 },
                 {
-                text: "Process a claim with robotics error"
-                },
-                {
-                    html: i5Tag
-                }
-            ],
-            [
-                {
-                text: "s10"
-                },
-                {
-                text: "Process an entitled claim needing a note adding"
-                },
-                {
-                    html: i5Tag
+                    html: idTemplateTag
                 }
             ]
         ]
@@ -225,6 +150,15 @@
         <li><a href="start?s=t2">Process a claim where only single application fraud rules are matched</a> (New) relates to p4</li>
         <li><a href="start?s=t3">Process a claim with ID at risk flag</a></li>
       </ol>
+
+    </div>
+  </div>
+
+
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <p>You can <a href="nino-search">find a claim</a> by its scenario number, for example: s3.</p>
 
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
