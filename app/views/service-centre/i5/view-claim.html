@@ -40,7 +40,7 @@
 
     <h1 class="govuk-heading-l govuk-visually-hidden">Claim processing</h1>
 
-    {% include '../includes/warnings.html' %}
+    {% include './includes/warnings.html' %}
 
     {% if data['guidMismatch'] == '1' %}
     {# include Simon Hamiltons nino as its default #}
@@ -64,7 +64,7 @@
     
     <aside class="app-related-items" role="complementary">
 
-      {% include "./actions.html" %}
+      {% include "./includes/actions.html" %}
 
       <h3 class="govuk-heading-m">Claim history</h3>
 

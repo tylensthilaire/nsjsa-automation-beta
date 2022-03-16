@@ -72,7 +72,7 @@
 
       <form action="confirmation" method="get">
 
-      {% if data['s'] == 'r1' %}
+      {% if data['s'] == 's1' %}
 
         {{ govukRadios({
             idPrefix: 'status',
@@ -101,7 +101,7 @@
           })
         }}
 
-        {% elif data['s'] == 'r2' or data['s'] == 'r4' %}
+        {% elif data['s'] == 's2' or data['s'] == 's4' %}
 
 
         {{ govukRadios({
@@ -138,7 +138,7 @@
           })
         }}
 
-        {% elif data['s'] == 'r3' %}
+        {% elif data['s'] == 's3' %}
 
           {{ govukRadios({
             idPrefix: 'status',
@@ -178,7 +178,7 @@
           })
         }}
 
-        {% elif data['s'] == 'p1' %}
+        {% elif data['s'] == 's5' %}
 
           {{ govukRadios({
               idPrefix: 'status',
@@ -199,7 +199,7 @@
             })
           }}
         
-        {% elif data['s'] == 'p2' %}
+        {% elif data['s'] == 's6' %}
 
           {{ govukRadios({
             idPrefix: "status",
@@ -230,7 +230,7 @@
             ]
           }) }}
 
-          {% elif data['s'] == 'p3' %}
+          {% elif data['s'] == 's7' %}
 
           {{ govukRadios({
             idPrefix: "status",
@@ -273,7 +273,7 @@
             ]
           }) }}
 
-          {% elif data['s'] == 'p4' or data['s'] == 'p5' %}
+          {% elif data['s'] == 's8' or data['s'] == 's9' or data['s'] == 's10' %}
 
           {{ govukRadios({
             idPrefix: "status",
@@ -308,7 +308,7 @@
             ]
           }) }}
 
-          {% elif data['s'] == 'p6' %}
+          {% elif data['s'] == 's11' %}
 
           {{ govukRadios({
             idPrefix: "status",
@@ -358,7 +358,7 @@
             ]
           }) }}
 
-        {% elif data['s'] == 'p7' or data['s'] == 'p8' or data['s'] == 'p9' %}
+        {% elif data['s'] == 's12' or data['s'] == 's13' or data['s'] == 's14' %}
 
           {{ govukRadios({
             idPrefix: "status",
@@ -401,7 +401,7 @@
             ]
           }) }}
 
-        {% elif data['s'] == 'p10' %}
+        {% elif data['s'] == 's15' %}
 
           {{ govukRadios({
               idPrefix: 'status',

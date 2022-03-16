@@ -7,6 +7,20 @@
 
 {% block content %}
 
+{% set regTag %}
+    {{govukTag({
+        text: "Register",
+        classes: "govuk-tag--blue"
+    })}}
+{% endset %}
+
+{% set proTag %}
+    {{govukTag({
+        text: "Process",
+        classes: "govuk-tag--purple"
+    })}}
+{% endset %}
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
@@ -15,43 +29,210 @@
         <span class="govuk-caption-l">{{ data['i4Name'] }}</span>
       </h1>
 
+      <p>Increment 4 introduces 2 buckets of claims, {{ regTag | safe }} and {{ proTag | safe }}.</p>
+
       <p><a href="../understanding-exceptions">Understanding exceptions to automation</a>.</p>
 
 {# {{ data | dump('\t') }} #}
 
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      </div>
+    </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
 
-      <p><a href="nino-search">Find a claim</a> by its bucket letter and scenario number, for example: r3.</p>
+        <h2 class="govuk-heading-m">Agent manual tasks</h2>
 
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+    {{ govukTable({
+        caption: "Automation exceptions",
+        captionClasses: "govuk-table__caption--s",
+        firstCellIsHeader: true,
+        head: [
+            {
+                text: "ID"
+            },
+            {
+                text: "Scenario"
+            },
+            {
+                text: "Bucket"
+            }
+        ],
+        rows: [
+        [
+            {
+                text: "s1"
+            },
+            {
+                html: "<a href='start?s=s1'>Register a claim where we couldn't automate the registration</a> (ES push fail)"
+            },
+            {
+                html: regTag
+            }
+        ],
+        [
+            {
+                text: "s2"
+            },
+            {
+                html: "<a href='start?s=s2'>Register a claim where the NINo does not match CIS record</a>"
+            },
+            {
+                html: regTag
+            }
+          ],
+        [
+            {
+                text: "s3"
+            },
+            {
+                html: "<a href='start?s=s3'>Register the right claim where we have duplicates and deal with the rest</a>"
+            },
+            {
+                html: regTag
+            }
+          ],
+        [
+            {
+                text: "s4"
+            },
+            {
+                html: "<a href='start?s=s4'>Register a claim where we have a NINo that does not match CIS record and then has duplicates once NINo updated</a>"
+            },
+            {
+                html: regTag
+            }
+          ],
+          [
+            {
+                text: "s5"
+            },
+            {
+                html: "<a href='start?s=s5'>Withdraw a claim from Northern Ireland</a>"
+            },
+            {
+                html: proTag
+            }
+          ],
+          [
+            {
+                text: "s6"
+            },
+            {
+                html: "<a href='start?s=s6'>Process a claim where an appointee is found</a>"
+            },
+            {
+                html: proTag
+            }
+          ],
+          [
+            {
+                text: "s7"
+            },
+            {
+                html: "<a href='start?s=s7'>Process a claim where data does not match CIS</a>"
+            },
+            {
+                html: proTag
+            }
+          ],
+            [
+                {
+                    text: "s8"
+                },
+                {
+                    html: "<a href='start?s=s8'>Process a claim where single application fraud rules are matched</a>"
+                },
+                {
+                    html: proTag
+                }
+            ],
+            [
+                {
+                    text: "s9"
+                },
+                {
+                    html: "<a href='start?s=s9'>Process a claim where multiple application fraud rules are matched</a>"
+                },
+                {
+                    html: proTag
+                }
+            ],
+            [
+                {
+                    text: "s10"
+                },
+                {
+                    html: "<a href='start?s=s10'>Process a claim with ID at risk flag</a>"
+                },
+                {
+                    html: proTag
+                }
+            ],
+            [
+                {
+                    text: "s11"
+                },
+                {
+                    html: "<a href='start?s=s11'>Process a claim with an automated build failure</a> (BA push fail)"
+                },
+                {
+                    html: proTag
+                }
+            ],
+            [
+                {
+                    text: "s12"
+                },
+                {
+                    html: "<a href='start?s=s12'>Process a claim without automatic NI contributions check</a> (MBR fail)"
+                },
+                {
+                    html: proTag
+                }
+            ],
+            [
+                {
+                    text: "s13"
+                },
+                {
+                    html: "<a href='start?s=s13'>Process a claim complex for robotics</a>"
+                },
+                {
+                    html: proTag
+                }
+            ],
+            [
+                {
+                    text: "s14"
+                },
+                {
+                    html: "<a href='start?s=s14'>Process a claim with robotics error</a>"
+                },
+                {
+                    html: proTag
+                }
+            ],
+            [
+                {
+                    text: "s15"
+                },
+                {
+                    html: "<a href='start?s=s15'>Process an entitled claim needing a decision note adding</a>"
+                },
+                {
+                    html: proTag
+                }
+            ]
+        ]
+      }) }}
 
-      <h2 class="govuk-heading-m">Registration bucket (r)</h2>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
 
-      <h3 class="govuk-heading-s">Manual task scenarios</h3>
-
-      <ol class="govuk-list govuk-list--number">
-        <li><a href="start?s=r1">Register a claim where we couldn't automate the registration</a> <br>(ES push fail)</li>
-        <li><a href="start?s=r2">Register a claim where the NINo does not match CIS record</a></li>
-        <li><a href="start?s=r3">Register the right claim where we have duplicates and deal with the rest</a></li>
-        <li><a href="start?s=r4">Register a claim where we have a NINo does not match CIS record and then has duplicates once NINo updated</a></li>
-      </ol>
-      
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-      <h2 class="govuk-heading-m">Processing bucket (p)</h2>
-      <h3 class="govuk-heading-s">Manual task scenarios</h3>
-      <ol class="govuk-list govuk-list--number">
-        <li><a href="start?s=p1">Withdraw a Northern Ireland claim</a></li>
-        <li><a href="start?s=p2">Process a claim where an appointee is found</a></li>
-        <li><a href="start?s=p3">Process a claim where data does not match CIS</a></li>
-        <li><a href="start?s=p4">Process a claim where single and multiple application fraud rules are matched</a></li>
-        <li><a href="start?s=p5">Process a claim with ID at risk flag</a></li>
-        <li><a href="start?s=p6">Process a claim with an automated build failure</a></li>
-        <li><a href="start?s=p7">Process a claim without automatic NI contributions check</a></li>
-        <li><a href="start?s=p8">Process a claim complex for robotics</a></li>
-        <li><a href="start?s=p9">Process a claim with robotics error</a></li>
-        <li><a href="start?s=p10">Process an entitled claim needing a note adding</a></li>
-      </ol>
+      <p>You can <a href="nino-search">find a claim</a> by its scenario number, for example: s3.</p>
 
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
