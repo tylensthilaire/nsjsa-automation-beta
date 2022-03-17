@@ -28,13 +28,14 @@ module.exports = {
   "postcode": "AA1 3AB",
   "serviceShortName": "New Style JSA",
   "i4Name": "JSAPS Pushes and process claims buckets",
-  "i5Name": "Manual ID and bio check bucket",
+  "i5Name": "Manual ID and bio check buckets",
 
   // scenario defaults
   "northernIreland": 0,
   "dupe": 0,
   "idRisk": 0,
-  "fraud": 0,
+  "singleFraud": 0,
+  "multiFraud": 0,
   "niMatchCis": 0,
   "cis": 0,
   "appointee": 0,

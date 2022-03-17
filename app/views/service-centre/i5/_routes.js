@@ -16,15 +16,15 @@ router.get('/', function (req, res) {
 router.get('/start', function (req, res) {
     let data = req.session.data;
     answer = data['s'];
-    
-    // all processing scenarios, just one this inc
-    if (['p4'].includes(answer)) {
+    data['claimant'] = 'ij';
+
+    // all processing scenarios
+    if (['s9'].includes(answer)) {
 
         data['task'] = 'process';
-        data['claimant'] = 'ij';
 
     // all template scenarios
-    } else if (['t1','t2','t3'].includes(answer)) {
+    } else if (['s7','s8','s10'].includes(answer)) {
 
          data['task'] = 'id-template';
          data['claimStatus'] = 'ID-template-needed';
@@ -35,14 +35,25 @@ router.get('/start', function (req, res) {
     }
 
     // specific scenarios
-    if (answer === 'p4') {
-  
-        data['claimStatus'] = 'fraud-check-needed';
-        data['fraud'] = 1;
-    
-    } else if (answer === 't1') {
+    if (answer === 's7') {
 
         data['cis'] = 1;
+
+    } else if (answer === 's8') {
+  
+        data['claimStatus'] = 'fraud-check-needed';
+        data['singleFraud'] = 1;
+        data['multiFraud'] = 0;
+    
+    } else if (answer === 's9') {
+  
+        data['claimStatus'] = 'fraud-check-needed';
+        data['singleFraud'] = 0;
+        data['multiFraud'] = 1;
+
+    } else if (answer === 's10') {
+
+        data['idRisk'] = 1;
     }
 
     res.redirect('choose-task');
@@ -61,7 +72,8 @@ router.post('/nino-search', function (req, res) {
     delete data['northernIreland'];
     delete data['dupe'];
     delete data['idRisk'];
-    delete data['fraud'];
+    delete data['singleFraud'];
+    delete data['multipleFraud'];
     delete data['niMatchCis'];
     delete data['cis'];
     delete data['appointee'];
@@ -85,10 +97,10 @@ router.post('/nino-search', function (req, res) {
     }
 
     // specific scenarios
-    if (answer === 'p4') {
+    if (answer === 's8') {
   
         data['claimStatus'] = 'fraud-check-needed';
-        data['fraud'] = 1;
+        data['singleFraud'] = 1;
 
     }
 
@@ -98,7 +110,7 @@ router.post('/nino-search', function (req, res) {
 router.post('/nino', function (req, res) {
     let data = req.session.data;
     // console.log( data['niMatchCis'] );
-    if ( data['s'] != 'r4' ) {
+    if ( data['s'] != 'p4' ) {
         data['cis'] = 0;
         data['niMatchCis'] = 0;
         data['noReg'] = 1;
@@ -108,29 +120,52 @@ router.post('/nino', function (req, res) {
     }
 });
 
+router.post('/update', function (req, res) {
+    let data = req.session.data;
+
+    if ( data['claimStatus'] == 'ID-check-needed' ) {
+        delete data['s'];
+
+        data['task'] = 'id-check';
+        data['s'] = 's9';
+    }
+    res.redirect('confirmation');
+});
+
 // reset the data back to defaults when end is got
 router.get('/end', function (req, res) {
     let data = req.session.data;
+    answer = data['s'];
 
-    delete data['s'];
-    delete data['task'];
-    delete data['claimant'];
-    delete data['nino'];
-    delete data['claimStatus'];
-    delete data['northernIreland'];
-    delete data['dupe'];
-    delete data['idRisk'];
-    delete data['fraud'];
-    delete data['niMatchCis'];
-    delete data['cis'];
-    delete data['appointee'];
-    delete data['noReg'];
-    delete data['build'];
-    delete data['nicCheck'];
-    delete data['bsError'];
-    delete data['note'];
+    if (data['claimStatus'] == 'ID-check-needed') {
 
-    res.redirect('screens');
+        data['task'] = 'id-check';
+        res.redirect('view-claim');
+
+    } else {
+
+        delete data['s'];
+        delete data['task'];
+        delete data['claimant'];
+        delete data['nino'];
+        delete data['claimStatus'];
+        delete data['northernIreland'];
+        delete data['dupe'];
+        delete data['idRisk'];
+        delete data['singleFraud'];
+        delete data['multiFraud'];
+        delete data['niMatchCis'];
+        delete data['cis'];
+        delete data['appointee'];
+        delete data['noReg'];
+        delete data['build'];
+        delete data['nicCheck'];
+        delete data['bsError'];
+        delete data['note'];
+
+        res.redirect('screens');
+    }
+
 });
 
 module.exports = router

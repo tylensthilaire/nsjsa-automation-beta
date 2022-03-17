@@ -82,7 +82,7 @@ items: [
 }) }}
 
 
-{% elif data['claimStatus'] == 'ID-check-needed' %}
+{% elif data['claimStatus'] == 'ID-check-needed' and data['task'] == 'process' %}
 
 {{ dwpTimeline({
 items: [
@@ -104,6 +104,34 @@ items: [
 ]
 }) }}
 
+
+{% elif data['claimStatus'] == 'ID-check-needed' and data['task'] == 'id-check' %}
+
+{{ dwpTimeline({
+items: [
+    {
+        heading: "ID check needed",
+        label: "label",
+        author: "by Shirly Ozarks",
+        date: "on 6 September 2021",
+        time: "at 8:42am"
+    },
+    {
+        heading: "ID template needed",
+        label: "label",
+        author: "automated",
+        date: "on 5 September 2021",
+        time: "at 6:15am"
+    },
+    {
+        heading: "New claim",
+        date: "by claimant on 5 September 2021",
+        time: "at 6:12am",
+        classes: "dwp-timeline-entry--closing"
+    }
+
+]
+}) }}
 
 {% elif data['claimStatus'] == 'fraud-check-needed' %}
 
@@ -171,7 +199,7 @@ items: [
 ]
 }) }}
 
-{% elif data['s'] == 'p7' %}
+{% elif data['s'] == 's12' %}
 
 {{ dwpTimeline({
 items: [
@@ -207,7 +235,7 @@ items: [
 ]
 }) }}
 
-{% elif data['s'] == 'p8' %}
+{% elif data['s'] == 's13' %}
 
 {{ dwpTimeline({
 items: [
@@ -229,7 +257,7 @@ items: [
 ]
 }) }}
 
-{% elif data['s'] == 'p9' %}
+{% elif data['s'] == 's14' %}
 
 {{ dwpTimeline({
 items: [
@@ -265,7 +293,7 @@ items: [
 ]
 }) }}
 
-{% elif data['s'] == 'p10' %}
+{% elif data['s'] == 's15' %}
 
 {{ dwpTimeline({
 items: [
@@ -294,7 +322,8 @@ items: [
     {
         heading: "New claim",
         date: "by claimant on 5 September 2021",
-        time: "at 6:12am"
+        time: "at 6:12am",
+        classes: "dwp-timeline-entry--closing"
     }
     ]
 }) }}
@@ -313,7 +342,8 @@ items: [
     {
         heading: "New claim",
         date: "by claimant on 5 September 2021",
-        time: "at 6:12am"
+        time: "at 6:12am",
+        classes: "dwp-timeline-entry--closing"
     }
     ]
 }) }}
@@ -332,11 +362,31 @@ items: [
     {
         heading: "New claim",
         date: "by claimant on 5 September 2021",
-        time: "at 6:12am"
+        time: "at 6:12am",
+        classes: "dwp-timeline-entry--closing"
     }
     ]
 }) }}
 
+{% elif data['claimStatus'] == 'ID-template-needed' %}
+
+{{ dwpTimeline({
+    items: [
+        {
+        heading: "ID template needed",
+        label: "label",
+        author: "automated",
+        date: "on 5 September 2021",
+        time: "at 6:15am"
+    },
+    {
+        heading: "New claim",
+        date: "by claimant on 5 September 2021",
+        time: "at 6:12am",
+        classes: "dwp-timeline-entry--closing"
+    }
+    ]
+}) }}
 
 {% else %}
 

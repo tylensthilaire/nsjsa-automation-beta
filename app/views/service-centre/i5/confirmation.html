@@ -11,11 +11,11 @@
 {% block keyDetails %}
   
   {% if data['claimant'] == 'sh' %}
-    {% include '../claimants/sh/key-details.html' %}
+    {% include './claimants/sh/key-details.html' %}
   {% elif data['claimant'] == 'kb' %}
-    {% include '../claimants/kb/key-details.html' %}
+    {% include './claimants/kb/key-details.html' %}
   {% elif data['claimant'] == 'ij' %}
-    {% include '../claimants/ij/key-details.html' %}
+    {% include './claimants/ij/key-details.html' %}
   {% else %}
     <p>No claimant set.</p>
   {% endif %}
@@ -23,7 +23,7 @@
 {% endblock %}
 
 {% block content %}
-
+{# {{ data | dump('\t') }}  #}
 {% if data['ttcStatus'] %}
   {% set msg = ttcStatus %}
 {% else %}
@@ -38,11 +38,16 @@
         html: msg
       }) }}
 
-      {{ govukButton({
-        text: "Get next claim",
-        href: "end"
-      }) }}
-
+      {% if data['s'] == 's7' %}
+        {% set btnHref = 'view-claim' %}
+      {% else %}
+       {# End clears the data #}
+         {% set btnHref = 'end' %}
+      {% endif %}
+        {{ govukButton({
+          text: "Get next claim",
+          href: btnHref
+        }) }}
       <p><a href="choose-task" class="govuk-link">Change task</a></p>
 
     </div>
