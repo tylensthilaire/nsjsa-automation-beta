@@ -53,9 +53,24 @@ router.use('/sprints/sprint11/10-education/', require('./views/sprints/sprint11/
 router.use('/sprints/sprint11/dth-lead-in/', require('./views/sprints/sprint11/dth-lead-in/_routes'))
 router.use('/sprints/sprint11/dth/', require('./views/sprints/sprint11/dth/_routes'))
 
+router.use('/sprints/sprint14/', require('./views/sprints/sprint11/_routes'))
+router.use('/sprints/sprint14/1a-eligibility/', require('./views/sprints/sprint14/1a-eligibility/_routes'))
+router.use('/sprints/sprint14/1b-lead-in/', require('./views/sprints/sprint14/1b-lead-in/_routes'))
+router.use('/sprints/sprint14/2-details/', require('./views/sprints/sprint14/2-details/_routes'))
+router.use('/sprints/sprint14/3-claim-start/', require('./views/sprints/sprint14/3-claim-start/_routes'))
+router.use('/sprints/sprint14/4-other-benefits/', require('./views/sprints/sprint14/4-other-benefits/_routes'))
+router.use('/sprints/sprint14/5-jury-service/', require('./views/sprints/sprint14/5-jury-service/_routes'))
+router.use('/sprints/sprint14/6-current-employment/', require('./views/sprints/sprint14/6-current-employment/_routes'))
+router.use('/sprints/sprint14/7-previous-employment/', require('./views/sprints/sprint14/7-previous-employment/_routes'))
+router.use('/sprints/sprint14/8-abroad/', require('./views/sprints/sprint14/8-abroad/_routes'))
+router.use('/sprints/sprint14/9-pensions/', require('./views/sprints/sprint14/9-pensions/_routes'))
+router.use('/sprints/sprint14/10-education/', require('./views/sprints/sprint14/10-education/_routes'))
+router.use('/sprints/sprint14/dth-lead-in/', require('./views/sprints/sprint14/dth-lead-in/_routes'))
+router.use('/sprints/sprint14/dth/', require('./views/sprints/sprint14/dth/_routes'))
+
 // redirect to latest citizen journey
 router.get('/citizen-latest', function (req, res) {
-    res.redirect('sprints/sprint11/screens');
+    res.redirect('sprints/sprint14/screens');
 });
 
 // plug in service centre beta
