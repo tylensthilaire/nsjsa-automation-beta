@@ -7,6 +7,13 @@
 
 {% block content %}
 
+{% set regTag %}
+    {{govukTag({
+        text: "Register",
+        classes: "govuk-tag--blue"
+    })}}
+{% endset %}
+
 {% set proTag %}
     {{govukTag({
         text: "Process",
@@ -14,17 +21,24 @@
     })}}
 {% endset %}
 
-{% set idTemplateTag %}
+{% set escTag %}
     {{govukTag({
-        text: "ID template",
-        classes: "govuk-tag--orange"
+        text: "Escalation",
+        classes: "govuk-tag--green"
     })}}
 {% endset %}
 
-{% set idCheckTag %}
+{% set fraudTag %}
     {{govukTag({
-        text: "ID check",
-        classes: "govuk-tag--turquoise"
+        text: "Fraud",
+        classes: "govuk-tag--yellow"
+    })}}
+{% endset %}
+
+{% set appTag %}
+    {{govukTag({
+        text: "Appointee",
+        classes: "govuk-tag--pink"
     })}}
 {% endset %}
 
@@ -32,26 +46,25 @@
     <div class="govuk-grid-column-three-quarters">
 
       <h1 class="govuk-heading-l">
-        Increment 6
-        <span class="govuk-caption-l">{{ data['i6Name'] }}</span>
+        Increment 7
+        <span class="govuk-caption-l">{{ data['i7Name'] }}</span>
       </h1>
 
-      <p>Increment 6 introduces 2 new scenarios both of which drop into the {{ idTemplateTag | safe }} bucket to have ID checked.</p>
+      <p>Increment 7 introduces 3 buckets of claims, {{ escTag | safe }}, {{ fraudTag | safe }} and {{ appTag | safe }}.</p>
 
       <p><a href="../understanding-exceptions">Understanding exceptions to automation</a>.</p>
 
 {# {{ data | dump('\t') }} #}
-      
+
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
+      </div>
     </div>
-  </div>
-
-<div class="govuk-grid-row">
+  <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <h2 class="govuk-heading-m">Agent manual tasks</h2>
 
-  {{ govukTable({
+        <h2 class="govuk-heading-m">Agent manual tasks</h2>
+
+    {{ govukTable({
         caption: "Automation exceptions",
         captionClasses: "govuk-table__caption--s",
         firstCellIsHeader: true,
@@ -63,54 +76,45 @@
                 text: "Scenario"
             },
             {
-                html: "I5 bucket"
+                html: "I6 bucket"
             },
             {
-                html:  "I6 bucket"
+                html:  "I7 bucket"
             }
         ],
         rows: [
           [
             {
-                text: "s16"
+                text: "s6"
             },
             {
-                html: "<a href='start?s=s16'>A claim where ID was not verified online</a>"
+                html: "<a href='start?s=s6'>A claim where an appointee is found</a>"
             },
             {
-                html: 'n/a'
+                html: proTag
             },
             {
-                html: idTemplateTag
+                html: "&rarr; " + appTag
             }
           ],
-            [
+          [
                 {
-                    text: "s17"
+                    text: "s9"
                 },
                 {
-                    html: "<a href='start?s=s17'>A claim where the OIDV GUID does not match CIS NINo</a>"
+                    html: "<a href='start?s=s9'>A claim where multiple application fraud rules are matched</a>"
                 },
                 {
-                    html: 'n/a'
+                    html: proTag
                 },
                 {
-                    html: idTemplateTag
+                    html: "&rarr; " + fraudTag
                 }
             ]
         ]
       }) }}
 
-
     </div>
   </div>
-
-  {# <div class="govuk-grid-row">
-    <div class="govuk-grid-column-three-quarters">
-
-      <p>You can <a href="nino-search">find a claim</a> by its scenario number, for example: s3.</p>
-
-    </div>
-  </div> #}
 
 {% endblock %}

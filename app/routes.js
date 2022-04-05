@@ -77,6 +77,7 @@ router.get('/citizen-latest', function (req, res) {
 router.use('/service-centre/i4/', require('./views/service-centre/i4/_routes'))
 router.use('/service-centre/i5/', require('./views/service-centre/i5/_routes'))
 router.use('/service-centre/i6/', require('./views/service-centre/i6/_routes'))
+router.use('/service-centre/i7/', require('./views/service-centre/i7/_routes'))
 router.use('/service-centre/mvp/', require('./views/service-centre/mvp/_routes'))
 
 module.exports = router

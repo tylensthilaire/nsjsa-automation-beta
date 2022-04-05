@@ -30,6 +30,7 @@ module.exports = {
   "i4Name": "JSAPS Pushes and process claims buckets",
   "i5Name": "Manual ID and bio check buckets",
   "i6Name": "OIDV, Online identity verification",
+  "i7Name": "Escalation, fraud and appointee buckets",
 
   // scenario defaults
   "northernIreland": 0,
@@ -44,6 +45,7 @@ module.exports = {
   "build": 0,
   "nicCheck": 0,
   "bsError": 0,
-  "note": 0
+  "note": 0,
+  "guidMismatch": 0
 
 }
