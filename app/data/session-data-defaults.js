@@ -29,6 +29,7 @@ module.exports = {
   "serviceShortName": "New Style JSA",
   "i4Name": "JSAPS Pushes and process claims buckets",
   "i5Name": "Manual ID and bio check buckets",
+  "i6Name": "OIDV, Online identity verification",
 
   // scenario defaults
   "northernIreland": 0,
