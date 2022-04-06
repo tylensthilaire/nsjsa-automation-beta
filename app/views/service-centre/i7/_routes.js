@@ -16,15 +16,32 @@ router.get('/', function (req, res) {
 router.get('/start', function (req, res) {
     let data = req.session.data;
     answer = data['s'];
+        
+    // not registered escalated
+    if (['s1'].includes(answer)) {
 
-    // all registration scenarios
-    if (['s1','s2','s3','s4'].includes(answer)) {
-
-        data['task'] = 'register';
+        data['task'] = 'specialist-review';
         data['claimStatus'] = 'not-registered';
+        data['claimant'] = 'sh';
+        data['nino'] = 'CX 40 01 26 A';
+        data['noReg'] = 1;
+
+    // appointee
+    } else if (['s6'].includes(answer)) {
+
+        data['task'] = 'appointee';
+        data['claimant'] = 'ij';
+        data['claimStatus'] = 'appointee-check-needed';
+        data['appointee'] = 1;
+
+    // multi claim fraud
+    } else if (['s9'].includes(answer)) {
+
+        data['task'] = 'fraud-review';
+        data['claimant'] = 'ij';
     
         // all processing scenarios
-    } else if (['s5','s6','s7','s8','s9','s10','s11','s12','s13','s14','s15'].includes(answer)) {
+    } else if (['s5','s7','s8','s10','s11','s12','s13','s14','s15'].includes(answer)) {
 
         data['task'] = 'process';
         data['claimant'] = 'ij';
@@ -35,13 +52,7 @@ router.get('/start', function (req, res) {
     }
 
     // specific scenarios
-    if (answer === 's1') {
-
-        data['claimant'] = 'sh';
-        data['nino'] = 'CX 40 01 26 A';
-        data['noReg'] = 1;
-
-    } else if (answer === 's2') {
+    if (answer === 's2') {
 
         data['claimant'] = 'kb';
         data['nino'] = 'CX 60 12 13 A';
@@ -63,11 +74,6 @@ router.get('/start', function (req, res) {
 
         data['claimStatus'] = 'northern-ireland';
         data['northernIreland'] = 1;
-
-    } else if (answer === 's6') {
-
-        data['claimStatus'] = 'appointee-check-needed';
-        data['appointee'] = 1;
 
     } else if (answer === 's7') {
 

@@ -65,7 +65,7 @@
         <h2 class="govuk-heading-m">Agent manual tasks</h2>
 
     {{ govukTable({
-        caption: "Automation exceptions",
+        caption: "Moved automation exceptions",
         captionClasses: "govuk-table__caption--s",
         firstCellIsHeader: true,
         head: [
@@ -111,8 +111,130 @@
                     html: "&rarr; " + fraudTag
                 }
             ]
+
         ]
       }) }}
+
+
+    {{ govukTable({
+        caption: "Escalation automation exceptions",
+        captionClasses: "govuk-table__caption--s",
+        firstCellIsHeader: true,
+        head: [
+            {
+                text: "ID"
+            },
+            {
+                text: "Scenario"
+            },
+            {
+                html: "Previous bucket"
+            },
+            {
+                html:  "Escalated to"
+            }
+        ],
+        rows: [
+            [
+                {
+                    text: "s1"
+                },
+                {
+                    html: "<a href='start?s=s1'>A claim where we couldn't automate the registration</a> (ES push fail)"
+                },
+                {
+                    html: regTag
+                },
+                {
+                    html: escTag
+                }
+            ],
+            [
+                {
+                    text: "s2"
+                },
+                {
+                    html: "<a href='start?s=s2'>A claim where the NINo does not match CIS record</a>"
+                },
+                {
+                    html: regTag
+                },
+                {
+                    html: escTag
+                }
+            ],
+            [
+                {
+                    text: "s3"
+                },
+                {
+                    html: "<a href='start?s=s3'>A claim where we have duplicates</a>"
+                },
+                {
+                    html: regTag
+                },
+                {
+                    html: escTag
+                }
+            ],
+            [
+                {
+                    text: "s11"
+                },
+                {
+                    html: "<a href='start?s=s11'>A claim with an automated build failure</a> (BA push fail)"
+                },
+                {
+                    html: proTag
+                },
+                {
+                    html: escTag
+                }
+            ],
+            [
+                {
+                    text: "s12"
+                },
+                {
+                    html: "<a href='start?s=s12'>A claim without automatic NI contributions check</a> (MBR fail)"
+                },
+                {
+                    html: proTag
+                },
+                {
+                    html: escTag
+                }
+            ],
+            [
+                {
+                    text: "s13"
+                },
+                {
+                    html: "<a href='start?s=s13'>A claim complex for robotics"
+                },
+                {
+                    html: proTag
+                },
+                {
+                    html: escTag
+                }
+            ],
+            [
+                {
+                    text: "s14"
+                },
+                {
+                    html: "<a href='start?s=s14'>A claim with robotics error"
+                },
+                {
+                    html: proTag
+                },
+                {
+                    html: escTag
+                }
+            ]
+        ]
+    }) }}
 
     </div>
   </div>

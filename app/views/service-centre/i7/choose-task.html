@@ -8,7 +8,7 @@ Service centre - {{ serviceName }}
 {% endblock %}
 
 {% block content %}
-{# {{ data | dump('\t') }}  #}
+{{ data | dump('\t') }} 
 
 <h1 class="govuk-heading-l">
   <span class="govuk-caption-l">Service centre agent</span>
@@ -18,15 +18,69 @@ Service centre - {{ serviceName }}
 {% if data['task'] == 'process' %}
   {% set processUrl = 'view-claim' %}
   {% set registerUrl = '#' %}
+  {% set templateUrl = '#' %}
+  {% set idUrl = '#' %}
+  {% set fraudUrl = '#' %}
+  {% set specialistUrl = '#' %}
+  {% set appointeeUrl = '#' %}
 {% elif data['task'] == 'register' %}
   {% set processUrl = '#' %}
   {% set registerUrl = 'view-claim' %}
+  {% set templateUrl = '#' %}
+  {% set idUrl = '#' %}
+  {% set fraudUrl = '#' %}
+  {% set specialistUrl = '#' %}
+  {% set appointeeUrl = '#' %}
   {% if data['dupe'] == 1 %}
     {% set registerUrl = 'duplicates' %}
   {% endif %}
+{% elif data['task'] == 'id-template' %}
+  {% set processUrl = '#' %}
+  {% set registerUrl = '#' %}
+  {% set templateUrl = 'view-claim' %}
+  {% set fraudUrl = '#' %}
+  {% set specialistUrl = '#' %}
+  {% set appointeeUrl = '#' %}
+{% elif data['task'] == 'id-check' %}
+  {% set processUrl = '#' %}
+  {% set registerUrl = '#' %}
+  {% set templateUrl = '#' %}
+  {% set idUrl = 'view-claim' %}
+  {% set fraudUrl = '#' %}
+  {% set specialistUrl = '#' %}
+  {% set appointeeUrl = '#' %}
+{% elif data['task'] == 'appointee' %}
+  {% set processUrl = '#' %}
+  {% set registerUrl = '#' %}
+  {% set templateUrl = '#' %}
+  {% set idUrl = '#' %}
+  {% set fraudUrl = '#' %}
+  {% set specialistUrl = '#' %}
+  {% set appointeeUrl = 'view-claim' %}
+{% elif data['task'] == 'specialist-review' %}
+  {% set processUrl = '#' %}
+  {% set registerUrl = '#' %}
+  {% set templateUrl = '#' %}
+  {% set idUrl = '#' %}
+  {% set fraudUrl = '#' %}
+  {% set specialistUrl = 'view-claim' %}
+  {% set appointeeUrl = '#' %}
+{% elif data['task'] == 'fraud-review' %}
+  {% set processUrl = '#' %}
+  {% set registerUrl = '#' %}
+  {% set templateUrl = '#' %}
+  {% set idUrl = '#' %}
+  {% set fraudUrl = 'view-claim' %}
+  {% set specialistUrl = '#' %}
+  {% set appointeeUrl = '#' %}
 {% else %}
   {% set registerUrl = '#' %}
   {% set processUrl = '#' %}
+  {% set templateUrl = '#' %}
+  {% set idUrl = '#' %}
+  {% set fraudUrl = '#' %}
+  {% set specialistUrl = '#' %}
+  {% set appointeeUrl = '#' %}
 {% endif %}
 
 <div class="govuk-grid-row">
@@ -59,6 +113,61 @@ Service centre - {{ serviceName }}
     <a href="mi" class="tile tile--blue">
       <div class="tile__contents">
         <h2 class="tile__title">View management information</h2>
+      </div>
+    </a>
+  </div>
+
+</div>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+<h2 class="govuk-heading-m">Identity tasks</h2>
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-half">
+    <a href="{{ templateUrl }}" class="tile tile--blue">
+      <div class="tile__contents">
+        <h2 class="tile__title">Create an ID template <span>({{ range(31, 300) | random }})</span></h2>
+      </div>
+    </a>
+  </div>
+
+  <div class="govuk-grid-column-one-half">
+    <a href="{{ idUrl }}" class="tile tile--blue">
+      <div class="tile__contents">
+        <h2 class="tile__title">Conduct an ID check <span>({{ range(31, 300) | random }})</span></h2>
+      </div>
+    </a>
+  </div>
+
+</div>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<h2 class="govuk-heading-m">Escalation tasks</h2>
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-half">
+    <a href="{{ specialistUrl }}" class="tile tile--blue">
+      <div class="tile__contents">
+        <h2 class="tile__title">Specialist review <span>({{ range(31, 300) | random }})</span></h2>
+      </div>
+    </a>
+  </div>
+
+  <div class="govuk-grid-column-one-half">
+    <a href="{{ fraudUrl }}" class="tile tile--blue">
+      <div class="tile__contents">
+        <h2 class="tile__title">Fraud review <span>({{ range(31, 300) | random }})</span></h2>
+      </div>
+    </a>
+  </div>
+
+  <div class="govuk-grid-column-one-half">
+    <a href="{{ appointeeUrl }}" class="tile tile--blue">
+      <div class="tile__contents">
+        <h2 class="tile__title">Appointee review <span>({{ range(31, 300) | random }})</span></h2>
       </div>
     </a>
   </div>
