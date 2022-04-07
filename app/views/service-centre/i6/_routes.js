@@ -32,11 +32,11 @@ router.get('/start', function (req, res) {
     // specific scenarios
     if (answer === 's16') {
 
-        data['cis'] = 1;
+        data['OIDVskip'] = 1;
 
     } else if (answer === 's17') {
   
-        data['cis'] = 0;
+        data['OIDVskip'] = 0;
         data['guidMismatch'] = 1;
     
     }
@@ -87,11 +87,11 @@ router.post('/nino-search', function (req, res) {
     // specific scenarios
     if (answer === 's16') {
 
-        data['cis'] = 1;
+        data['OIDVskip'] = 1;
 
     } else if (answer === 's17') {
   
-        data['cis'] = 0;
+        data['OIDVskip'] = 0;
         data['guidMismatch'] = 1;
     
     }
@@ -116,10 +116,7 @@ router.post('/update', function (req, res) {
     let data = req.session.data;
 
     if ( data['claimStatus'] == 'ID-check-needed' ) {
-        delete data['s'];
-
         data['task'] = 'id-check';
-        data['s'] = 's9';
     }
     res.redirect('confirmation');
 });

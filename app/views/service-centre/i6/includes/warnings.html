@@ -13,6 +13,7 @@ or data['nicCheck'] == '1'
 or data['bsError'] == '1'
 or data['note'] == '1'
 or data['guidMismatch'] == '1'
+or data['OIDVskip'] == '1'
 %}
 
 <section class="dwp-print-hide">
@@ -63,6 +64,9 @@ or data['guidMismatch'] == '1'
     {% endif %}
     {% if data['guidMismatch'] == '1' %}
       <li>The application National Insurance number (NINo) does not match the verified identity NINo</li>
+    {% endif %}
+    {% if data['OIDVskip'] == '1' %}
+      <li>Online identity verification was skipped by claimant</li>
     {% endif %}
     </ul>
  </div>

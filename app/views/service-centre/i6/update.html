@@ -47,7 +47,7 @@
 
       <form action="update" method="post">
 
-      {% if data['s'] == 's9' %}
+      {% if data['claimStatus'] == 'ID-check-needed' %}
 
           {{ govukRadios({
             idPrefix: "status",
@@ -82,7 +82,7 @@
             ]
           }) }}
 
-      {% elif data['s'] == 's16' or data['s'] == 's17' %}
+      {% elif data['claimStatus'] == 'ID-template-needed' %}
 
           {{ govukRadios({
             idPrefix: "status",
