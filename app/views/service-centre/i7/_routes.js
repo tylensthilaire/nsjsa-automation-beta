@@ -16,15 +16,32 @@ router.get('/', function (req, res) {
 router.get('/start', function (req, res) {
     let data = req.session.data;
     answer = data['s'];
-        
+    
+    // specialist review
+    if (['s1','s2','s3','s11','s12','s13','s14'].includes(answer)) {
+        data['task'] = 'specialist-review';
+        data['claimStatus'] = 'escalate-to-specialist';
+    }
+
     // not registered escalated
     if (['s1'].includes(answer)) {
 
-        data['task'] = 'specialist-review';
-        data['claimStatus'] = 'not-registered';
         data['claimant'] = 'sh';
         data['nino'] = 'CX 40 01 26 A';
         data['noReg'] = 1;
+
+    } else if (['s2'].includes(answer)) {
+
+        data['noReg'] = 1;
+        data['claimant'] = 'kb';
+        data['nino'] = 'CX 60 12 13 A';
+        data['niMatchCis'] = 1;
+
+    } else if (['s3'].includes(answer)) {
+
+        data['claimant'] = 'sh';
+        data['nino'] = 'CX 40 01 26 A';
+        data['dupe'] = 1;
 
     // appointee
     } else if (['s6'].includes(answer)) {
@@ -39,12 +56,18 @@ router.get('/start', function (req, res) {
 
         data['task'] = 'fraud-review';
         data['claimant'] = 'ij';
-    
-        // all processing scenarios
-    } else if (['s5','s7','s8','s10','s11','s12','s13','s14','s15'].includes(answer)) {
 
-        data['task'] = 'process';
+    // not built
+    } else if (['s11'].includes(answer)) {
+
         data['claimant'] = 'ij';
+        data['build'] = 1;
+
+    // MBR fail
+    } else if (['s12'].includes(answer)) {
+
+        data['claimant'] = 'ij';
+        data['nicCheck'] = 1;
 
     // remainder
     } else {
@@ -52,19 +75,7 @@ router.get('/start', function (req, res) {
     }
 
     // specific scenarios
-    if (answer === 's2') {
-
-        data['claimant'] = 'kb';
-        data['nino'] = 'CX 60 12 13 A';
-        data['niMatchCis'] = 1;
-
-    } else if (answer === 's3') {
- 
-        data['claimant'] = 'sh';
-        data['nino'] = 'CX 40 01 26 A';
-        data['dupe'] = 1;
-
-    } else if (answer === 's4') {
+    if (answer === 's4') {
  
         data['claimant'] = 'kb';
         data['nino'] = 'CX 60 12 13 A';
@@ -95,18 +106,6 @@ router.get('/start', function (req, res) {
         data['claimant'] = 'ij';
         data['claimStatus'] = 'ID-at-risk-check-needed';
         data['idRisk'] = 1;
-
-    } else if (answer === 's11') {
-
-        data['claimant'] = 'ij';
-        data['claimStatus'] = 'not-built';
-        data['build'] = 1;
-
-    } else if (answer === 's12') {
-
-        data['claimant'] = 'ij';
-        data['claimStatus'] = 'review-needed';
-        data['nicCheck'] = 1;
 
     } else if (answer === 's13') {
         // robot

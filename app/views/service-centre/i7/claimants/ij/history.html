@@ -1,4 +1,102 @@
-{% if data['claimStatus'] == 'ID-verified' %}
+{% if data['s'] == 's6' or data['s'] == 's9' or data['s'] == 's11' %}
+
+{{ dwpTimeline({
+    items: [
+    {
+        heading: "Escalate to specialist",
+        author: "by Percy Hook",
+        date: "on 1 September 2021",
+        time: "at 9:13am"
+    },
+    {
+        heading: "Not built",
+        label: "label",
+        author: "automated",
+        date: "on 31 August 2021",
+        time: "at 4:42pm"
+    },
+    {
+        heading: "Registered",
+        label: "label",
+        author: "automated",
+        date: "on 31 August 2021",
+        time: "at 4:35pm"
+    },
+    {
+        heading: "New claim",
+        label: "label",
+        author: "by claimant",
+        date: "on 31 August 2021",
+        time: "at 4:32pm",
+        classes: "dwp-timeline-entry--closing"
+    }
+    ]
+}) }}
+
+{{ dwpTimeline({
+items: [
+    {
+        heading: "Escalate to specialist",
+        author: "by Percy Hook",
+        date: "on 5 September 2021",
+        time: "at 11:56am"
+    },
+    {
+        heading: "Review needed",
+        label: "label",
+        author: "automated",
+        date: "on 5 September 2021",
+        time: "at 10:54am"
+    },
+    {
+        heading: "Registered",
+        label: "label",
+        author: "automated",
+        date: "on 3 September 2021",
+        time: "at 10:24am"
+    },
+    {
+        heading: "ID verified",
+        label: "label",
+        author: "by Shelly Hargreaves",
+        date: "on 1 September 2021",
+        time: "at 10:22am"
+    },
+    {
+        heading: "ID check needed",
+        label: "label",
+        author: "by Terry Smith",
+        date: "on 1 September 2021",
+        time: "at 9:13am"
+    },
+    {
+        heading: "ID template needed",
+        label: "label",
+        author: "automated",
+        date: "on 31 August 2021",
+        time: "at 4:43pm"
+    },
+    {
+        heading: "ID not verified",
+        label: "label",
+        author: "automated",
+        date: "on 31 August 2021",
+        time: "at 4:42pm"
+    },
+    {
+        heading: "New claim",
+        label: "label",
+        author: "by claimant",
+        date: "on 31 August 2021",
+        time: "at 4:32pm",
+        classes: "dwp-timeline-entry--closing"
+    }
+]
+}) }}
+
+{% endif %}
+
+{# {% if data['claimStatus'] == 'ID-verified' %}
 
 {{ dwpTimeline({
 items: [
@@ -380,4 +478,4 @@ items: [
     ]
 }) }}
 
-{% endif %}
+{% endif %} #}

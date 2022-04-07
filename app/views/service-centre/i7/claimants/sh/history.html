@@ -1,4 +1,33 @@
-{% if data['claimStatus'] == 'ID-verified' %}
+{% if data['claimStatus'] == 'escalate-to-specialist' %}
+
+{{ dwpTimeline({
+    items: [
+    {
+        heading: "Escalate to specialist",
+        author: "by Percy Hook",
+        date: "on 1 August 2021",
+        time: "at 9:13am"
+    },
+    {
+        heading: "Not registered",
+        label: "label",
+        date: "on 31 July 2021",
+        time: "at 4:43pm"
+    },
+    {
+        heading: "New claim",
+        author: "by claimant",
+        date: "on 31 July 2021",
+        time: "at 4:32pm",
+        classes: "dwp-timeline-entry--closing"
+    }
+    ]
+}) }}
+
+
+{% endif %}
+
+{# {% if data['claimStatus'] == 'ID-verified' %}
 
 {{ dwpTimeline({
 items: [
@@ -156,4 +185,4 @@ items: [
     ]
 }) }}
 
-{% endif %}
+{% endif %} #}

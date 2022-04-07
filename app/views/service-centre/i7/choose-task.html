@@ -65,6 +65,10 @@ Service centre - {{ serviceName }}
   {% set fraudUrl = '#' %}
   {% set specialistUrl = 'view-claim' %}
   {% set appointeeUrl = '#' %}
+
+  {% if data['dupe'] == 1 %}
+    {% set specialistUrl = 'duplicates' %}
+  {% endif %}
 {% elif data['task'] == 'fraud-review' %}
   {% set processUrl = '#' %}
   {% set registerUrl = '#' %}
