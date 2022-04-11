@@ -4,6 +4,13 @@
   DWP - Jobseeker&rsquo;s Allowance
 {% endblock %}
 
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -12,10 +19,11 @@
         <div class="dwp-interruption govuk-!-margin-bottom-6" >
 
             {# <span class="govuk-caption-l">1. {{ serviceName }}</span> #}
-            <h1 class="govuk-heading-l">Read this information carefully</h1>
+            <h1 class="govuk-heading-l">What happens next</h1>
             <ol class="govuk-list govuk-list--bullet">
-                <li>It usually takes about 30 minutes to apply and check who you are</li>
-                <li>We may ask you for some information more than once</li>
+                <li>It usually takes about 30 minutes to apply and complete the identity check</li>
+                <li>We will ask you for some information more than once because 
+                    a different government system checks identity</li>
                 <li>You cannot save your answers and come back later</li>
                 <li>You'll get a chance to check and change your answers before you send them</li>
                 
@@ -23,8 +31,8 @@
             {# <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"> #}
 
             {{ govukButton({
-                text: "Continue",
-                href: "apply-things-needed"
+                text: "Start your application now",
+                href: "../2-details"
             }) }}
 
         </div>

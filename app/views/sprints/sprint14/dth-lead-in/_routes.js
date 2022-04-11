@@ -6,7 +6,7 @@ const ABS_BASE_PATH = `/${BASE_PATH}`;
 const NEXT_PATH = '/sprints/sprint14/confirmation';
 
 router.get('/', function (req, res) {
-  res.redirect(`${ABS_BASE_PATH}/dth-reasons`);
+  res.redirect(`${ABS_BASE_PATH}/dth-things-needed`);
 })
 
 module.exports = router;
