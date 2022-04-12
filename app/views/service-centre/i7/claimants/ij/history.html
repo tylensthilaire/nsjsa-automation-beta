@@ -1,4 +1,46 @@
-{% if data['s'] == 's6' or data['s'] == 's9' or data['s'] == 's11' %}
+{% if data['s'] == 's6' %}
+
+{{ dwpTimeline({
+    items: [
+    {
+        heading: "Appointee check needed",
+        label: "label",
+        author: "automated",
+        date: "on 5 September 2021",
+        time: "at 6:15am"
+    },
+    {
+        heading: "New claim",
+        date: "by claimant on 5 September 2021",
+        time: "at 6:12am",
+        classes: "dwp-timeline-entry--closing"
+    }
+    ]
+}) }}
+
+{% elif data['s'] == 's9' %}
+
+{{ dwpTimeline({
+items: [
+    {
+        heading: "Fraud check needed",
+        label: "label",
+        author: "automated",
+        date: "on 31 August 2021",
+        time: "at 4:42pm"
+    },
+    {
+        heading: "New claim",
+        label: "label",
+        author: "by claimant",
+        date: "on 31 August 2021",
+        time: "at 4:32pm",
+        classes: "dwp-timeline-entry--closing"
+    }
+]
+}) }}
+
+{% elif data['s'] == 's11' %}
 
 {{ dwpTimeline({
     items: [
@@ -33,6 +75,50 @@
     ]
 }) }}
 
+{% elif data['s'] == 's12' %}
+{{ dwpTimeline({
+items: [
+    {
+        heading: "Escalate to specialist",
+        author: "by Percy Hook",
+        date: "on 1 September 2021",
+        time: "at 9:13am"
+    },
+    {
+        heading: "Review needed",
+        label: "label",
+        author: "automated",
+        date: "on 31 August 2021",
+        time: "at 4:45pm"
+    },
+    {
+        heading: "ID verified",
+        label: "label",
+        author: "by Terry Smith",
+        date: "on 1 September 2021",
+        time: "at 9:13am"
+    },
+    {
+        heading: "ID check needed",
+        label: "label",
+        author: "automated",
+        date: "on 31 August 2021",
+        time: "at 4:42pm"
+    },
+    {
+        heading: "New claim",
+        label: "label",
+        author: "by claimant",
+        date: "on 31 August 2021",
+        time: "at 4:32pm",
+        classes: "dwp-timeline-entry--closing"
+    }
+]
+}) }}
+
+{% endif %}
+
+{# 
 {{ dwpTimeline({
 items: [
     {
@@ -92,9 +178,9 @@ items: [
         classes: "dwp-timeline-entry--closing"
     }
 ]
-}) }}
+}) }} #}
 
-{% endif %}
+
 
 {# {% if data['claimStatus'] == 'ID-verified' %}
 

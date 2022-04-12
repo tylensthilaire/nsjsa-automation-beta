@@ -166,7 +166,98 @@
           })
         }}
 
+        {% elif data['s'] == 's6' %}
+
+          {{ govukRadios({
+            idPrefix: "status",
+            name: "claimStatus",
+            fieldset: {
+              legend: {
+                text: "Update claim status",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: "appointee confirmed",
+                text: "Appointee confirmed"
+              },
+              {
+                  value: "failed-to-contact",
+                  text: "Failed to contact",
+                  conditional: {
+                    html: failHtml
+                  }
+              },
+              {
+                value: "Withdrawn",
+                text: "Withdrawn"
+              }
+            ]
+          }) }}
+
+          {% elif data['s'] == 's9' %}
+
+          {{ govukRadios({
+            idPrefix: "status",
+            name: "claimStatus",
+            fieldset: {
+              legend: {
+                text: "Update claim status",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: "id-verified",
+                text: "ID verified"
+              },
+              {
+                value: "id-template-needed",
+                text: "ID template needed"
+              }
+            ]
+          }) }}
+
           {% elif data['s'] == 's11' or data['s'] == 's12' or data['s'] == 's13' or data['s'] == 's14' %}
+
+          {{ govukRadios({
+            idPrefix: "status",
+            name: "claimStatus",
+            fieldset: {
+              legend: {
+                text: "Update claim status",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: "awaiting-appointment",
+                text: "Awaiting appointment"
+              },
+              {
+                value: "not-entitled",
+                text: "Not entitled"
+              },
+              {
+                  value: "failed-to-contact",
+                  text: "Failed to contact",
+                  conditional: {
+                    html: failHtml
+                  }
+              },
+              {
+                value: "suspected-fraud",
+                text: "Suspected fraud"
+              }
+            ]
+          }) }}
+
+        {% elif data['s'] == 's18' %}
+        This is the TTC one we need to refine
 
           {{ govukRadios({
             idPrefix: "status",

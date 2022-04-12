@@ -18,7 +18,7 @@ router.get('/start', function (req, res) {
     answer = data['s'];
     
     // specialist review
-    if (['s1','s2','s3','s11','s12','s13','s14'].includes(answer)) {
+    if (['s1','s2','s3','s9','s11','s12','s13','s14','s18'].includes(answer)) {
         data['task'] = 'specialist-review';
         data['claimStatus'] = 'escalate-to-specialist';
     }
@@ -56,6 +56,7 @@ router.get('/start', function (req, res) {
 
         data['task'] = 'fraud-review';
         data['claimant'] = 'ij';
+        data['multiFraud'] = 1;
 
     // not built
     } else if (['s11'].includes(answer)) {
@@ -69,61 +70,26 @@ router.get('/start', function (req, res) {
         data['claimant'] = 'ij';
         data['nicCheck'] = 1;
 
+    // Complex for robotics
+    } else if (['s13'].includes(answer)) {
+
+        data['claimant'] = 'ij';
+
+    // Robotics error
+    } else if (['s14'].includes(answer)) {
+
+        data['claimant'] = 'ij';
+        data['bsError'] = 1;
+
+    // Not built and been TTC
+    } else if (['s18'].includes(answer)) {
+
+        data['claimant'] = 'sh';
+        data['build'] = 1;
+
     // remainder
     } else {
         data['task'] = 'none';
-    }
-
-    // specific scenarios
-    if (answer === 's4') {
- 
-        data['claimant'] = 'kb';
-        data['nino'] = 'CX 60 12 13 A';
-        data['niMatchCis'] = 1;
-
-    } else if (answer === 's5') {
-
-        data['claimStatus'] = 'northern-ireland';
-        data['northernIreland'] = 1;
-
-    } else if (answer === 's7') {
-
-        data['claimStatus'] = 'ID-check-needed';
-        data['cis'] = 1;
-
-    } else if (answer === 's8') {
-  
-        data['claimStatus'] = 'fraud-check-needed';
-        data['singleFraud'] = 1;
-
-    } else if (answer === 's9') {
-  
-        data['claimStatus'] = 'fraud-check-needed';
-        data['multiFraud'] = 1;
-
-    } else if (answer === 's10') {
-
-        data['claimant'] = 'ij';
-        data['claimStatus'] = 'ID-at-risk-check-needed';
-        data['idRisk'] = 1;
-
-    } else if (answer === 's13') {
-        // robot
-        data['claimant'] = 'ij';
-        data['claimStatus'] = 'review-needed';
-
-    } else if (answer === 's14') {
-        // robot error
-        data['claimant'] = 'ij';
-        data['claimStatus'] = 'review-needed';
-        data['bsError'] = 1;
-
-    } else if (answer === 's15') {
-        // decision note
-        data['claimant'] = 'ij';
-        data['claimStatus'] = 'not-entitled';
-        data['note'] = 1;
-
     }
 
     res.redirect('choose-task');
