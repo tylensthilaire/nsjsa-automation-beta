@@ -116,6 +116,83 @@ items: [
 ]
 }) }}
 
+{% elif data['s'] == 's13' %}
+
+{{ dwpTimeline({
+items: [
+    {
+        heading: "Escalate to specialist",
+        author: "by Patricia Jennings",
+        date: "on 1 September 2021",
+        time: "at 10:13am"
+    },
+    {
+        heading: "Review needed",
+        label: "label",
+        author: "automated",
+        date: "on 31 August 2021",
+        time: "at 4:45pm"
+    },
+    {
+        heading: "New claim",
+        label: "label",
+        author: "by claimant",
+        date: "on 31 August 2021",
+        time: "at 4:32pm",
+        classes: "dwp-timeline-entry--closing"
+    }
+]
+}) }}
+
+{% elif data['s'] == 's14' %}
+
+{{ dwpTimeline({
+items: [
+    {
+        heading: "Escalate to specialist",
+        author: "by Lynne Desmond",
+        date: "on 1 September 2021",
+        time: "at 2:10pm"
+    },
+    {
+        heading: "Review needed",
+        label: "label",
+        author: "automated",
+        date: "on 1 September 2021",
+        time: "at 9:19am"
+    },
+    {
+        heading: "ID verified",
+        label: "label",
+        author: "by Terry Smith",
+        date: "on 1 September 2021",
+        time: "at 9:13am"
+    },
+    {
+        heading: "ID check needed",
+        label: "label",
+        author: "automated",
+        date: "on 31 August 2021",
+        time: "at 4:42pm"
+    },
+    {
+        heading: "Registered",
+        label: "label",
+        author: "automated",
+        date: "on 31 August 2021",
+        time: "at 4:39pm"
+    },
+    {
+        heading: "New claim",
+        label: "label",
+        author: "by claimant",
+        date: "on 31 August 2021",
+        time: "at 4:32pm",
+        classes: "dwp-timeline-entry--closing"
+    }
+]
+}) }}
+
 {% endif %}
 
 {# 
