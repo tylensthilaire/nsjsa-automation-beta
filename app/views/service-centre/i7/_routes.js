@@ -39,7 +39,7 @@ router.get('/start', function (req, res) {
 
     } else if (['s3'].includes(answer)) {
 
-        data['claimant'] = 'sh';
+        data['claimant'] = 'kb';
         data['nino'] = 'CX 40 01 26 A';
         data['dupe'] = 1;
 
@@ -87,6 +87,7 @@ router.get('/start', function (req, res) {
 
         data['claimant'] = 'sh';
         data['build'] = 1;
+        data['claimStatus'] = 'fully-clerical';
 
     // remainder
     } else {
