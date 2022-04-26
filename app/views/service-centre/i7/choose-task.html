@@ -89,7 +89,7 @@ Service centre - {{ serviceName }}
 
 <div class="govuk-grid-row">
 
-  <div class="govuk-grid-column-one-third">
+  <div class="govuk-grid-column-one-half">
     <a href="{{ registerUrl }}" class="tile tile--blue">
       <div class="tile__contents">
         <h2 class="tile__title">Register a claim <span>({{ range(52, 200) | random }})</span></h2>
@@ -97,7 +97,7 @@ Service centre - {{ serviceName }}
     </a>
   </div>
 
-  <div class="govuk-grid-column-one-third">
+  <div class="govuk-grid-column-one-half">
     <a href="{{ processUrl }}" class="tile tile--blue">
       <div class="tile__contents">
         <h2 class="tile__title">Process a claim <span>({{ range(52, 500) | random }})</span></h2>
@@ -105,7 +105,7 @@ Service centre - {{ serviceName }}
     </a>
   </div>
 
-  <div class="govuk-grid-column-one-third">
+  <div class="govuk-grid-column-one-half">
     <a href="{{ appointeeUrl }}" class="tile tile--blue">
       <div class="tile__contents">
         <h2 class="tile__title">Appointee review <span>({{ range(5, 45) | random }})</span></h2>
@@ -113,18 +113,10 @@ Service centre - {{ serviceName }}
     </a>
   </div>
 
-  <div class="govuk-grid-column-one-third">
+  <div class="govuk-grid-column-one-half">
     <a href="nino-search" class="tile tile--blue">
       <div class="tile__contents">
         <h2 class="tile__title">Find a claim</h2>
-      </div>
-    </a>
-  </div>
-
-  <div class="govuk-grid-column-one-third">
-    <a href="mi" class="tile tile--blue">
-      <div class="tile__contents">
-        <h2 class="tile__title">View management information</h2>
       </div>
     </a>
   </div>
@@ -137,7 +129,7 @@ Service centre - {{ serviceName }}
 <h2 class="govuk-heading-m">Identity tasks</h2>
 <div class="govuk-grid-row">
 
-  <div class="govuk-grid-column-one-third">
+  <div class="govuk-grid-column-one-half">
     <a href="{{ templateUrl }}" class="tile tile--blue">
       <div class="tile__contents">
         <h2 class="tile__title">Create an ID template <span>({{ range(31, 300) | random }})</span></h2>
@@ -145,7 +137,7 @@ Service centre - {{ serviceName }}
     </a>
   </div>
 
-  <div class="govuk-grid-column-one-third">
+  <div class="govuk-grid-column-one-half">
     <a href="{{ idUrl }}" class="tile tile--blue">
       <div class="tile__contents">
         <h2 class="tile__title">Conduct an ID check <span>({{ range(31, 300) | random }})</span></h2>
@@ -160,7 +152,7 @@ Service centre - {{ serviceName }}
 <h2 class="govuk-heading-m">Escalation tasks</h2>
 <div class="govuk-grid-row">
 
-  <div class="govuk-grid-column-one-third">
+  <div class="govuk-grid-column-one-half">
     <a href="{{ specialistUrl }}" class="tile tile--blue">
       <div class="tile__contents">
         <h2 class="tile__title">Specialist review <span>({{ range(31, 300) | random }})</span></h2>
@@ -168,7 +160,7 @@ Service centre - {{ serviceName }}
     </a>
   </div>
 
-  <div class="govuk-grid-column-one-third">
+  <div class="govuk-grid-column-one-half">
     <a href="{{ fraudUrl }}" class="tile tile--blue">
       <div class="tile__contents">
         <h2 class="tile__title">Fraud review <span>({{ range(31, 300) | random }})</span></h2>
@@ -176,6 +168,20 @@ Service centre - {{ serviceName }}
     </a>
   </div>
 
+</div>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<h2 class="govuk-heading-m">Management information</h2>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    <a href="mi" class="tile tile--blue">
+      <div class="tile__contents">
+        <h2 class="tile__title">View management information</h2>
+      </div>
+    </a>
+  </div>
 </div>
 
 {% endblock %}

@@ -57,6 +57,7 @@ router.get('/start', function (req, res) {
         data['task'] = 'fraud-review';
         data['claimant'] = 'ij';
         data['multiFraud'] = 1;
+        data['claimStatus'] = 'fraud-check-needed';
 
     // not built
     } else if (['s11'].includes(answer)) {
