@@ -116,7 +116,71 @@
       }) }}
 
 
-    {{ govukTable({
+ {{ govukTable({
+        caption: "Escalation automation exceptions",
+        captionClasses: "govuk-table__caption--s",
+        firstCellIsHeader: true,
+        head: [
+            {
+                text: "ID"
+            },
+            {
+                text: "Scenario"
+            },
+            {
+                html: "Worked bucket"
+            },
+            {
+                html:  "Escalated bucket"
+            }
+        ],
+        rows: [
+            [
+                {
+                    text: "s18"
+                },
+                {
+                    html: "to update <a href='start?s=s18'>A clerical claim</a>"
+                },
+                {
+                    html: proTag
+                },
+                {
+                    html: escTag
+                }
+            ],
+            [
+                {
+                    text: "s19"
+                },
+                {
+                    html: "to add <a href='start?s=s19'>A claim that couldn't be registered</a>"
+                },
+                {
+                    html: regTag
+                },
+                {
+                    html: escTag
+                }
+            ],
+            [
+                {
+                    text: "s20"
+                },
+                {
+                    html: "to add <a href='start?s=s20'>A claim that couldn't be processed</a>"
+                },
+                {
+                    html: proTag
+                },
+                {
+                    html: escTag
+                }
+            ]
+        ]
+    }) }}
+
+    {# {{ govukTable({
         caption: "Escalation automation exceptions",
         captionClasses: "govuk-table__caption--s",
         firstCellIsHeader: true,
@@ -248,7 +312,7 @@
                 }
             ]
         ]
-    }) }}
+    }) }} #}
 
     </div>
   </div>
