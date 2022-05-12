@@ -130,7 +130,7 @@
           })
         }}
 
-        {% elif data['s'] == 's3' %}
+        {% elif data['s'] == 's3' or data['s'] == 's19' %}
 
           {{ govukRadios({
             idPrefix: 'status',
@@ -221,7 +221,7 @@
             ]
           }) }}
 
-          {% elif data['s'] == 's11' or data['s'] == 's12' or data['s'] == 's13' or data['s'] == 's14' %}
+          {% elif data['s'] == 's11' or data['s'] == 's12' or data['s'] == 's13' or data['s'] == 's14' or data['s'] == 's20' %}
 
           {{ govukRadios({
             idPrefix: "status",
@@ -287,10 +287,6 @@
               {
                 value: "suspected-fraud",
                 text: "Suspected fraud"
-              },
-              {
-                value: "confirmed-clerical",
-                text: "Confirmed clerical"
               }
             ]
           }) }}

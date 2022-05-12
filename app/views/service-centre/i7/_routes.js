@@ -18,7 +18,7 @@ router.get('/start', function (req, res) {
     answer = data['s'];
     
     // specialist review
-    if (['s1','s2','s3','s9','s11','s12','s13','s14','s18'].includes(answer)) {
+    if (['s1','s2','s3','s11','s12','s13','s14','s18','s19','s20'].includes(answer)) {
         data['task'] = 'specialist-review';
         data['claimStatus'] = 'escalate-to-specialist';
     }
@@ -88,6 +88,16 @@ router.get('/start', function (req, res) {
         data['claimant'] = 'sh';
         data['build'] = 1;
         data['claimStatus'] = 'fully-clerical';
+
+    } else if (['s19'].includes(answer)) {
+
+        data['noReg'] = 1;
+        data['claimant'] = 'kb';
+        data['nino'] = 'CX 60 12 13 A';
+
+    } else if (['s20'].includes(answer)) {
+
+        data['claimant'] = 'ij';
 
     // remainder
     } else {
