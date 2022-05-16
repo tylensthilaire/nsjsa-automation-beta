@@ -86,8 +86,7 @@ router.get('/start', function (req, res) {
     } else if (['s18'].includes(answer)) {
 
         data['claimant'] = 'sh';
-        data['build'] = 1;
-        data['claimStatus'] = 'fully-clerical';
+        data['claimStatus'] = 'transfer-to-clerical';
 
     } else if (['s19'].includes(answer)) {
 
