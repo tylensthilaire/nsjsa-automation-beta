@@ -13,15 +13,5 @@
   {% endfor %}
 {% endblock %}
 
-{% set htmlClasses = htmlClasses | default("jsa-automation") %}
-
-{% block header %}
-    {{ dwpHeader({
-        "homepageUrl": "/",
-        "serviceName": "DWP NSJSA Automation Beta Prototypes",
-        "serviceUrl": "/",
-        "containerClasses": "govuk-width-container"
-    }) }}
-{% endblock %}
-
+{% block header %}{% endblock %}
 {% block footer %}{% endblock %}
