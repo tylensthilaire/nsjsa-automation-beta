@@ -32,6 +32,7 @@ Service centre - {{ serviceName }}
   {% set processUrl = '#' %}
   {% set registerUrl = '#' %}
   {% set templateUrl = 'view-claim' %}
+  {% set idUrl = 'view-claim' %}
 {% elif data['task'] == 'id-check' %}
   {% set processUrl = '#' %}
   {% set registerUrl = '#' %}
@@ -85,7 +86,7 @@ Service centre - {{ serviceName }}
 
 <h2 class="govuk-heading-m">Identity tasks</h2>
 <div class="govuk-grid-row">
-<!--
+  <!--
   <div class="govuk-grid-column-one-half">
     <a href="{{ templateUrl }}" class="tile tile--blue">
       <div class="tile__contents">
@@ -93,7 +94,7 @@ Service centre - {{ serviceName }}
       </div>
     </a>
   </div>
--->
+  -->
   <div class="govuk-grid-column-one-half">
     <a href="{{ idUrl }}" class="tile tile--blue">
       <div class="tile__contents">
