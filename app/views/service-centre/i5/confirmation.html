@@ -38,16 +38,13 @@
         html: msg
       }) }}
 
-      {% if data['s'] == 's7' %}
-        {% set btnHref = 'view-claim' %}
-      {% else %}
-       {# End clears the data #}
-         {% set btnHref = 'end' %}
-      {% endif %}
-        {{ govukButton({
-          text: "Get next claim",
-          href: btnHref
-        }) }}
+      {# End clears the data #}
+      {% set btnHref = 'end' %}
+        
+      {{ govukButton({
+        text: "Get next claim",
+        href: btnHref
+      }) }}
       <p><a href="choose-task" class="govuk-link">Change task</a></p>
 
     </div>
