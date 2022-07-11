@@ -104,7 +104,7 @@ items: [
 ]
 }) }}
 
-
+<!-- Scenario 7 -->
 {% elif data['claimStatus'] == 'ID-check-needed' and data['task'] == 'id-check' %}
 
 {{ dwpTimeline({
@@ -117,13 +117,6 @@ items: [
         time: "at 8:42am"
     },
     {
-        heading: "ID template needed",
-        label: "label",
-        author: "automated",
-        date: "on 5 September 2021",
-        time: "at 6:15am"
-    },
-    {
         heading: "New claim",
         date: "by claimant on 5 September 2021",
         time: "at 6:12am",
@@ -133,6 +126,7 @@ items: [
 ]
 }) }}
 
+<!-- Scenario 8 -->
 {% elif data['claimStatus'] == 'fraud-check-needed' %}
 
 {{ dwpTimeline({
@@ -155,6 +149,7 @@ items: [
 ]
 }) }}
 
+<!-- Scenario 10 -->
 {% elif data['claimStatus'] == 'ID-at-risk-check-needed' %}
 
 {{ dwpTimeline({
