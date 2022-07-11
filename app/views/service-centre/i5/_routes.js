@@ -41,7 +41,6 @@ router.get('/start', function (req, res) {
 
     } else if (answer === 's8') {
   
-        data['claimStatus'] = 'fraud-check-needed';
         data['cis'] = 1;
         data['idRisk'] = 0;
         data['singleFraud'] = 1;
