@@ -36,7 +36,7 @@
         <span class="govuk-caption-l">{{ data['i5Name'] }}</span>
       </h1>
 
-      <p>Increment 5 introduces 2 linked buckets of claims, {{ idTemplateTag | safe }} and {{ idCheckTag | safe }}</p>
+      <p>Increment 5 introduces 1 new bucket of claims, {{ idCheckTag | safe }}</p>
 
       <p><a href="../understanding-exceptions">Understanding exceptions to automation</a>.</p>
 
@@ -81,7 +81,7 @@
                 html: proTag
             },
             {
-                html: "&rarr; " + idTemplateTag
+                html: "&rarr; " + idCheckTag
             }
           ],
             [
@@ -95,7 +95,7 @@
                     html: proTag
                 },
                 {
-                    html: "&rarr; " + idTemplateTag
+                    html: "&rarr; " + idCheckTag
                 }
             ],
             [
@@ -109,7 +109,7 @@
                     html: proTag
                 },
                 {
-                    html: proTag
+                    html: "&rarr; " + proTag
                 }
             ],
             [
@@ -123,7 +123,7 @@
                     html: proTag
                 },
                 {
-                    html: "&rarr; " + idTemplateTag
+                    html: "&rarr; " + idCheckTag
                 }
             ]
         ]

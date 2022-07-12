@@ -65,24 +65,21 @@
                 text: "ID verified"
               },
               {
-                  value: "failed-to-contact",
-                  text: "Failed to contact",
-                  conditional: {
-                    html: failHtml
-                  }
-              },
-              {
-                value: "awaiting-evidence",
-                text: "Awaiting evidence"
-              },
-              {
                 value: "suspected-fraud",
                 text: "Suspected fraud"
+              },
+              {
+                value: "id-check-needed",
+                text: "ID check needed"
+              },
+              {
+                value: "withdrawn",
+                text: "Withdrawn"
               }
             ]
           }) }}
 
-      {% elif data['s'] == 's7' or data['s'] == 's8' or data['s'] == 's10' %}
+          {% elif data['s'] == 's7' or data['s'] == 's8' or data['s'] == 's10' %}
 
           {{ govukRadios({
             idPrefix: "status",
@@ -96,12 +93,26 @@
             },
             items: [
               {
-                value: "ID-check-needed",
-                text: "ID check needed"
+                value: "id-verified",
+                text: "ID verified"
               },
               {
-                value: "ID-check-not-needed",
-                text: "ID check not needed"
+                  value: "failed-to-contact",
+                  text: "Failed to contact",
+                  conditional: {
+                    html: failHtml
+                  }
+              },
+              {
+                value: "awaiting-evidence",
+                text: "Awaiting evidence"
+              },
+              {
+                value: "suspected-fraud",
+                text: "Suspected fraud"
+              },
+              { value: "withdrawn",
+                text: "Withdrawn"
               }
             ]
           }) }}

@@ -26,8 +26,8 @@ router.get('/start', function (req, res) {
     // all template scenarios
     } else if (['s7','s8','s10'].includes(answer)) {
 
-         data['task'] = 'id-template';
-         data['claimStatus'] = 'ID-template-needed';
+         data['task'] = 'id-check';
+         data['claimStatus'] = 'ID-check-needed';
 
     // remainder
     } else {
@@ -41,7 +41,8 @@ router.get('/start', function (req, res) {
 
     } else if (answer === 's8') {
   
-        data['claimStatus'] = 'fraud-check-needed';
+        data['cis'] = 1;
+        data['idRisk'] = 0;
         data['singleFraud'] = 1;
         data['multiFraud'] = 0;
     
@@ -53,7 +54,9 @@ router.get('/start', function (req, res) {
 
     } else if (answer === 's10') {
 
+        data['cis'] = 0;
         data['idRisk'] = 1;
+        data['singleFraud'] = 0;
     }
 
     res.redirect('choose-task');
@@ -126,6 +129,7 @@ router.post('/update', function (req, res) {
     if ( data['claimStatus'] == 'ID-check-needed' ) {
         delete data['s'];
 
+        data['claimStatus'] = 'ID-verified'
         data['task'] = 'id-check';
         data['s'] = 's9';
     }
