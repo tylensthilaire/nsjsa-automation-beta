@@ -21,7 +21,7 @@ router.get('/start', function (req, res) {
     // all scenarios
     if ( ['s16', 's17'].includes(answer) ) {
 
-        data['task'] = 'id-template';
+        data['task'] = 'id-check';
         data['claimStatus'] = 'ID-template-needed';
 
     // remainder
