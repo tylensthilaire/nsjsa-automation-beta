@@ -47,8 +47,6 @@
 
       <form action="update" method="post">
 
-      {% if data['claimStatus'] == 'ID-check-needed' %}
-
           {{ govukRadios({
             idPrefix: "status",
             name: "claimStatus",
@@ -78,35 +76,13 @@
               {
                 value: "suspected-fraud",
                 text: "Suspected fraud"
-              }
-            ]
-          }) }}
-
-      {% elif data['claimStatus'] == 'ID-template-needed' %}
-
-          {{ govukRadios({
-            idPrefix: "status",
-            name: "claimStatus",
-            fieldset: {
-              legend: {
-                text: "Update claim status",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--l"
-              }
-            },
-            items: [
-              {
-                value: "ID-check-needed",
-                text: "ID check needed"
               },
               {
-                value: "ID-check-not-needed",
-                text: "ID check not needed"
+                value:"withdrawn",
+                text: "Withdrawn"
               }
             ]
           }) }}
-
-        {% endif %}
 
         {{ govukButton({
           text: "Continue"
