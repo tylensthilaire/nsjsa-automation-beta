@@ -27,20 +27,20 @@ router.get('/start', function (req, res) {
     if (['s1'].includes(answer)) {
 
         data['claimant'] = 'sh';
-        data['nino'] = 'CX 40 01 26 A';
+        data['nino'] = 'RN 00 00 35 C';
         data['noReg'] = 1;
 
     } else if (['s2'].includes(answer)) {
 
         data['noReg'] = 1;
         data['claimant'] = 'kb';
-        data['nino'] = 'CX 60 12 13 A';
+        data['nino'] = 'RN 00 00 35 C';
         data['niMatchCis'] = 1;
 
     } else if (['s3'].includes(answer)) {
 
         data['claimant'] = 'kb';
-        data['nino'] = 'CX 40 01 26 A';
+        data['nino'] = 'RN 00 00 35 C';
         data['dupe'] = 1;
 
     // appointee
@@ -92,7 +92,7 @@ router.get('/start', function (req, res) {
 
         data['noReg'] = 1;
         data['claimant'] = 'kb';
-        data['nino'] = 'CX 60 12 13 A';
+        data['nino'] = 'RN 00 00 35 C';
 
     } else if (['s20'].includes(answer)) {
 
@@ -153,26 +153,26 @@ router.post('/nino-search', function (req, res) {
     if (answer === 's1') {
 
         data['claimant'] = 'sh';
-        data['nino'] = 'CX 40 01 26 A';
+        data['nino'] = 'RN 00 00 35 C';
         data['noReg'] = 1;
 
     } else if (answer === 's2') {
 
         data['claimant'] = 'kb';
-        data['nino'] = 'CX 60 12 13 A';
+        data['nino'] = 'RN 00 00 35 C';
         data['niMatchCis'] = 1;
 
     } else if (answer === 's3') {
  
         data['claimant'] = 'sh';
-        data['nino'] = 'CX 40 01 26 A';
+        data['nino'] = 'RN 00 00 35 C';
         data['dupe'] = 1;
         res.redirect('duplicates');
 
     } else if (answer === 's4') {
  
         data['claimant'] = 'kb';
-        data['nino'] = 'CX 60 12 13 A';
+        data['nino'] = 'RN 00 00 35 C';
         data['niMatchCis'] = 1;
 
     } else if (answer === 's5') {
