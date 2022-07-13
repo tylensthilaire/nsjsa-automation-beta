@@ -38,19 +38,6 @@
         html: msg
       }) }}
 
-      <!--
-      {% if data['claimStatus'] == 'id-verified' or data['claimStatus'] == 'ID-check-not-needed' %}
-        {% set btnHref = 'end' %}
-      {% else %}
-       {# End clears the data #}
-         {% set btnHref = 'view-claim' %}
-      {% endif %}
-        {{ govukButton({
-          text: "Get next claim",
-          href: btnHref
-        }) }}
-      -->
-
       {% set btnHref = 'end' %}
 
       {{ govukButton({
