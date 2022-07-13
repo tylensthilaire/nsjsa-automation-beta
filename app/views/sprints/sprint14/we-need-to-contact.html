@@ -10,7 +10,7 @@
 <div class="govuk-grid-row">
 <div class="govuk-grid-column-two-thirds" >
 
-      <h1 class="govuk-heading-xl">We need to contact you to check who you are</h1>
+      <h1 class="govuk-heading-xl">We will call you to check your identity</h1>
 
       <ol class="app-task-list ">
         <li>
@@ -22,20 +22,22 @@
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">Complete an identity check</span>
-              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">We will contact you</strong>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="list-convictions-status">We will call you</strong>
             </li>
           </ul>
         </li>
       </ol>
 
-      <p class=" govuk-!-margin-bottom-9">We will contact you to check your identity and update you on progress in the next 10 days.</p>
+      <p>We will contact you by phone in the next 3 working days to check your identity and update you on your claim.</p>
+      <p class=" govuk-!-margin-bottom-9">The call will take about 10 minutes and we will send you a text or email the day&nbsp;before.</p>
 
-{% set help %}
-<p>If you're on a low income you might be able to apply for Universal Credit as part of a dual claim with New Style JSA.</p>
-<p>Unlike New Style JSA, you can apply with a partner and get support for housing costs, children and childcare.</p>
-<p>You or your partner must have less than £16,000 in savings or investments to be eligilbe.</p>
-<p>Find out <a href="https://www.gov.uk/how-to-claim-universal-credit">how to claim for Universal Credit on GOV.UK</a>.</p>
-{% endset %}
+      {% set help %}
+        <p>If you're on a low income you might be able to apply for Universal Credit as part of a dual claim with New Style JSA.</p>
+        <p>Unlike New Style JSA, you can apply with a partner and get support for housing costs, children and childcare.</p>
+        <p>You or your partner must have less than £16,000 in savings or investments to be eligible.</p>
+        <p>Find out <a href="https://www.gov.uk/how-to-claim-universal-credit">how to claim for Universal Credit on GOV.UK</a>.</p>
+      {% endset %}
+
       {{ govukDetails({
         summaryText: "Do you need help with housing costs or support for a partner or child?",
         html: help

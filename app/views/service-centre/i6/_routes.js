@@ -21,8 +21,8 @@ router.get('/start', function (req, res) {
     // all scenarios
     if ( ['s16', 's17'].includes(answer) ) {
 
-        data['task'] = 'id-template';
-        data['claimStatus'] = 'ID-template-needed';
+        data['task'] = 'id-check';
+        data['claimStatus'] = 'ID-check-needed';
 
     // remainder
     } else {
@@ -33,6 +33,7 @@ router.get('/start', function (req, res) {
     if (answer === 's16') {
 
         data['OIDVskip'] = 1;
+        data['guidMismatch'] = 0;
 
     } else if (answer === 's17') {
   

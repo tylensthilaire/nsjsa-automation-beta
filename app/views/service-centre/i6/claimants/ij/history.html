@@ -1,32 +1,4 @@
-{% if data['s'] == 's16' and data['claimStatus'] == 'ID-template-needed' %}
-
-{{ dwpTimeline({
-items: [
-    {
-        heading: "ID template needed",
-        label: "label",
-        author: "automated",
-        date: "on 5 September 2021",
-        time: "at 6:16am"
-    },
-    {
-        heading: "ID not verified",
-        label: "label",
-        author: "automated",
-        date: "on 5 September 2021",
-        time: "at 6:15am"
-    },
-    {
-        heading: "New claim",
-        date: "by claimant on 5 September 2021",
-        time: "at 6:12am",
-        classes: "dwp-timeline-entry--closing"
-    }
-
-]
-}) }}
-
-{% elif data['s'] == 's16' and data['claimStatus'] == 'ID-check-needed' %}
+{% if data['s'] == 's16' and data['claimStatus'] == 'ID-check-needed' %}
 
 {{ dwpTimeline({
 items: [
@@ -38,44 +10,9 @@ items: [
         time: "at 8:42am"
     },
     {
-        heading: "ID template needed",
-        label: "label",
-        author: "automated",
-        date: "on 5 September 2021",
-        time: "at 6:16am"
-    },
-    {
         heading: "ID not verified",
         label: "label",
         author: "automated",
-        date: "on 5 September 2021",
-        time: "at 6:15am"
-    },
-    {
-        heading: "New claim",
-        date: "by claimant on 5 September 2021",
-        time: "at 6:12am",
-        classes: "dwp-timeline-entry--closing"
-    }
-
-]
-}) }}
-
-{% elif data['s'] == 's17' and data['claimStatus'] == 'ID-template-needed' %}
-
-{{ dwpTimeline({
-items: [
-    {
-        heading: "ID template needed",
-        label: "label",
-        author: "automated",
-        date: "on 5 September 2021",
-        time: "at 6:16am"
-    },
-    {
-        heading: "ID verified",
-        label: "label",
-        author: "DWP Dynamic Trust Hub",
         date: "on 5 September 2021",
         time: "at 6:15am"
     },
@@ -101,13 +38,6 @@ items: [
         time: "at 8:42am"
     },
     {
-        heading: "ID template needed",
-        label: "label",
-        author: "automated",
-        date: "on 5 September 2021",
-        time: "at 6:16am"
-    },
-    {
         heading: "ID verified",
         label: "label",
         author: "DWP Dynamic Trust Hub",
@@ -123,11 +53,5 @@ items: [
 
 ]
 }) }}
-
-
-
-{% else %}
-
-Not set
 
 {% endif %}
