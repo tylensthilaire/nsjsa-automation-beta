@@ -18,7 +18,7 @@ items: [
 ]
 }) }}
 
-{% elif data['claimStatus'] == 'awaiting-appointment' %}
+{% elif data['claimStatus'] == 'awaiting-appointment' and data['entNote'] == '0'%}
 
 
 {{ dwpTimeline({
@@ -265,12 +265,34 @@ items: [
 ]
 }) }}
 
-{% elif data['s'] == 's15' %}
+{% elif data['s'] == 's15' or data['s'] == 's17' %}
 
 {{ dwpTimeline({
 items: [
     {
         heading: "Not entitled",
+        label: "label",
+        author: "automated",
+        date: "on 31 August 2021",
+        time: "at 4:42pm"
+    },
+    {
+        heading: "New claim",
+        label: "label",
+        author: "by claimant",
+        date: "on 31 August 2021",
+        time: "at 4:32pm",
+        classes: "dwp-timeline-entry--closing"
+    }
+]
+}) }}
+
+{% elif data['s'] == 's16' %}
+
+{{ dwpTimeline({
+items: [
+    {
+        heading: "Awaiting appointment",
         label: "label",
         author: "automated",
         date: "on 31 August 2021",

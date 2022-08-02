@@ -12,6 +12,8 @@ or data['niMatchCis'] == '1'
 or data['nicCheck'] == '1'
 or data['bsError'] == '1'
 or data['note'] == '1'
+or data['entNote'] == '1'
+or data['FTWNote'] == '1'
 %}
 
 <section class="dwp-print-hide">
@@ -60,6 +62,13 @@ or data['note'] == '1'
     {% if data['note'] == '1' %}
       <li>The benefit system needs a decision note</li>
     {% endif %}
+    {% if data['entNote'] == '1' %}
+      <li>Note required in benefit system</li>
+    {% endif %}
+    {% if data['FTWNote'] == '1' %}
+      <li>Full time work decision note required in benefit system</li>
+    {% endif %}
+    </ul>
     </ul>
  </div>
 </section>

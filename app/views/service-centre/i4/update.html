@@ -401,7 +401,7 @@
             ]
           }) }}
 
-        {% elif data['s'] == 's15' %}
+        {% elif data['s'] == 's15' or data['s'] == 's17' %}
 
           {{ govukRadios({
               idPrefix: 'status',
@@ -417,6 +417,27 @@
                   {
                       value: "decision-note-added",
                       text: "Decision note added"
+                  }     
+              ]
+            })
+          }}
+
+          {% elif data['s'] == 's16' %}
+
+          {{ govukRadios({
+              idPrefix: 'status',
+              name: 'claimStatus',
+              fieldset: {
+                legend: {
+                  text: "Update claim status",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--l"
+                }
+              },
+              items: [
+                  {
+                      value: "awaiting-appointment",
+                      text: "Awaiting appointment"
                   }     
               ]
             })

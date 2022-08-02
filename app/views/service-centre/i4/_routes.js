@@ -22,9 +22,9 @@ router.get('/start', function (req, res) {
 
         data['task'] = 'register';
         data['claimStatus'] = 'not-registered';
-    
-        // all processing scenarios
-    } else if (['s5','s6','s7','s8','s9','s10','s11','s12','s13','s14','s15'].includes(answer)) {
+
+    // all processing scenarios
+    } else if (['s5','s6','s7','s8','s9','s10','s11','s12','s13','s14','s15','s16','s17'].includes(answer)) {
 
         data['task'] = 'process';
         data['claimant'] = 'ij';
@@ -119,6 +119,18 @@ router.get('/start', function (req, res) {
         data['claimStatus'] = 'not-entitled';
         data['note'] = 1;
 
+    } else if (answer === 's16') {
+        // entitlement note
+        data['claimant'] = 'ij';
+        data['claimStatus'] = 'awaiting-appointment';
+        data['entNote'] = 1;
+
+    } else if (answer === 's17') {
+        // full time work note
+        data['claimant'] = 'ij';
+        data['claimStatus'] = 'not-entitled';
+        data['FTWNote'] = 1;
+    
     }
 
     res.redirect('choose-task');
@@ -147,6 +159,8 @@ router.post('/nino-search', function (req, res) {
     delete data['nicCheck'];
     delete data['bsError'];
     delete data['note'];
+    delete data['entNote'];
+    delete data['FTWNote'];
 
     answer = data['niNumber'];
 
@@ -157,7 +171,7 @@ router.post('/nino-search', function (req, res) {
         data['claimStatus'] = 'not-registered';
     
         // all processing scenarios
-    } else if (['s5','s6','s7','s8','s9','s10','s11','s12','s13','s14','s15'].includes(answer)) {
+    } else if (['s5','s6','s7','s8','s9','s10','s11','s12','s13','s14','s15','s16','s17'].includes(answer)) {
 
         data['task'] = 'process';
         data['claimant'] = 'ij';
@@ -253,6 +267,18 @@ router.post('/nino-search', function (req, res) {
         data['claimStatus'] = 'not-entitled';
         data['note'] = 1;
 
+    } else if (answer === 's16') {
+        // entitlement note
+        data['claimant'] = 'ij';
+        data['claimStatus'] = 'awaiting-appointment';
+        data['entNote'] = 1;
+
+    } else if (answer === 's17') {
+        // full time work note
+        data['claimant'] = 'ij';
+        data['claimStatus'] = 'not-entitled';
+        data['FTWNote'] = 1;
+    
     }
 
     res.redirect('view-claim');
@@ -293,6 +319,8 @@ router.get('/end', function (req, res) {
     delete data['nicCheck'];
     delete data['bsError'];
     delete data['note'];
+    delete data['entNote'];
+    delete data['FTWNote'];
 
     res.redirect('screens');
 });
