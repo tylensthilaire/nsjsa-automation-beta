@@ -4,6 +4,16 @@
 Service centre - {{ serviceName }}
 {% endblock %}
 
+{% block header %}
+    {# override dwpHeader to go back to service start #}
+    {{ dwpHeader({
+        "homepageUrl": "/",
+        "serviceName": data['agentServiceName'],
+        "serviceUrl": "/service-centre/i4/end",
+        "containerClasses": "govuk-width-container"
+    }) }}
+{% endblock %}
+
 {% block beforeContent %}
 {% endblock %}
 
@@ -16,7 +26,7 @@ Service centre - {{ serviceName }}
 </h1>
 
 {% if data['task'] == 'process' %}
-  {% set processUrl = 'view-claim' %}
+  {% set processUrl = 'r-view-claim' %}
   {% set registerUrl = '#' %}
 {% elif data['task'] == 'register' %}
   {% set processUrl = '#' %}

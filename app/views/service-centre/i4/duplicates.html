@@ -7,7 +7,18 @@
 {% set claimStatus = data['claimStatus'] | replace("-", " ") | capitalize %}
 
 {% block header %}
-  {{ super() }}
+
+  {# override dwpHeader to go back to service start #}
+  {{ dwpHeader({
+    "homepageUrl": "/",
+    "serviceName": data['agentServiceName'],
+    "serviceUrl": "/service-centre/i4/end",
+    "containerClasses": "govuk-width-container"
+  }) }}
+
+  {# not sure what this does other than include dwp header #}
+  {# {{ super() }} #}
+
 {% endblock %}
 
 {% block content %}

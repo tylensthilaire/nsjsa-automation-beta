@@ -22,6 +22,16 @@
 
 {% endblock %}
 
+{% block header %}
+    {# override dwpHeader to go back to service start #} 
+    {{ dwpHeader({
+        "homepageUrl": "/",
+        "serviceName": data['agentServiceName'],
+        "serviceUrl": "/service-centre/i4/end",
+        "containerClasses": "govuk-width-container"
+    }) }}
+{% endblock %}
+
 {% block content %}
 
 {% if data['ttcStatus'] %}

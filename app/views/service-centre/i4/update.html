@@ -70,7 +70,7 @@
   <div class="govuk-grid-row  govuk-!-margin-top-4">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="confirmation" method="get">
+      <form action="confirmation" method="post">
 
       {% if data['s'] == 's1' %}
 
@@ -422,7 +422,7 @@
             })
           }}
 
-          {% elif data['s'] == 's16' %}
+        {% elif data['s'] == 's16' %}
 
           {{ govukRadios({
               idPrefix: 'status',

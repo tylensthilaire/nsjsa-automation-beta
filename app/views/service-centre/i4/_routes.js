@@ -136,31 +136,28 @@ router.get('/start', function (req, res) {
     res.redirect('choose-task');
 });
 
+router.post('/confirmation', function (req, res) {
+    let data = req.session.data;
+
+    data['updated'] = 1;
+
+    res.redirect('confirmation');
+});
+
+router.get('/r-view-claim', function (req, res) {
+    let data = req.session.data;
+
+    if (['s17'].includes(answer) && data['updated'] === 1) {
+
+        data['claimStatus'] = 'not-eligible';
+
+    }
+
+        res.redirect('view-claim');
+});
 
 router.post('/nino-search', function (req, res) {
     let data = req.session.data;
-
-    // reset data
-    delete data['s'];
-    delete data['task'];
-    delete data['claimant'];
-    delete data['nino'];
-    delete data['claimStatus'];
-    delete data['northernIreland'];
-    delete data['dupe'];
-    delete data['idRisk'];
-    delete data['singleFraud'];
-    delete data['multiFraud'];
-    delete data['niMatchCis'];
-    delete data['cis'];
-    delete data['appointee'];
-    delete data['noReg'];
-    delete data['build'];
-    delete data['nicCheck'];
-    delete data['bsError'];
-    delete data['note'];
-    delete data['entNote'];
-    delete data['FTWNote'];
 
     answer = data['niNumber'];
 
@@ -321,6 +318,8 @@ router.get('/end', function (req, res) {
     delete data['note'];
     delete data['entNote'];
     delete data['FTWNote'];
+    delete data['niNumber'];
+    delete data['updated'];
 
     res.redirect('screens');
 });

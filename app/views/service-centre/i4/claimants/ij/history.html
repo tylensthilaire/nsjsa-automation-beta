@@ -39,6 +39,60 @@ items: [
 ]
 }) }}
 
+{% elif data['s'] == 's17' and data['updated'] == 1 %}
+
+{{ dwpTimeline({
+items: [
+    {
+    heading: "Not entitled — Full time work benefit note added",
+    label: "label",
+    author: "automated",
+    date: "on 31 August 2021",
+    time: "at 4:45pm"
+    },
+    {
+    heading: "Not entitled",
+    label: "label",
+    author: "automated",
+    date: "on 31 August 2021",
+    time: "at 4:45pm"
+    },
+    {
+    heading: "New claim",
+    date: "by claimant on 31 August 2021",
+    time: "at 4:32pm",
+    classes: "dwp-timeline-entry--closing"
+    }
+]
+}) }}
+
+{% elif data['s'] == 's16' and data['updated'] == 1 %}
+
+{{ dwpTimeline({
+items: [
+    {
+    heading: "Awaiting appointment — Benefit system note added",
+    label: "label",
+    author: "automated",
+    date: "on 31 August 2021",
+    time: "at 4:45pm"
+    },
+    {
+    heading: "Not entitled",
+    label: "label",
+    author: "automated",
+    date: "on 31 August 2021",
+    time: "at 4:45pm"
+    },
+    {
+    heading: "New claim",
+    date: "by claimant on 31 August 2021",
+    time: "at 4:32pm",
+    classes: "dwp-timeline-entry--closing"
+    }
+]
+}) }}
+
 {% elif data['claimStatus'] == 'first-fail' %}
 
 {{ dwpTimeline({
