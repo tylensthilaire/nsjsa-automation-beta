@@ -150,6 +150,11 @@ router.get('/r-view-claim', function (req, res) {
     if (['s17'].includes(answer) && data['updated'] === 1) {
 
         data['claimStatus'] = 'not-eligible';
+        data['FTWNote'] = 0;
+
+    } else if (['s16'].includes(answer) && data['updated'] === 1) {
+
+        data['entNote'] = 0;
 
     }
 
