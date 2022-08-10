@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block content %}
+{#{{ data | dump('\t') }}#}
 
 {% set failHtml %}
 {{ govukRadios({
@@ -401,7 +402,7 @@
             ]
           }) }}
 
-        {% elif data['s'] == 's15' or data['s'] == 's17' %}
+        {% elif data['s'] == 's15' or data['s'] == 's22' %}
 
           {{ govukRadios({
               idPrefix: 'status',
@@ -422,7 +423,7 @@
             })
           }}
 
-        {% elif data['s'] == 's16' %}
+        {% elif data['s'] == 's21' %}
 
           {{ govukRadios({
               idPrefix: 'status',
