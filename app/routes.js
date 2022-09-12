@@ -80,4 +80,9 @@ router.use('/service-centre/i6/', require('./views/service-centre/i6/_routes'))
 router.use('/service-centre/i7/', require('./views/service-centre/i7/_routes'))
 router.use('/service-centre/mvp/', require('./views/service-centre/mvp/_routes'))
 
+// feedback location
+router.get('/feedback'), function (req, res) {
+    res.redirect('https://github.com/dwp/nsjsa-automation-beta/issues')
+};
+
 module.exports = router
