@@ -6,6 +6,7 @@
 
 {% block content %}
 {# {{ data | dump('\t') }}  #}
+
 {% set failHtml %}
 {{ govukRadios({
   idPrefix: "failed-contact",
@@ -35,6 +36,27 @@
     }
   ]
 }) }}
+{% endset -%}
+
+{% set withdrawHtml %}
+  {{ govukCheckboxes({
+      idPrefix: 'withdraw',
+      name: 'withdrawConfirm',
+      fieldset: {
+        legend: {
+          text: "Are you sure you want to withdraw this claim?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+          {
+              value: "withdrawal-confirmed",
+              text: "Yes"
+          }                  
+      ]
+    })
+  }}
 {% endset -%}
 
 {{ govukBackLink({
@@ -79,7 +101,10 @@
               },
               {
                 value:"withdrawn",
-                text: "Withdrawn"
+                text: "Withdrawn",
+                conditional: {
+                  html: withdrawHtml
+                }
               }
             ]
           }) }}

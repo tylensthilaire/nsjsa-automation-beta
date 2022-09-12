@@ -63,6 +63,27 @@
   }}
 {% endset -%}
 
+{% set withdrawHtml %}
+  {{ govukCheckboxes({
+      idPrefix: 'withdraw',
+      name: 'withdrawConfirm',
+      fieldset: {
+        legend: {
+          text: "Are you sure you want to withdraw this claim?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+          {
+              value: "withdrawal-confirmed",
+              text: "Yes"
+          }                  
+      ]
+    })
+  }}
+{% endset -%}
+
 {{ govukBackLink({
   text: "Back",
   href: "javascript:history.back()"
@@ -173,7 +194,10 @@
                 },
                 {
                     value: "withdrawn",
-                    text: "Withdrawn"
+                    text: "Withdrawn",
+                    conditional: {
+                      html: withdrawHtml
+                    }
                 }     
             ]
           })
@@ -194,7 +218,10 @@
               items: [
                   {
                       value: "withdrawn",
-                      text: "Withdrawn"
+                      text: "Withdrawn",
+                      conditional: {
+                        html: withdrawHtml
+                      }
                   }     
               ]
             })
@@ -226,7 +253,10 @@
               },
               {
                 value: "Withdrawn",
-                text: "Withdrawn"
+                text: "Withdrawn",
+                conditional: {
+                  html: withdrawHtml
+                }
               }
             ]
           }) }}
