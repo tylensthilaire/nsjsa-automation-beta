@@ -4,25 +4,45 @@
 Service centre - {{ serviceName }}
 {% endblock %}
 
+{% block header %}
+    {# override dwpHeader to go back to service start #}
+    {{ dwpHeader({
+        "homepageUrl": "/",
+        "serviceName": data['agentServiceName'],
+        "serviceUrl": "/service-centre/i4/end",
+        "containerClasses": "govuk-width-container"
+    }) }}
+{% endblock %}
+
 {% block beforeContent %}
 {% endblock %}
 
 {% block content %}
-
+{# {{ data | dump('\t') }}  #}
 
 <h1 class="govuk-heading-l">
   <span class="govuk-caption-l">Service centre agent</span>
   Choose a task
 </h1>
-{% if data['dupe'] == 1 %}
-  {% set url = 'duplicates' %}
+
+{% if data['task'] == 'process' %}
+  {% set processUrl = 'r-view-claim' %}
+  {% set registerUrl = '#' %}
+{% elif data['task'] == 'register' %}
+  {% set processUrl = '#' %}
+  {% set registerUrl = 'view-claim' %}
+  {% if data['dupe'] == 1 %}
+    {% set registerUrl = 'duplicates' %}
+  {% endif %}
 {% else %}
-  {% set url = 'view-claim' %}
+  {% set registerUrl = '#' %}
+  {% set processUrl = '#' %}
 {% endif %}
+
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-one-half">
-    <a href="{{ url }}" class="tile tile--blue">
+    <a href="{{ registerUrl }}" class="tile tile--blue">
       <div class="tile__contents">
         <h2 class="tile__title">Register a claim <span>({{ range(52, 200) | random }})</span></h2>
       </div>
@@ -30,7 +50,7 @@ Service centre - {{ serviceName }}
   </div>
 
   <div class="govuk-grid-column-one-half">
-    <a href="#" class="tile tile--blue">
+    <a href="{{ processUrl }}" class="tile tile--blue">
       <div class="tile__contents">
         <h2 class="tile__title">Process a claim <span>({{ range(52, 200) | random }})</span></h2>
       </div>
@@ -41,6 +61,14 @@ Service centre - {{ serviceName }}
     <a href="nino-search" class="tile tile--blue">
       <div class="tile__contents">
         <h2 class="tile__title">Find a claim</h2>
+      </div>
+    </a>
+  </div>
+
+  <div class="govuk-grid-column-one-half">
+    <a href="mi" class="tile tile--blue">
+      <div class="tile__contents">
+        <h2 class="tile__title">View management information</h2>
       </div>
     </a>
   </div>
