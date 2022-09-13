@@ -50,32 +50,30 @@
 
   <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-grid-row">
+    <h2 class="govuk-heading-m">Overview</h2>
 
+    <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-half">
-        <h2 class="govuk-heading-m">Overview</h2>
+        <span class="govuk-caption-m">Submitted</span>
         <p class="govuk-heading-xl">{{ range(64, 512) | random }}</p>
       </div>
 
       <div class="govuk-grid-column-one-half">
-        <h2 class="govuk-heading-m">Oldest Claim</h2>
+        <span class="govuk-caption-m">Oldest claim</span>
         <p class="govuk-heading-xl">15/12/2021</p>
       </div>
-
     </div>
 
     <div class="govuk-grid-row">
-
       <div class="govuk-grid-column-one-half">
-        <h2 class="govuk-heading-m">Total Outstanding Processable</h2>
+        <span class="govuk-caption-m">Total outstanding processable</span>
         <p class="govuk-heading-xl">{{ range(64, 512) | random }}</p>
       </div>
 
       <div class="govuk-grid-column-one-half">
-        <h2 class="govuk-heading-m">Total Withdrawn</h2>
-        <p class="govuk-heading-xl govuk-!-padding-top-6">{{ range(0, 32) | random }}</p>
+        <span class="govuk-caption-m">Total Withdrawn</span>
+        <p class="govuk-heading-xl">{{ range(0, 32) | random }}</p>
       </div>
-
     </div>
 
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
