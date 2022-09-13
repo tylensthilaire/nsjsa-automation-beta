@@ -1,7 +1,7 @@
-{% extends "layout.html" %}
+{% extends "agent/layout.html" %}
 
 {% block pageTitle %}
-  Register – {{ serviceName }} – GOV.UK Prototype Kit
+Managment information – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -53,30 +53,31 @@
     <h2 class="govuk-heading-m">Overview</h2>
 
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-half">
-        <span class="govuk-caption-m">Submitted</span>
-        <p class="govuk-heading-xl">{{ range(64, 512) | random }}</p>
+      <div class="govuk-grid-column-one-third">
+        <span class="govuk-caption-m">New claims</span>
+        <p class="govuk-heading-xl govuk-!-padding-top-5">{{ range(64, 512) | random }}</p>
       </div>
 
-      <div class="govuk-grid-column-one-half">
+        <div class="govuk-grid-column-one-third">
+          <span class="govuk-caption-m">Total outstanding processable</span>
+          <p class="govuk-heading-xl">{{ range(64, 512) | random }}</p>
+        </div>
+  
+        <div class="govuk-grid-column-one-third">
+          <span class="govuk-caption-m">Total Withdrawn</span>
+          <p class="govuk-heading-xl govuk-!-padding-top-5">{{ range(0, 32) | random }}</p>
+        </div>
+
+      <div class="govuk-grid-column-full">
         <span class="govuk-caption-m">Oldest claim</span>
-        <p class="govuk-heading-xl">15/12/2021</p>
+        <ul class="govuk-list">
+          <li class="govuk-heading-xl">RN&nbsp;00&nbsp;00&nbsp;35&nbsp;C</li>
+          <li>15th December 2021</li>
+        </ul>
       </div>
     </div>
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-half">
-        <span class="govuk-caption-m">Total outstanding processable</span>
-        <p class="govuk-heading-xl">{{ range(64, 512) | random }}</p>
-      </div>
-
-      <div class="govuk-grid-column-one-half">
-        <span class="govuk-caption-m">Total Withdrawn</span>
-        <p class="govuk-heading-xl">{{ range(0, 32) | random }}</p>
-      </div>
-    </div>
-
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-padding-top-4">
 
     <h2 class="govuk-heading-m">Registration</h2>
 
