@@ -2,10 +2,25 @@
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[javascript]": {
-    "editor.defaultFormatter": "standard.vscode-standard"
-  },
-  "[nunjucks]": {
+
+  "[njk]": {
     "editor.defaultFormatter": "eseom.nunjucks-template"
-  }
+  },
+
+  // Make VSC think HTML files are nunjucks files
+  "files.associations": {
+    "*.html": "njk"
+  },
+
+  // Lints with Standard JS
+  "standard.enable": true,
+
+  // Select standard engine
+  "standard.engine": "ts-standard",
+
+  // Format files with Standard whenever you save the file
+  "standard.autoFixOnSave": true,
+
+  // Files to validate with Standard JS
+  "standard.validate": ["javascript"]
 }
