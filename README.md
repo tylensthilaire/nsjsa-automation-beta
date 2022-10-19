@@ -117,15 +117,16 @@ npx eleventy --serve
 ├─ .gitignore                         // List of files not to version control
 ├─ .npmrc                             // NPM config
 ├─ .nvmrc                             // NVM config
+├─ .prettierignore                    // List of ignored filetypes for Perttier
 ├─ LICENSE.txt
-├─ Procfile                           // Specifies startup commands to Heroku
-├─ VERSION.txt                        // govuk-prototype-kit version
 ├─ listen-on-port.js
 ├─ package-lock.json                  // Manages dependencies strictly
 ├─ package.json                       // Manages dependencies
+├─ Procfile                           // Sets Heroku startup commands
 ├─ README.md                          // ☛ You are here
 ├─ server.js
-└─ start.js
+├─ start.js
+└─ VERSION.txt                        // govuk-prototype-kit version
 ```
 
 </details>
