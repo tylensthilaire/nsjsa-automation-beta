@@ -58,37 +58,53 @@ npx eleventy --serve
 - To revisit an older iteration,
   fork the release branch and pull changes into `main` through it.
   -->
+  
+  </details>
 
-**Date-based versioning** allows us to look at the prototype as it was at a specific point in time.
+<details>
+  <summary><strong>Date-based versioning</strong> allows us to look at the prototype as it was at a specific point in time.</summary>
 
 - Add tags to commits used for research, show and tells, et al in the format `YYMMDD-Event-Type`.
 - Create releases from these tags for archiving as needed.
 - ‘Fix forward‘ to keep the commit history traceable
 
-**[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)** keep the project history easy to understand
+</details>
+
+<details>
+  <summary><strong>[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)</strong> keep the project history easy to understand.</summary>
 
 - Each commit should add a whole feature or fix a whole bug.
 - Commits should never 'break the build' so that we can test or share at any time.
 
-**Linting** enforces code formatting and conventions consistent
+</details>
+
+<details>
+  <summary><strong>Linting</strong> enforces code formatting and conventions consistent
 
 - The GOV.UK Prototype Kit uses [standardJS](https://standardjs.com/) for javascript files.
 - Other files use [Prettier](https://prettier.io/)
 - Recommended Visual Studio Code settings and extensions are included in the repository.
 
-**Continuous deployment** processes automatically deploy the latest code pushed to Github for each branch with [Render](https://render.com/)
+</details>
+
+<details>
+  <summary><strong>Continuous deployment</strong> processes automatically deploy the latest code pushed to Github for each branch with [Render](https://render.com/).</summary>
 
 - When you add a branch (e.g. a release branch) you will need to configure a new app in Render
 - `main` is deployed to [nsjsa-automation-staging.onrender.com](https://nsjsa-automation-staging.onrender.com)
 - `production` is deployed to [nsjsa-automation-cbkl.onrender.com](https://nsjsa-automation-cbkl.onrender.com)
 
-**Self documenting** code, in the form of comments, ensures the repo is easy for people to pick up and run with.
+</details>
+
+<details>
+  <summary><strong>Self documenting</strong> code, in the form of comments, ensures the repo is easy for people to pick up and run with.</summary>
 
 - Keep in mind that the GOV.UK Prototyping Kit is designed to require “minimal skills to get started”.
 - Use extra README files per directory as required.
 
-<details>
-  <summary>Project structure</summary>
+</details>
+
+## Project structure
 
 ```ascii
 .
@@ -98,38 +114,36 @@ npx eleventy --serve
 ├─ app                                // Where your prototype lives
 │  ├─ assets
 │  │  ├─ images                       // Where images live
-│  │  │  └─ …
+│  │  │  └< …
 │  │  ├─ javascripts                  // Where js scripts live
-│  │  │  └─ …
+│  │  │  └< …
 │  │  └─ sass                         // Where Sass lives
-│  │     └─ …
+│  │     └< …
 │  ├─ data                            // Where data lives
 │  │  └─ session-data-defaults.js     // Default data for applications in Service center UI
 │  ├─ views                           // Your prototype screens
-│  │  └─ …
+│  │  └< …
 │  ├─ config.js                       // Prototype configuration
 │  ├─ filters.js
 │  └─ routes.js                       // Main routes file for branched journeys
 ├─ docs                               // Documentation
-│  └─ …
+│  └< …
 ├─ lib                                // Makes everything work
-│  └─ …
+│  └< …
 ├─ .gitignore                         // List of files not to version control
 ├─ .npmrc                             // NPM config
 ├─ .nvmrc                             // NVM config
-├─ .prettierignore                    // List of ignored filetypes for Perttier
+├─ .prettierignore                    // List of ignored filetypes for Prettier
 ├─ LICENSE.txt
 ├─ listen-on-port.js
 ├─ package-lock.json                  // Manages dependencies strictly
 ├─ package.json                       // Manages dependencies
 ├─ Procfile                           // Sets Heroku startup commands
-├─ README.md                          // ☛ You are here
+├─ README.md                        ☛ // YOU ARE HERE
 ├─ server.js
 ├─ start.js
 └─ VERSION.txt                        // govuk-prototype-kit version
 ```
-
-</details>
 
 ## Support
 
