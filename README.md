@@ -41,14 +41,15 @@ npm install
 ### 4. Run Locally
 
 ```bash
-npx eleventy --serve
+npm run build && npm run serve
 ```
 
 </details>
 
 ## Conventions
 
-**[Trunk based development](https://trunkbaseddevelopment.com/)** separates the work in progress from work completed.
+<details>
+  <summary><strong><a href='https://trunkbaseddevelopment.com/'>Trunk based development</a></strong> separates the work in progress from work completed.</summary>
 
 - `main` is the latest used to preview or QA work in progress.
 - `production` a stable, _live_ environment for researching with.
@@ -71,7 +72,7 @@ npx eleventy --serve
 </details>
 
 <details>
-  <summary><strong>[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)</strong> keep the project history easy to understand.</summary>
+  <summary><strong><a href='https://www.conventionalcommits.org/en/v1.0.0/'>Conventional Commits</a></strong> keep the project history easy to understand.</summary>
 
 - Each commit should add a whole feature or fix a whole bug.
 - Commits should never 'break the build' so that we can test or share at any time.
@@ -79,7 +80,7 @@ npx eleventy --serve
 </details>
 
 <details>
-  <summary><strong>Linting</strong> enforces code formatting and conventions consistent
+  <summary><strong>Linting</strong> enforces code formatting and conventions consistent.</summary>
 
 - The GOV.UK Prototype Kit uses [standardJS](https://standardjs.com/) for javascript files.
 - Other files use [Prettier](https://prettier.io/)
@@ -88,7 +89,7 @@ npx eleventy --serve
 </details>
 
 <details>
-  <summary><strong>Continuous deployment</strong> processes automatically deploy the latest code pushed to Github for each branch with [Render](https://render.com/).</summary>
+  <summary><strong>Continuous deployment</strong> processes automatically deploy the latest code pushed to Github for each branch with <a href='https://render.com/'>Render</a>.</summary>
 
 - When you add a branch (e.g. a release branch) you will need to configure a new app in Render
 - `main` is deployed to [nsjsa-automation-staging.onrender.com](https://nsjsa-automation-staging.onrender.com)
